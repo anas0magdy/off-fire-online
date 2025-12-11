@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* نظام الألوان الجديد بناءً على ملف اقتراحات التصميم */
+  --color-primary: #3B82F6; /* أزرق نيون هادئ */
+  --color-primary-dark: #0A2647; /* أزرق ملكي */
+  --color-cta: #F97316; /* برتقالي متوهج للأكشن */
+  --color-cta-hover: #FF6B00; /* برتقالي ناري */
+  
+  --color-dark: #0B1120; /* كحلي عميق جداً للخلفية */
+  --color-card: #162032; /* كحلي غامق للكروت */
+  
+  --color-text-main: #F3F4F6; /* أبيض لؤلؤي */
+  --color-text-sub: #9CA3AF; /* رمادي فضي */
+  
+  --font-sans: 'Tajawal', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+}
+
+/* استدعاء الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+:root {
+  direction: rtl;
+}
+
+body {
+  @apply bg-dark text-text-main font-sans overflow-x-hidden;
+}
+
+/* تحسين السكرول بار */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+}
+
+/* أنيميشن مخصصة */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* تأثير الزجاج (Glassmorphism) */
+.glass {
+  background: rgba(22, 32, 50, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
