@@ -10,5 +10,5 @@ export default defineConfig({
   ],
   // ⚠️ هام جداً: استبدل 'repo-name' باسم المستودع بتاعك على جيت هب بين علامتين /
   // لو اسم المشروع off-fire-online يبقى تكتب: '/off-fire-online/'
-  base: './', 
+  base: '/', 
 })
