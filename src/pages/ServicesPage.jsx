@@ -30,30 +30,29 @@ const ServicesPage = () => {
       {/* 2. Main Services List */}
       <section className="py-20 bg-darker">
         <div className="container mx-auto px-6">
-          <div className="space-y-24">
+          <div className="space-y-16 lg:space-y-24">
             {SERVICES_PAGE_CONTENT.services.map((service, idx) => (
-                <div key={service.id} className={`flex flex-col lg:flex-row gap-12 items-start ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                <div key={service.id} className={`flex flex-col lg:flex-row gap-8 lg:gap-12 items-start ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                   
-                  {/* Image Card */}
-                  <div className="w-full lg:w-5/12 sticky top-28">
+                  {/* Image Card - Mobile: Static, Desktop: Sticky */}
+                  <div className="w-full lg:w-5/12 relative lg:sticky lg:top-28 z-10">
                      <div className="bg-card rounded-3xl border border-white/5 p-3 shadow-2xl relative group overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-tr from-dark/60 to-transparent z-10 rounded-2xl pointer-events-none"></div>
                         <img 
                             src={service.image} 
-                            className="w-full h-[300px] lg:h-[450px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-[250px] md:h-[350px] lg:h-[450px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
                             alt={service.title}
                             onError={(e) => e.target.style.display = 'none'} 
                         />
-                        {/* Overlay Title for Mobile */}
-                        <div className="absolute bottom-6 right-6 z-20 lg:hidden">
-                            <span className="bg-cta text-white text-xs font-bold px-3 py-1 rounded mb-2 inline-block">خدمة {service.id}</span>
-                            <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                        {/* Overlay Title for Mobile - Optional */}
+                        <div className="absolute bottom-4 right-4 z-20 lg:hidden bg-dark/80 backdrop-blur-sm px-3 py-1 rounded-lg border border-white/10">
+                            <h3 className="text-lg font-bold text-white">{service.title}</h3>
                         </div>
                      </div>
                   </div>
 
                   {/* Content */}
-                  <div className="w-full lg:w-7/12">
+                  <div className="w-full lg:w-7/12 relative z-20">
                     <div className="hidden lg:flex items-center gap-3 mb-4">
                         <span className="text-6xl font-black text-white/5 select-none">{`0${service.id}`}</span>
                         <div>
@@ -62,16 +61,22 @@ const ServicesPage = () => {
                         </div>
                     </div>
                     
-                    <p className="text-text-sub mb-8 text-lg leading-relaxed">{service.desc}</p>
+                    {/* Mobile Title (visible only on small screens if needed, otherwise rely on image overlay or add here) */}
+                    <div className="lg:hidden mb-4">
+                        <span className="text-primary font-bold text-xs tracking-wider uppercase block mb-1">{service.subtitle}</span>
+                        <h3 className="text-2xl font-bold text-text-main">{service.title}</h3>
+                    </div>
+
+                    <p className="text-text-sub mb-8 text-base lg:text-lg leading-relaxed">{service.desc}</p>
                     
                     {/* Sub Items Grid */}
                     <div className="grid sm:grid-cols-2 gap-4 mb-8">
                         {service.subItems.map((item, i) => (
                             <div key={i} className="bg-card p-5 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors">
-                                <h4 className="text-white font-bold mb-2 flex items-center gap-2">
-                                    <CheckCircle size={16} className="text-green-500"/> {item.title}
+                                <h4 className="text-white font-bold mb-2 flex items-center gap-2 text-sm lg:text-base">
+                                    <CheckCircle size={16} className="text-green-500 flex-shrink-0"/> {item.title}
                                 </h4>
-                                <p className="text-text-sub text-sm leading-snug">{item.details}</p>
+                                <p className="text-text-sub text-xs lg:text-sm leading-snug">{item.details}</p>
                             </div>
                         ))}
                     </div>
@@ -131,12 +136,13 @@ const ServicesPage = () => {
             </div>
 
             <div className="relative">
-                {/* Line */}
+                {/* Line - Hidden on Mobile */}
                 <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 z-0"></div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     {SERVICES_PAGE_CONTENT.steps.map((step, i) => (
                         <div key={i} className="relative z-10 bg-dark p-6 rounded-2xl border border-white/10 hover:border-primary transition-colors text-center lg:text-right group">
+                            {/* Circle for Mobile (Centered) and Desktop (Aligned) */}
                             <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 mx-auto lg:mx-0 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
                                 {i + 1}
                             </div>
