@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
+import ScrollToTop from './components/ScrollToTop'; // 1. استيراد الملف الجديد
 
 // استدعاء الصفحات
 import HomePage from './pages/HomePage';
@@ -16,6 +17,8 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* 2. تشغيله هنا عشان يشتغل مع الراوتر */}
+      
       <div className="flex flex-col min-h-screen bg-dark text-white font-sans selection:bg-primary selection:text-white">
         
         {/* الهيدر ثابت في كل الصفحات */}

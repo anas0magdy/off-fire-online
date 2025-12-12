@@ -1,35 +1,47 @@
+/* 1. Imports must come first (الخطوط تأتي أولاً) */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+
+/* 2. Tailwind Import */
 @import "tailwindcss";
 
+/* 3. Theme Configuration */
 @theme {
-  /* نظام الألوان الجديد بناءً على ملف اقتراحات التصميم */
-  --color-primary: #3B82F6; /* أزرق نيون هادئ */
-  --color-primary-dark: #0A2647; /* أزرق ملكي */
-  --color-cta: #F97316; /* برتقالي متوهج للأكشن */
-  --color-cta-hover: #FF6B00; /* برتقالي ناري */
+  /* --- Colors --- */
+  --color-dark: #0B1120;
+  --color-darker: #020617;
+  --color-card: #162032;
   
-  --color-dark: #0B1120; /* كحلي عميق جداً للخلفية */
-  --color-card: #162032; /* كحلي غامق للكروت */
+  --color-primary: #3B82F6;
+  --color-primary-dark: #0A2647;
+  --color-primary-light: #60A5FA;
   
-  --color-text-main: #F3F4F6; /* أبيض لؤلؤي */
-  --color-text-sub: #9CA3AF; /* رمادي فضي */
+  --color-cta: #F97316;
+  --color-cta-hover: #EA580C;
   
-  --font-sans: 'Tajawal', sans-serif;
+  --color-text-main: #F3F4F6;
+  --color-text-sub: #9CA3AF;
+  
+  /* --- Fonts --- */
+  --font-sans: 'Cairo', sans-serif;
   --font-oswald: 'Oswald', sans-serif;
 }
 
-/* استدعاء الخطوط */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
-
+/* 4. Base Styles */
 :root {
   direction: rtl;
 }
 
 body {
-  @apply bg-dark text-text-main font-sans overflow-x-hidden;
+  background-color: var(--color-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-/* تحسين السكرول بار */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -41,7 +53,7 @@ body {
   border-radius: 9999px;
 }
 
-/* أنيميشن مخصصة */
+/* 5. Custom Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -58,13 +70,30 @@ body {
   animation: slideUp 0.8s ease-out forwards;
 }
 
-/* تأثير الزجاج (Glassmorphism) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Utility Classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* Glassmorphism Effect */
 .glass {
   background: rgba(22, 32, 50, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
-
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
