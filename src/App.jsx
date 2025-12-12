@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// استخدام HashRouter هو الحل الأضمن لاستضافة GitHub Pages
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // استدعاء المكونات الثابتة
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
-import ScrollToTop from './components/ScrollToTop'; // 1. استيراد الملف الجديد
+import ScrollToTop from './components/ScrollToTop';
 
 // استدعاء الصفحات
 import HomePage from './pages/HomePage';
@@ -17,14 +18,14 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* 2. تشغيله هنا عشان يشتغل مع الراوتر */}
+      <ScrollToTop />
       
       <div className="flex flex-col min-h-screen bg-dark text-white font-sans selection:bg-primary selection:text-white">
         
-        {/* الهيدر ثابت في كل الصفحات */}
+        {/* الهيدر ثابت */}
         <Navbar />
 
-        {/* المحتوى المتغير حسب الرابط */}
+        {/* المحتوى المتغير */}
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -32,10 +33,13 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            
+            {/* 🔥🔥 الحل السحري هنا: أي رابط غلط أو الصفحة فاضية، حولني فوراً للرئيسية 🔥🔥 */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 
-        {/* الأزرار العائمة والفوتر ثابتين */}
+        {/* الفوتر والأزرار */}
         <FloatingActions />
         <Footer />
         
