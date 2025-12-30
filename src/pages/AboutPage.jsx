@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Target, ShieldCheck, Heart, Zap, Users, ArrowLeft, CheckCircle } from 'lucide-react';
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
-import { ABOUT_DATA } from '../data/content';
+import { ABOUT_DATA, WHY_US_BG_IMAGE } from '../data/content';
 
 const AboutPage = () => {
   return (
@@ -37,7 +37,6 @@ const AboutPage = () => {
       <section className="py-12 lg:py-28 bg-darker">
         <div className="container mx-auto px-4 lg:px-6">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-                {/* Image Composition */}
                 <div className="w-full lg:w-1/2 relative group">
                     <div className="absolute -inset-2 lg:-inset-4 bg-primary/10 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-0"></div>
                     <img 
@@ -47,7 +46,6 @@ const AboutPage = () => {
                     />
                 </div>
 
-                {/* Text Content */}
                 <div className="w-full lg:w-1/2">
                     <h2 className="text-xl lg:text-4xl font-bold text-text-main mb-4 lg:mb-6 flex items-center gap-2 lg:gap-3">
                         قصتنا: من مشكلة إلى رؤية <span className="w-8 lg:w-12 h-1 bg-cta rounded-full"></span>
@@ -56,7 +54,6 @@ const AboutPage = () => {
                         <TextWithBrand text={ABOUT_DATA.story} />
                     </p>
                     
-                    {/* Vision & Mission */}
                     <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4">
                         <div className="bg-card p-5 lg:p-6 rounded-xl lg:rounded-2xl border-l-4 border-primary shadow-md hover:translate-y-[-5px] transition-transform duration-300">
                             <div className="flex items-center gap-3 mb-4">
@@ -130,12 +127,7 @@ const AboutPage = () => {
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center gap-1 lg:hidden">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <div className="w-2 h-2 bg-white/20 rounded-full"></div>
-                <div className="w-2 h-2 bg-white/20 rounded-full"></div>
-            </div>
-
+            
             <div className="hidden lg:block relative max-w-4xl mx-auto">
                 <div className="absolute top-0 bottom-0 right-1/2 w-1 bg-white/10 -mr-0.5 rounded-full"></div>
                 {ABOUT_DATA.process.map((step, i) => (
@@ -156,16 +148,27 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 5. Why Us & Audience */}
-      <section className="py-12 lg:py-28 bg-dark">
-        <div className="container mx-auto px-4 lg:px-6">
+      {/* 5. Why Us & Audience (Updated Background) */}
+      <section className="py-16 lg:py-28 relative bg-dark">
+        {/* الخلفية الجديدة */}
+        <div className="absolute inset-0 z-0">
+            <img 
+                src={WHY_US_BG_IMAGE} 
+                alt="Why Us Background" 
+                className="w-full h-full object-cover"
+            />
+            {/* طبقة تعتيم 90% */}
+            <div className="absolute inset-0 bg-dark/80"></div>
+        </div>
+
+        <div className="container mx-auto px-4 lg:px-6 relative z-10">
             <div className="mb-12 lg:mb-20">
                 <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-6 lg:mb-12">لماذا نحن خيارك الذكي؟</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6">
                     {ABOUT_DATA.whyUs.map((item, i) => {
                         const Icon = item.icon;
                         return (
-                            <div key={i} className="flex flex-col lg:flex-row gap-3 lg:gap-4 bg-card/50 p-4 lg:p-6 rounded-xl lg:rounded-2xl border border-white/5 text-center lg:text-right">
+                            <div key={i} className="flex flex-col lg:flex-row gap-3 lg:gap-4 bg-card/50 backdrop-blur-sm p-4 lg:p-6 rounded-xl lg:rounded-2xl border border-white/5 text-center lg:text-right hover:border-white/20 transition-colors">
                                 <div className="mx-auto lg:mx-0 flex-shrink-0 text-cta bg-dark p-2 rounded-full w-fit">
                                     <Icon size={20} className="lg:w-6 lg:h-6" />
                                 </div>
@@ -183,16 +186,11 @@ const AboutPage = () => {
                 <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-6 lg:mb-12">شريك الأمان الأول لكافة القطاعات</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
                     {ABOUT_DATA.audience.map((item, i) => (
-                        <div key={i} className="group relative rounded-xl lg:rounded-2xl overflow-hidden h-40 lg:h-64 border border-white/10">
-                            
-                            {/* التعديل هنا: تغميق الخلفية (Gradient) عشان الكلام يبان */}
+                        <div key={i} className="group relative rounded-xl lg:rounded-2xl overflow-hidden h-40 lg:h-64 border border-white/10 shadow-lg">
                             <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/60 to-transparent z-10"></div>
-                            
                             <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                            
                             <div className="absolute bottom-0 left-0 w-full p-3 lg:p-6 z-20">
                                 <h4 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-2 drop-shadow-md">{item.title}</h4>
-                                {/* التعديل هنا: تكبير الخط، تغيير اللون للأبيض الرمادي، وإلغاء الشفافية */}
                                 <p className="text-gray-200 text-xs lg:text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all lg:translate-y-2 lg:group-hover:translate-y-0 leading-snug font-medium">
                                     {item.desc}
                                 </p>
