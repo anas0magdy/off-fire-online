@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import { Target, ShieldCheck, Heart, Zap, Users, ArrowLeft, CheckCircle } from 'lucide-react';
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
-import { ABOUT_DATA, WHY_US_BG_IMAGE } from '../data/content';
+import { ABOUT_DATA, WHY_US_BG_IMAGE, HSERVICES1 } from '../data/content';
 
 const AboutPage = () => {
   return (
     <div className="animate-fadeIn pt-20 lg:pt-24">
       
       {/* 1. Hero Section */}
-      <div className="relative h-[50vh] lg:h-[60vh] flex items-center justify-center bg-dark border-b border-white/5 overflow-hidden">
+      <div className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center bg-dark border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0">
             <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
+                src={HSERVICES1}
                 alt="Team Meeting" 
                 className="w-full h-full object-cover opacity-20 animate-pulse-slow" 
             />

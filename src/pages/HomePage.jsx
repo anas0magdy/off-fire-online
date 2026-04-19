@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import { 
   HERO_SLIDES, PAIN_POINTS, FEATURES, 
   SERVICES_SUMMARY, TARGET_AUDIENCE, WHY_US, FAQ, 
-  SECTORS_BG_IMAGE, SOLUTION_IMAGE 
+  SECTORS_BG_IMAGE, SOLUTION_IMAGE
 } from '../data/content';
 
 const HomePage = () => {
@@ -76,13 +76,13 @@ const HomePage = () => {
         {HERO_SLIDES.map((slide, index) => (
           <div 
             key={slide.id}
-            className={`absolute inset-0 transition-all duration-[800ms] ease-in-out bg-dark ${index === currentSlide ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105'}`}
+            className={`absolute inset-0 transition-all duration-[900ms] ease-in-out bg-dark ${index === currentSlide ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105'}`}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/40 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/50 to-dark/20 z-10" />
             <img 
               src={slide.image} 
               alt="" 
-              className="w-full h-full object-cover opacity-50" 
+              className="w-full h-full object-cover opacity-100" 
               onError={(e) => e.target.style.display = 'none'} 
             />
             <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 container mx-auto pt-20 lg:pt-0">
@@ -116,10 +116,10 @@ const HomePage = () => {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-8 lg:mb-20">
             <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-3 lg:mb-6 relative inline-block">
-              التحدي: طلب بسيط.. لماذا يتحول لفوضى؟
+              تسهيل عبئ استخراج الرخص وتركيب انظمة السلامة
               <span className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-0.5 lg:h-1 bg-gradient-to-r from-transparent via-cta to-transparent opacity-80"></span>
             </h2>
-            <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto">تبدأ كل منشأة بطلب واضح، لكن الدوامة تبدأ سريعاً.</p>
+            <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> تظن أن الأمر مجرد " طلب عرض سعر"، لكنك تصطدم بواقع مختلف تماماً. إليك ما يحدث خلف الكواليس:</p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8">
@@ -136,6 +136,10 @@ const HomePage = () => {
               );
             })}
           </div>
+            <div className="text-center mb-8 lg:mb-20">
+              <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> هنا تبدأ الشكوك: هل السعر عادل؟ هل سأحصل على شهادة الإنجاز؟ </p>
+              <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> "اختصر الطريق.. OFF FIRE ONLINE هي منصتك الرقمية؛ من طلب عرض السعر حتى الاعتماد."</p>
+          </div>
         </div>
       </section>
 
@@ -147,9 +151,12 @@ const HomePage = () => {
             <div className="order-2 md:order-1">
               <span className="text-primary font-bold mb-2 lg:mb-4 block uppercase tracking-wider text-base lg:text-lg border-l-4 border-primary pl-3">الحل الذكي</span>
               <h2 className="text-3xl md:text-6xl font-extrabold text-text-main mb-6 lg:mb-10 leading-tight">
-                حوّل الفوضى إلى <span className="text-transparent bg-clip-text bg-gradient-to-l from-primary to-white">نظام ذكي</span>
+                اختصر طريقك مع<span className="text-transparent bg-clip-text bg-gradient-to-l from-primary to-white">OFF FIRE ONLINE</span>
                 <br/>في أقل من 3 دقائق
               </h2>
+              <div className="text-center mb-8 lg:mb-20">
+                <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> منصة موحدة تتيح لك إنجاز كل متطلبات الأمن والسلامة في مكان واحد: الشركات المعتمدة، المواصفات، الأسعار، التحليل الفني، والشراء المباشر… بضغطة زر.</p>
+              </div>
               <ul className="space-y-5 lg:space-y-8 mb-8 lg:mb-12">
                 {FEATURES.map((feat, i) => (
                   <li key={i} className="flex items-start gap-3 lg:gap-5 group">
@@ -189,8 +196,8 @@ const HomePage = () => {
       <section className="py-12 lg:py-28 bg-dark">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-8 lg:mb-20">
-            <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-2 lg:mb-6">منظومة أمان متكاملة</h2>
-            <p className="text-text-sub text-lg lg:text-xl">تحت سقف واحد.. قارن، تأكد، ونفذ.</p>
+            <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-2 lg:mb-6">خدماتنا</h2>
+            <p className="text-text-sub text-lg lg:text-xl">منظومة أمان متكاملة.. حقق معادلة السعر والجودة لكافة اشتراطات الدفاع المدني تحت سقف واحد.</p>
           </div>
           
           <div className="relative">
@@ -247,6 +254,8 @@ const HomePage = () => {
             
             <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-text-main mb-6 lg:mb-10 border-r-4 border-cta pr-3 lg:pr-6">من نخدم؟</h3>
+                <p className="text-text-sub text-lg lg:text-xl mb-6 lg:mb-10">مهما كان نشاطك نوفر لك حلولاً هندسية معتمدة، ونكون مساعدك الشخصي لتنفيذ الأعمال واجتياز التفتيش دون عوائق.</p>
+
                 <div className="grid grid-cols-2 gap-3 lg:gap-6">
                     {TARGET_AUDIENCE.map((aud, i) => (
                         <div key={i} className="bg-card/50 backdrop-blur-sm p-4 lg:p-8 rounded-xl lg:rounded-2xl border border-white/5 hover:border-white/20 transition-colors">
