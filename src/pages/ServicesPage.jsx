@@ -3,13 +3,44 @@ import { CheckCircle, Info, Lightbulb, Plus, Minus } from 'lucide-react';
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { SERVICES_PAGE_CONTENT } from '../data/content';
+import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
 
 const ServicesPage = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <div className="animate-fadeIn pt-20 lg:pt-24">
-      
+    <Helmet>
+        {/* العنوان الأساسي للخدمات */}
+        <title>خدماتنا | حلول متكاملة للأمن والسلامة واعتمادات الدفاع المدني</title>
+        
+        {/* وصف خدمات الشركة بشكل مفصل وجذاب لمحركات البحث */}
+        <meta 
+            name="description" 
+            content="استكشف خدماتنا: استخراج رخص الدفاع المدني، تصميم وتركيب أنظمة مكافحة الحريق، عقود الصيانة السنوية المعتمدة، وتوريد أدوات السلامة بأفضل المواصفات." 
+        />
+        
+        {/* كلمات مفتاحية تركز على "نية الشراء" لدى العميل */}
+        <meta 
+            name="keywords" 
+            content="عقد صيانة حريق، تركيب رشاشات حريق، توريد طفايات حريق، ترخيص الدفاع المدني، مخططات سلامة، شركة سلامة معتمدة، فحص أنظمة إنذار" 
+        />
+
+        {/* إعدادات مشاركة الصفحة (Open Graph) */}
+        <meta property="og:title" content="خدمات OFF FIRE ONLINE | منظومتك المتكاملة للأمان" />
+        <meta property="og:description" content="من التصميم والتركيب إلى الصيانة والاعتماد.. نوفر لك كل ما تحتاجه منشأتك لاجتياز اشتراطات السلامة." />
+        <meta property="og:image" content={SERVICES_PAGE_CONTENT.services[0]?.image} /> {/* يستخدم صورة أول خدمة كصورة عرض */}
+        <meta property="og:type" content="website" />
+
+        {/* إعدادات تويتر */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="خدمات الأمن والسلامة في السعودية" />
+        <meta name="twitter:description" content="أنجز متطلبات السلامة لمنشأتك بضغطة زر عبر منصتنا الرقمية." />
+
+        {/* رابط الـ Canonical */}
+        <link rel="canonical" href={window.location.href} />
+    </Helmet>
+
       {/* 1. Hero Section */}
       <div className="bg-dark py-16 lg:py-20 text-center px-4 border-b border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 opacity-50 blur-3xl"></div>

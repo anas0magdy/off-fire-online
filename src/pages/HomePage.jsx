@@ -7,6 +7,7 @@ import {
   SERVICES_SUMMARY, TARGET_AUDIENCE, WHY_US, FAQ, 
   SECTORS_BG_IMAGE, SOLUTION_IMAGE
 } from '../data/content';
+import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,7 +71,39 @@ const HomePage = () => {
 
   return (
     <div className="animate-fadeIn">
+    <Helmet>
+      {/* العنوان الأساسي الذي يظهر في نتائج البحث */}
+      <title>OFF FIRE ONLINE | منصة خدمات الأمن والسلامة واشتراطات الدفاع المدني</title>
       
+      {/* وصف الصفحة SEO - ركزت هنا على الحلول التي تقدمها */}
+      <meta 
+          name="description" 
+          content="منصتك الرقمية الأولى في السعودية لاستخراج تصاريح الدفاع المدني، تركيب أنظمة مكافحة الحريق، والحصول على شهادات الإنجاز وعقود الصيانة بضغطة زر." 
+      />
+      
+      {/* الكلمات المفتاحية - Keywords */}
+      <meta 
+          name="keywords" 
+          content="الدفاع المدني، رخصة بلدي، سلامة، أنظمة حريق، عقود صيانة، الكود السعودي، شهادة إنجاز، سلامة المنشآت، أوف فاير أونلاين" 
+      />
+
+      {/* إعدادات وسائل التواصل (Open Graph) لظهور احترافي عند مشاركة رابط الموقع */}
+      <meta property="og:title" content="OFF FIRE ONLINE | اختصر طريقك للأمن والسلامة" />
+      <meta property="og:description" content="من طلب عرض السعر حتى الاعتماد.. أنجز متطلبات الأمن والسلامة لمنشأتك في أقل من 3 دقائق." />
+      <meta property="og:image" content={SOLUTION_IMAGE} /> {/* صورة التطبيق أو صورة الهيرو */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={window.location.origin} />
+
+      {/* إعدادات تويتر */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="OFF FIRE ONLINE | الحل الذكي للأمن والسلامة" />
+      <meta name="twitter:description" content="منصة موحدة لشركات السلامة المعتمدة، المواصفات، والأسعار في مكان واحد." />
+      <meta name="twitter:image" content={SOLUTION_IMAGE} />
+
+      {/* رابط الـ Canonical لتعريف جوجل أن هذا هو الرابط الأصلي */}
+      <link rel="canonical" href={window.location.origin} />
+  </Helmet>
+
       {/* 1. Hero Section */}
       <section className="relative h-[75vh] lg:h-[95vh] flex items-center justify-center overflow-hidden bg-dark pt-20 lg:pt-0">
         {HERO_SLIDES.map((slide, index) => (

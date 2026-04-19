@@ -4,11 +4,37 @@ import { Target, ShieldCheck, Heart, Zap, Users, ArrowLeft, CheckCircle } from '
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { ABOUT_DATA, WHY_US_BG_IMAGE, HSERVICES1 } from '../data/content';
+import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
 
 const AboutPage = () => {
   return (
     <div className="animate-fadeIn pt-20 lg:pt-24">
       
+    <Helmet>
+        {/* العنوان الأساسي للتبويب */}
+        <title>من نحن | {ABOUT_DATA.hero.title}</title>
+        
+        {/* الوصف التعريفي لمحركات البحث SEO */}
+        <meta name="description" content={ABOUT_DATA.hero.subtitle} />
+        
+        {/* الكلمات المفتاحية (Keywords) */}
+        <meta name="keywords" content="من نحن، حماية، أمان، رحلة العميل، رؤية الشركة، خدمات تقنية، شريك الأمان" />
+
+        {/* إعدادات وسائل التواصل الاجتماعي (Open Graph / Facebook) */}
+        <meta property="og:title" content={`من نحن - ${ABOUT_DATA.hero.title}`} />
+        <meta property="og:description" content={ABOUT_DATA.hero.subtitle} />
+        <meta property="og:image" content={HSERVICES1} />
+        <meta property="og:type" content="website" />
+
+        {/* إعدادات تويتر (Twitter Cards) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`من نحن - ${ABOUT_DATA.hero.title}`} />
+        <meta name="twitter:description" content={ABOUT_DATA.hero.subtitle} />
+        <meta name="twitter:image" content={HSERVICES1} />
+
+        {/* رابط الصفحة الحالي (Canonical Link) */}
+        <link rel="canonical" href={window.location.href} />
+    </Helmet>
       {/* 1. Hero Section */}
       <div className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center bg-dark border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0">

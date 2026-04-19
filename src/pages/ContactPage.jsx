@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../components/Button';
 import { supabase } from '../supabaseClient'; // تأكد من مسار الملف حسب مشروعك
+import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
 
 const ContactPage = () => {
   // 1. إنشاء حالة (State) لحفظ البيانات التي يكتبها المستخدم
@@ -74,6 +75,11 @@ const ContactPage = () => {
 
   return (
     <div className="animate-fadeIn pt-24 min-h-screen bg-gradient-to-b from-dark to-darker relative">
+      <Helmet>
+        <title>اتصل بنا | Off Fire Online</title>
+        <meta name="description" content="تواصل مع Off Fire Online لطلب أحدث أنظمة مكافحة الحريق والسلامة لمنشأتك. حلول سريعة، واضحة، وآمنة." />
+        <meta name="keywords" content="مكافحة حريق, أنظمة سلامة, طفايات حريق, إنذار حريق, Off Fire Online" />
+      </Helmet>
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-5xl mx-auto bg-card p-8 md:p-16 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden">
           

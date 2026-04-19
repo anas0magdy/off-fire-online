@@ -3,6 +3,7 @@ import { ChevronLeft, Search, Clock, X } from 'lucide-react';
 import { BLOG_POSTS, BLOG_CATEGORIES, BLOG_TAGS } from '../data/content';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
 
 const BlogPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -20,6 +21,41 @@ const BlogPage = () => {
   return (
     <div className="animate-fadeIn pt-20 lg:pt-24 relative">
       
+    <Helmet>
+        {/* العنوان: يتغير ديناميكياً إذا تم فتح مقال معين */}
+        <title>
+            {selectedPost 
+                ? `${selectedPost.title} | مدونة الأمن والسلامة` 
+                : "المدونة | المرجع الرقمي للأمن والسلامة واشتراطات الدفاع المدني"}
+        </title>
+
+        {/* الوصف: يتغير أيضاً حسب المقال المفتوح */}
+        <meta 
+            name="description" 
+            content={selectedPost 
+                ? selectedPost.excerpt 
+                : "دليلك الشامل لفهم الكود السعودي، أنظمة مكافحة الحريق، واشتراطات الدفاع المدني للمطاعم والمباني الإدارية."} 
+        />
+
+        {/* الكلمات المفتاحية لمحرّكات البحث */}
+        <meta name="keywords" content="الدفاع المدني السعودي، الكود السعودي للمباني، عقود صيانة حريق، أدوات السلامة، رخصة بلدي، أنظمة إنذار الحريق" />
+
+        {/* إعدادات مشاركة المقالات (Open Graph) */}
+        <meta property="og:title" content={selectedPost ? selectedPost.title : "مدونة الأمن والسلامة الرقمية"} />
+        <meta property="og:description" content={selectedPost ? selectedPost.excerpt : "شرح مبسط لكافة اشتراطات السلامة في السعودية"} />
+        <meta property="og:image" content={selectedPost ? selectedPost.image : "/default-blog-share.jpg"} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="اسم براندك" />
+
+        {/* إعدادات تويتر */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={selectedPost ? selectedPost.title : "المرجع الرقمي للأمن والسلامة"} />
+        <meta name="twitter:image" content={selectedPost ? selectedPost.image : "/default-blog-share.jpg"} />
+
+        {/* رابط الـ Canonical لمنع التكرار */}
+        <link rel="canonical" href={window.location.href} />
+    </Helmet>
+
       {/* 1. Hero Section */}
       <div className="bg-dark py-16 lg:py-24 text-center px-4 border-b border-white/5 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
