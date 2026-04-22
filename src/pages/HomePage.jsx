@@ -149,7 +149,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-8 lg:mb-20">
             <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-3 lg:mb-6 relative inline-block">
-              تسهيل عبئ استخراج الرخص وتركيب انظمة السلامة
+              تسهيل عبء استخراج الرخص وتركيب انظمة السلامة
               <span className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-0.5 lg:h-1 bg-gradient-to-r from-transparent via-cta to-transparent opacity-80"></span>
             </h2>
             <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> تظن أن الأمر مجرد " طلب عرض سعر"، لكنك تصطدم بواقع مختلف تماماً. إليك ما يحدث خلف الكواليس:</p>
