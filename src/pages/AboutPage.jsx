@@ -35,7 +35,7 @@ const AboutPage = () => {
         <meta name="twitter:image" content={HSERVICES1} />
 
         {/* رابط الصفحة الحالي (Canonical Link) */}
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href="https://offfireonline.com" />
     </Helmet>
       {/* 1. Hero Section */}
       <div className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center bg-dark border-b border-white/5 overflow-hidden">

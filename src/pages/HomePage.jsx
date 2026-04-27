@@ -94,7 +94,7 @@ const HomePage = () => {
       <meta property="og:description" content="من طلب عرض السعر حتى الاعتماد.. أنجز متطلبات الأمن والسلامة لمنشأتك في أقل من 3 دقائق." />
       <meta property="og:image" content={SOLUTION_IMAGE} /> {/* صورة التطبيق أو صورة الهيرو */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={window.location.origin} />
+      <meta property="og:url" content="https://offfireonline.com" />
 
       {/* إعدادات تويتر */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -103,7 +103,7 @@ const HomePage = () => {
       <meta name="twitter:image" content={SOLUTION_IMAGE} />
 
       {/* رابط الـ Canonical لتعريف جوجل أن هذا هو الرابط الأصلي */}
-      <link rel="canonical" href={window.location.origin} />
+        <link rel="canonical" href="https://offfireonline.com" />
   </Helmet>
 
       {/* 1. Hero Section */}

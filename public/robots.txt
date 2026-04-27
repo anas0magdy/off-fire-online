@@ -1,0 +1,21 @@
+# robots.txt for https://offfireonline.com
+
+# توجيهات عامة لجميع محركات البحث
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /*?*search=
+Disallow: /tmp/
+
+# توجيهات مخصصة لعناكب جوجل (اختياري، للتأكيد)
+User-agent: Googlebot
+Allow: /
+
+# توجيهات مخصصة لعناكب بينج (اختياري)
+User-agent: Bingbot
+Allow: /
+
+# رابط خريطة الموقع (Sitemap) - استبدله بالرابط الصحيح لموقعك
+Sitemap: https://offfireonline.com/sitemap.xml

@@ -53,7 +53,7 @@ const BlogPage = () => {
         <meta name="twitter:image" content={selectedPost ? selectedPost.image : "/default-blog-share.jpg"} />
 
         {/* رابط الـ Canonical لمنع التكرار */}
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href="https://offfireonline.com" />
     </Helmet>
 
       {/* 1. Hero Section */}

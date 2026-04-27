@@ -67,7 +67,7 @@ const ServicesPage = () => {
         <meta name="twitter:description" content="أنجز متطلبات السلامة والأنظمة الأمنية لمنشأتك بضغطة زر عبر منصتنا الرقمية." />
 
         {/* رابط الـ Canonical */}
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href="https://offfireonline.com" />
     </Helmet>
 
       {/* 1. Hero Section */}
