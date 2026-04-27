@@ -5,6 +5,8 @@ import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { ABOUT_DATA, WHY_US_BG_IMAGE, HSERVICES1 } from '../data/content';
 import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
+import { MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const AboutPage = () => {
   return (
@@ -235,10 +237,34 @@ const AboutPage = () => {
             <p className="text-sm lg:text-xl text-text-sub mb-6 lg:mb-10 max-w-3xl mx-auto">
                 {ABOUT_DATA.cta.text}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-6 justify-center">
-                <Link to="/contact"><Button primary className="w-full sm:w-auto text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-3 shadow-lg shadow-cta/20">{ABOUT_DATA.cta.btn1}</Button></Link>
-                <Link to="/contact"><Button className="w-full sm:w-auto text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-3">{ABOUT_DATA.cta.btn2}</Button></Link>
-            </div>
+        <div className="flex flex-col sm:flex-row gap-3 lg:gap-6 justify-center">
+
+            {/* زرار الأساسي */}
+            <Link to="/contact">
+                <Button 
+                primary 
+                className="w-full sm:w-auto text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-3 shadow-lg shadow-cta/20"
+                >
+                ابدأ رحلة الاعتماد الآن
+                </Button>
+            </Link>
+
+            {/* زرار واتساب */}
+            <a 
+                href="https://wa.me/966XXXXXXXXX" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+            >
+                <Button 
+                className="w-full sm:w-auto text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-3 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white"
+                >
+                <MessageCircle size={20} />
+                تواصل عبر واتساب
+                </Button>
+            </a>
+
+        </div>
         </div>
       </section>
 

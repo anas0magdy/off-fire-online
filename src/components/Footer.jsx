@@ -67,7 +67,8 @@ const Footer = () => {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 text-sm">جميع الحقوق محفوظة © 2025 OFF FIRE ONLINE</p>
-          <div className="flex gap-4">
+          {/* التعديل هنا: استخدام translate-x-8 لتحريكها يمين */}
+          <div className="flex gap-4 md:translate-x-15">
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#1DA1F2] hover:text-white transition-all"><Twitter size={18} /></a>
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all"><Linkedin size={18} /></a>
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#E1306C] hover:text-white transition-all"><Instagram size={18} /></a>

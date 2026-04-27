@@ -8,6 +8,8 @@ import {
   SECTORS_BG_IMAGE, SOLUTION_IMAGE
 } from '../data/content';
 import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
+import { MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -105,54 +107,72 @@ const HomePage = () => {
   </Helmet>
 
       {/* 1. Hero Section */}
-      <section className="relative h-[75vh] lg:h-[95vh] flex items-center justify-center overflow-hidden bg-dark pt-20 lg:pt-0">
-        {HERO_SLIDES.map((slide, index) => (
-          <div 
-            key={slide.id}
-            className={`absolute inset-0 transition-all duration-[900ms] ease-in-out bg-dark ${index === currentSlide ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105'}`}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/50 to-dark/20 z-10" />
-            <img 
-              src={slide.image} 
-              alt="" 
-              className="w-full h-full object-cover opacity-100" 
-              onError={(e) => e.target.style.display = 'none'} 
-            />
-            <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 container mx-auto pt-20 lg:pt-0">
-              
-              <div className="mb-4 lg:mb-8 animate-slideUp">
-                <h2 className="text-5xl lg:text-7xl font-black tracking-tight drop-shadow-2xl" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  <span className="text-white">OFF FIRE</span> <span className="text-cta">ONLINE</span>
-                </h2>
-              </div>
-              
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-text-main mb-4 lg:mb-8 leading-tight max-w-5xl animate-slideUp delay-100 drop-shadow-lg">
-                {slide.title}
-              </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-text-sub mb-6 lg:mb-12 max-w-3xl animate-slideUp delay-200 font-medium leading-relaxed px-2">
-                {slide.subtitle}
-              </p>
-              <div className="animate-slideUp delay-300 w-full px-4 flex justify-center">
-                 <Link to="/contact" className="w-full sm:w-auto">
-                    <Button primary className="text-lg lg:text-xl px-8 lg:px-12 py-4 lg:py-4 shadow-cta/20 shadow-xl rounded-xl w-full sm:w-auto font-bold">
-                      {slide.cta}
-                    </Button>
-                 </Link>
-              </div>
-            </div>
+<section className="relative h-[75vh] lg:h-[95vh] flex items-center justify-center overflow-hidden bg-dark pt-20 lg:pt-0">
+  {(() => {
+    const slide = HERO_SLIDES[0];
+
+    return (
+      <div className="absolute inset-0 bg-dark">
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/50 to-dark/20 z-10" />
+        
+        <img 
+          src={slide.image} 
+          alt="" 
+          className="w-full h-full object-cover opacity-100" 
+          onError={(e) => e.target.style.display = 'none'} 
+        />
+
+        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 container mx-auto pt-20 lg:pt-0">
+          
+          <div className="mb-4 lg:mb-8">
+            <h2 className="text-5xl lg:text-7xl font-black tracking-tight drop-shadow-2xl" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              <span className="text-white">OFF FIRE</span> <span className="text-cta">ONLINE</span>
+            </h2>
           </div>
-        ))}
-      </section>
+
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-text-main mb-4 lg:mb-8 leading-tight max-w-5xl drop-shadow-lg">
+            {slide.title}
+          </h1>
+
+          <p className="text-lg md:text-xl lg:text-2xl text-text-sub mb-6 lg:mb-12 max-w-3xl font-medium leading-relaxed px-2">
+            {slide.subtitle}
+          </p>
+
+          <div className="w-full px-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/contact" className="w-full sm:w-auto">
+              <Button primary className="w-full sm:w-auto text-lg lg:text-xl px-8 lg:px-12 py-4 shadow-cta/20 shadow-xl rounded-xl font-bold">
+                {slide.cta}
+              </Button>
+            </Link>
+
+            <a 
+              href="https://wa.me/966XXXXXXXXX" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <Button className="w-full sm:w-auto text-lg lg:text-xl px-8 lg:px-12 py-4 font-bold flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white">
+                <MessageCircle size={22} />
+                تواصل واتساب
+              </Button>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    );
+  })()}
+</section>
 
       {/* 2. Challenge (Pain Points) */}
       <section className="py-12 lg:py-28 bg-dark">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-8 lg:mb-20">
             <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-3 lg:mb-6 relative inline-block">
-              تسهيل عبء استخراج الرخص وتركيب انظمة السلامة
+              المنصة الأولى في المملكة التي توصلك بشركات الدفاع المدني المعتمدة مباشرة — بدون عمولات
               <span className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-0.5 lg:h-1 bg-gradient-to-r from-transparent via-cta to-transparent opacity-80"></span>
             </h2>
-            <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> تظن أن الأمر مجرد " طلب عرض سعر"، لكنك تصطدم بواقع مختلف تماماً. إليك ما يحدث خلف الكواليس:</p>
+            <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> تظن أن الأمر مجرد عرض سعر، لكن الواقع أصعب مما تتخيل.</p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8">
@@ -170,7 +190,6 @@ const HomePage = () => {
             })}
           </div>
             <div className="text-center mb-8 lg:mb-20">
-              <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> هنا تبدأ الشكوك: هل السعر عادل؟ هل سأحصل على شهادة الإنجاز؟ </p>
               <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto"> "اختصر الطريق.. OFF FIRE ONLINE هي منصتك الرقمية؛ من طلب عرض السعر حتى الاعتماد."</p>
           </div>
         </div>
@@ -224,6 +243,117 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+{/* 🚀 Steps Section - Animated Premium */}
+<section className="py-16 lg:py-28 bg-card/40 relative overflow-hidden">
+  <div className="container mx-auto px-4 lg:px-6 relative z-10">
+    
+    {/* Title */}
+    <motion.div 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-12 lg:mb-20"
+    >
+      <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-4 leading-snug">
+        من الطلب إلى الرخصة..
+        <span className="block text-transparent bg-clip-text bg-gradient-to-l from-primary to-cta">
+          3 خطوات واضحة تختصر الطريق
+        </span>
+      </h2>
+      <p className="text-text-sub text-base lg:text-xl max-w-2xl mx-auto">
+        رحلة بسيطة وذكية تنقلك من البداية للاعتماد بدون تعقيد
+      </p>
+    </motion.div>
+
+    <div className="relative">
+      
+      {/* Mobile line */}
+      <div className="absolute right-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/40 to-transparent md:hidden"></div>
+
+      {/* Desktop line */}
+      <div className="hidden md:block absolute top-16 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+
+      {/* Steps */}
+      <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-10">
+        
+        {[
+          {
+            title: "أرسل طلبك بدون تعقيدات",
+            desc: "أجب على أسئلة ذكية مخصصة أو تواصل مباشر بسهولة.",
+            icon: <Zap size={26} />
+          },
+          {
+            title: "قارن العروض بوضوح تام",
+            desc: "عروض موحدة تساعدك تختار بين السعر والجودة بثقة.",
+            icon: <CheckCircle size={26} />
+          },
+          {
+            title: "اعتمد العرض واستلم شهادة الإنجاز",
+            desc: "نتابع معك حتى الاعتماد النهائي واستخراج الرخصة.",
+            icon: <ArrowLeft size={26} />
+          }
+        ].map((step, i) => (
+          
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="relative group flex md:block items-start gap-4 md:text-center"
+          >
+            
+            {/* Icon */}
+            <div className="relative z-10 flex-shrink-0 md:mx-auto w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 border border-primary/30 group-hover:scale-110 transition duration-300 group-hover:shadow-[0_0_20px_rgba(0,200,255,0.4)]">
+              <div className="text-primary">
+                {step.icon}
+              </div>
+            </div>
+
+            {/* Card */}
+            <div className="bg-card p-5 lg:p-8 rounded-xl lg:rounded-2xl border border-white/5 hover:border-primary transition-all duration-300 w-full group-hover:shadow-xl group-hover:shadow-primary/10">
+              <h3 className="text-lg lg:text-2xl font-bold text-text-main mb-2">
+                {step.title}
+              </h3>
+              <p className="text-text-sub text-sm lg:text-lg leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
+
+            {/* Number */}
+            <div className="absolute -top-3 right-0 md:right-4 text-4xl lg:text-5xl font-black text-white/5">
+              {i + 1}
+            </div>
+
+          </motion.div>
+        ))}
+
+      </div>
+    </div>
+
+    {/* CTA */}
+    <motion.div 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.6 }}
+      viewport={{ once: true }}
+      className="mt-14 lg:mt-20 text-center"
+    >
+      <p className="text-text-sub text-base lg:text-xl mb-6">
+        ابدأ الآن — واستلم عرضك خلال 24 ساعة
+      </p>
+
+      <Link to="/contact">
+        <Button primary className="w-full sm:w-auto text-lg lg:text-xl px-10 py-4 shadow-xl shadow-primary/20 font-bold hover:scale-105 transition">
+          اطلب عرض سعر مجاني
+        </Button>
+      </Link>
+    </motion.div>
+
+  </div>
+</section>
+
 
       {/* 4. Services Summary */}
       <section className="py-12 lg:py-28 bg-dark">
@@ -267,6 +397,18 @@ const HomePage = () => {
                 ))}
             </div>
           </div>
+                              {/* CTA داخل قسم الخدمات */}
+              <div className="mt-10 lg:mt-16 text-center">
+                <p className="text-text-sub text-base lg:text-xl mb-5 lg:mb-6">
+                  استفسر عن أي خدمة — الاستشارة مجانية
+                </p>
+
+                <Link to="/contact">
+                  <Button primary className="w-full sm:w-auto text-lg lg:text-xl px-10 py-4 shadow-xl shadow-primary/20 font-bold hover:scale-105 transition">
+                    اطلب الخدمة الآن
+                  </Button>
+                </Link>
+              </div>
         </div>
       </section>
 
