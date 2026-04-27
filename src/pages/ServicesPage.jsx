@@ -4,6 +4,9 @@ import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { SERVICES_PAGE_CONTENT } from '../data/content';
 import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
+import { Link } from 'react-router-dom'; // 👈 التعديل الأول: استدعاء Link
+import { MessageCircle } from "lucide-react";
+
 
 const ServicesPage = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -37,6 +40,32 @@ const ServicesPage = () => {
         <meta name="twitter:title" content="خدمات الأمن والسلامة في السعودية" />
         <meta name="twitter:description" content="أنجز متطلبات السلامة لمنشأتك بضغطة زر عبر منصتنا الرقمية." />
 
+        {/* العنوان الأساسي للخدمات (تم إضافة المراقبة الأمنية) */}
+        <title>خدماتنا | حلول الأمن والسلامة، اعتمادات الدفاع المدني، والمراقبة الأمنية</title>
+        
+        {/* وصف خدمات الشركة بشكل مفصل (تم إضافة الكاميرات والاستشارات) */}
+        <meta 
+            name="description" 
+            content="استكشف خدماتنا: استخراج رخص الدفاع المدني، تصميم وتركيب أنظمة مكافحة الحريق، عقود الصيانة المعتمدة، وتوريد أدوات السلامة وكاميرات المراقبة الأمنية." 
+        />
+        
+        {/* كلمات مفتاحية (تم إضافة الكلمات الجديدة اللي بيسيرش بيها العميل) */}
+        <meta 
+            name="keywords" 
+            content="عقد صيانة حريق، تركيب رشاشات حريق، توريد طفايات، ترخيص الدفاع المدني، كاميرات مراقبة، أنظمة أمنية، CCTV، استشارات هندسية، شركة سلامة معتمدة" 
+        />
+
+        {/* إعدادات مشاركة الصفحة (Open Graph) */}
+        <meta property="og:title" content="خدمات OFF FIRE ONLINE | منظومتك المتكاملة للأمان" />
+        <meta property="og:description" content="من التصميم والتركيب إلى الصيانة والاعتماد والمراقبة.. نوفر لك كل ما تحتاجه منشأتك لاجتياز الاشتراطات." />
+        <meta property="og:image" content={SERVICES_PAGE_CONTENT.services[0]?.image} /> 
+        <meta property="og:type" content="website" />
+
+        {/* إعدادات تويتر */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="خدمات الأمن والسلامة والمراقبة في السعودية" />
+        <meta name="twitter:description" content="أنجز متطلبات السلامة والأنظمة الأمنية لمنشأتك بضغطة زر عبر منصتنا الرقمية." />
+
         {/* رابط الـ Canonical */}
         <link rel="canonical" href={window.location.href} />
     </Helmet>
@@ -52,8 +81,22 @@ const ServicesPage = () => {
                <TextWithBrand text={SERVICES_PAGE_CONTENT.hero.subtitle} />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button primary className="text-base lg:text-lg px-8 py-3">{SERVICES_PAGE_CONTENT.hero.cta1}</Button>
-                <Button className="text-base lg:text-lg px-8 py-3 bg-white/5 hover:bg-white/10 border-white/10">{SERVICES_PAGE_CONTENT.hero.cta2}</Button>
+                <Link to="/contact">
+                                <Button primary className="w-full sm:w-auto text-lg lg:text-xl px-8 lg:px-12 py-4 shadow-cta/20 shadow-xl rounded-xl font-bold">
+                                {SERVICES_PAGE_CONTENT.hero.cta1}
+                                </Button>
+                </Link>
+                <a 
+                    href="https://wa.me/966XXXXXXXXX" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                    >
+                    <Button className="w-full sm:w-auto text-lg lg:text-xl px-8 lg:px-12 py-4 font-bold flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white">
+                        <MessageCircle size={22} />
+                        تواصل واتساب
+                    </Button>
+                </a>
             </div>
         </div>
       </div>
@@ -121,8 +164,10 @@ const ServicesPage = () => {
                         <p className="text-xs lg:text-base text-text-sub leading-relaxed relative z-10">{service.role}</p>
                     </div>
 
-                    <Button primary className="w-full sm:w-auto text-base lg:text-lg py-3">اطلب الخدمة الآن</Button>
-                  </div>
+                        <Link to="/contact" className="inline-block w-full sm:w-auto">
+                            <Button primary className="w-full sm:w-auto text-base lg:text-lg py-3">اطلب الخدمة الآن</Button>
+                        </Link>                  
+                    </div>
                   
                 </div>
             ))}
@@ -219,8 +264,10 @@ const ServicesPage = () => {
                 {SERVICES_PAGE_CONTENT.cta.text}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-6 justify-center">
-                <Button primary className="text-sm lg:text-lg px-8 py-3 shadow-lg shadow-cta/20">{SERVICES_PAGE_CONTENT.cta.btn1}</Button>
-                <Button className="text-sm lg:text-lg px-8 py-3">{SERVICES_PAGE_CONTENT.cta.btn2}</Button>
+                <Link to="/contact">
+                  <Button primary className="w-full sm:w-auto text-sm lg:text-lg px-8 py-3 shadow-lg shadow-cta/20">{SERVICES_PAGE_CONTENT.cta.btn1}</Button>
+                </Link>
+                
             </div>
         </div>
       </section>

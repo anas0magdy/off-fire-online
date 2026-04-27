@@ -66,8 +66,16 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-500 text-sm">جميع الحقوق محفوظة © 2025 OFF FIRE ONLINE</p>
-          {/* التعديل هنا: استخدام translate-x-8 لتحريكها يمين */}
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p className="text-gray-500 text-sm">جميع الحقوق محفوظة © 2025 OFF FIRE ONLINE</p>
+            {/* الروابط القانونية تمت إضافتها هنا تحت حقوق النشر */}
+            <div className="flex gap-4 text-xs md:text-sm text-gray-500">
+              <Link to="/terms" className="hover:text-primary transition-colors">الشروط والأحكام</Link>
+              <span className="text-gray-600">|</span>
+              <Link to="/privacy" className="hover:text-primary transition-colors">سياسة الخصوصية</Link>
+            </div>
+          </div>
+          {/* التعديل هنا: استخدام translate-x-15 لتحريكها يمين */}
           <div className="flex gap-4 md:translate-x-15">
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#1DA1F2] hover:text-white transition-all"><Twitter size={18} /></a>
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all"><Linkedin size={18} /></a>

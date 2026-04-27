@@ -11,6 +11,8 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 function App() {
   // ⚠️ هام: لازم basename هنا يكون نفس اللي كتبته في vite.config.js
@@ -30,6 +32,8 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             {/* توجيه أي رابط غلط للرئيسية */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
