@@ -5,21 +5,21 @@ import {
 } from 'lucide-react';
 
 // === استيراد الصور (تأكد من وجودها في assets) ===
-import hero1 from '../assets/hero-1.jpg';
+import hero1 from '../assets/hero-1.webp';
 import hero2 from '../assets/hero-2.jpg';
-import serviceFire from '../assets/service-fire.jpg';
-import serviceAlarm from '../assets/service-alarm.jpg';
-import serviceEquip from '../assets/service-equipment.jpg';
-import serviceConsult from '../assets/service-consulting.jpg';
-import blogAI from '../assets/blog-ai.jpg';
-import blogMaint from '../assets/blog-maintenance.jpg';
-import blogLicense from '../assets/blog-license.jpg';
-import sectorsBg from '../assets/sectors.jpg';
-import whyUsBg from '../assets/whyus.jpg';
-import appHand from '../assets/app-hand.jpg';
-import hservice1 from '../assets/home-services1.jpg';
-import serviceCustom from '../assets/serviceCustom.jpg';
-import serviceCctv from '../assets/serviceCctv.jpg';
+import serviceFire from '../assets/service-fire.webp';
+import serviceAlarm from '../assets/service-alarm.webp';
+import serviceEquip from '../assets/service-equipment.webp';
+import serviceConsult from '../assets/service-consulting.webp';
+import blogAI from '../assets/blog-ai.webp';
+import blogMaint from '../assets/blog-maintenance.webp';
+import blogLicense from '../assets/blog-license.webp';
+import sectorsBg from '../assets/sectors.webp';
+import whyUsBg from '../assets/whyus.webp';
+import appHand from '../assets/app-hand.webp';
+import hservice1 from '../assets/home-services1.webp';
+import serviceCustom from '../assets/serviceCustom.webp';
+import serviceCctv from '../assets/serviceCctv.webp';
 
 // =========================================================
 //  GLOBAL DATA
