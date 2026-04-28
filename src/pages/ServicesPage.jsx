@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle, Info, Lightbulb, Plus, Minus } from 'lucide-react';
+import { CheckCircle, Info, Lightbulb, Plus, Minus, Briefcase } from 'lucide-react';
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { SERVICES_PAGE_CONTENT } from '../data/content';
@@ -174,6 +174,29 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+
+{/* --- NEW SECTION: Provider Banner (Services Specific) --- */}
+      <section className="bg-gradient-to-r from-[#0B1120] via-[#111827] to-[#0B1120] border-y border-white/5 py-10 lg:py-12 relative z-20 shadow-2xl">
+        <div className="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-right">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#EF4444] to-red-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-500/30">
+               <Briefcase className="text-white w-7 h-7" />
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-xl lg:text-2xl mb-1">هل تنفذ أياً من هذه الخدمات؟</h3>
+              <p className="text-slate-400 text-sm lg:text-base max-w-xl">
+                سجل منشأتك كشريك معتمد في منصتنا، واستقبل طلبات المشاريع وعروض الأسعار مباشرة من العملاء.
+              </p>
+            </div>
+          </div>
+          <Link to="/register-provider" className="w-full md:w-auto shrink-0">
+            <button className="w-full md:w-auto bg-transparent border-2 border-[#EF4444] text-[#EF4444] hover:bg-[#EF4444] hover:text-white font-bold px-8 py-3 rounded-xl transition-all hover:scale-105 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+              سجل كشريك نجاح
+            </button>
+          </Link>
+        </div>
+      </section>
+      {/* --- END NEW SECTION --- */}
 
       {/* 3. Why Choose Us (USP) - Grid on Mobile */}
       <section className="py-12 lg:py-20 bg-dark border-t border-white/5">

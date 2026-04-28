@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Target, ShieldCheck, Heart, Zap, Users, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Target, ShieldCheck, Heart, Zap, Users, ArrowLeft, CheckCircle, Briefcase } from 'lucide-react';
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { ABOUT_DATA, WHY_US_BG_IMAGE, HSERVICES1 } from '../data/content';
@@ -113,6 +113,29 @@ const AboutPage = () => {
             </div>
         </div>
       </section>
+
+      {/* --- NEW SECTION: Partner/Provider Banner --- */}
+      <section className="bg-gradient-to-r from-primary/10 via-[#0B1120] to-cta/10 border-y border-white/10 py-10 lg:py-14 relative z-20">
+        <div className="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-5 text-center md:text-right">
+            <div className="w-16 h-16 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(239,68,68,0.2)]">
+               <Briefcase className="text-[#EF4444] w-8 h-8" />
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-2xl lg:text-3xl mb-2">هل تشاركنا نفس الرؤية؟</h3>
+              <p className="text-slate-300 text-sm lg:text-lg max-w-2xl leading-relaxed">
+                نبحث دائماً عن مكاتب استشارية، شركات مقاولات، وموردين يشاركونا التزامنا بالجودة. انضم لأكبر شبكة معتمدة في المملكة وضاعف أعمالك.
+              </p>
+            </div>
+          </div>
+          <Link to="/register-provider" className="w-full md:w-auto shrink-0">
+            <button className="w-full md:w-auto bg-white hover:bg-slate-200 text-[#0B1120] font-bold px-10 py-4 rounded-xl transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)] text-lg">
+              انضم كشريك نجاح
+            </button>
+          </Link>
+        </div>
+      </section>
+      {/* --- END NEW SECTION --- */}
 
       {/* 3. Values Section */}
       <section className="py-12 lg:py-28 bg-dark relative overflow-hidden">
