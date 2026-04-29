@@ -164,28 +164,6 @@ const HomePage = () => {
   })()}
 </section>
 
-
-{/* --- NEW SECTION: Provider Banner --- */}
-      <section className="bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] border-y border-white/10 py-6 lg:py-8 relative z-20">
-        <div className="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-right">
-            <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-               <Briefcase className="text-primary w-7 h-7" />
-            </div>
-            <div>
-              <h3 className="text-white font-bold text-xl lg:text-2xl mb-1">هل أنت مقاول، استشاري، مورد , فني؟</h3>
-              <p className="text-slate-400 text-sm lg:text-base">انضم لمنصتنا كمزود خدمة معتمد، واستقبل مشاريع جديدة وضاعف أرباحك.</p>
-            </div>
-          </div>
-          <Link to="/register-provider" className="w-full md:w-auto shrink-0">
-            <button className="w-full md:w-auto bg-white hover:bg-slate-200 text-[#0B1120] font-bold px-8 py-3.5 rounded-xl transition-all hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-              سجل كمزود خدمة الآن
-            </button>
-          </Link>
-        </div>
-      </section>
-      {/* --- END NEW SECTION --- */}
-
       {/* 2. Challenge (Pain Points) */}
       <section className="py-12 lg:py-28 bg-dark">
         <div className="container mx-auto px-4 lg:px-6">
@@ -481,6 +459,28 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+{/* --- NEW SECTION: Provider Banner --- */}
+      <section className="bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] border-y border-white/10 py-6 lg:py-8 relative z-20">
+        <div className="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-right">
+            <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+               <Briefcase className="text-primary w-7 h-7" />
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-xl lg:text-2xl mb-1">هل أنت مقاول، استشاري، مورد , فني؟</h3>
+              <p className="text-slate-400 text-sm lg:text-base">انضم لمنصتنا كمزود خدمة معتمد، واستقبل مشاريع جديدة وضاعف أرباحك.</p>
+            </div>
+          </div>
+          <Link to="/register-provider" className="w-full md:w-auto shrink-0">
+            <button className="w-full md:w-auto bg-white hover:bg-slate-200 text-[#0B1120] font-bold px-8 py-3.5 rounded-xl transition-all hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+              سجل كمزود خدمة الآن
+            </button>
+          </Link>
+        </div>
+      </section>
+      {/* --- END NEW SECTION --- */}
+
 
       {/* 6. FAQ */}
       <section className="py-12 lg:py-28 bg-dark">
