@@ -54,8 +54,10 @@ const Footer = () => {
                 info@offfireonline.com
               </li>
               <li className="flex items-center gap-4 text-gray-400">
-                <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-primary"><Phone size={18} /></div> 
-                +966 53 039 4904
+                <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-primary">
+                  <Phone size={18} />
+                </div> 
+                <bdi>+966 53 039 4904</bdi>
               </li>
               <li className="flex items-center gap-4 text-gray-400">
                 <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-primary"><MapPin size={18} /></div> 
