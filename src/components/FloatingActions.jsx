@@ -7,7 +7,7 @@ const FloatingActions = () => {
       <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4 animate-slideUp">
         {/* واتساب */}
         <a 
-          href="https://wa.me/966500000000" 
+          href="https://wa.me/966530394904" 
           target="_blank" 
           rel="noreferrer"
           className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-lg shadow-green-500/30 hover:scale-110 transition-transform cursor-pointer relative group"

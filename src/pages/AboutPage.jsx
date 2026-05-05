@@ -35,7 +35,7 @@ const AboutPage = () => {
         <meta name="twitter:image" content={HSERVICES1} />
 
         {/* رابط الصفحة الحالي (Canonical Link) */}
-        <link rel="canonical" href="https://offfireonline.com" />
+        <link rel="canonical" href="https://www.offfireonline.com" />
     </Helmet>
       {/* 1. Hero Section */}
       <div className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center bg-dark border-b border-white/5 overflow-hidden">
@@ -274,7 +274,7 @@ const AboutPage = () => {
 
             {/* زرار واتساب */}
             <a 
-                href="https://wa.me/966XXXXXXXXX" 
+                href="https://wa.me/966530394904"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"

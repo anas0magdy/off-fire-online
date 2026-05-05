@@ -103,7 +103,7 @@ const HomePage = () => {
       <meta name="twitter:image" content={SOLUTION_IMAGE} />
 
       {/* رابط الـ Canonical لتعريف جوجل أن هذا هو الرابط الأصلي */}
-        <link rel="canonical" href="https://offfireonline.com" />
+        <link rel="canonical" href="https://www.offfireonline.com" />
   </Helmet>
 
       {/* 1. Hero Section */}
@@ -146,7 +146,7 @@ const HomePage = () => {
             </Link>
 
             <a 
-              href="https://wa.me/966XXXXXXXXX" 
+              href="https://wa.me/966530394904" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
