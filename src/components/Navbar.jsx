@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronLeft, Briefcase } from 'lucide-react';
 import { NAV_LINKS } from '../data/content.js';
-// استدعاء اللوجو الشفاف
+import { useTranslation } from 'react-i18next';
 import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
+  const { i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -30,114 +32,102 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-dark/95 backdrop-blur-xl shadow-lg border-white/5 py-2' : 'bg-transparent py-4'}`}>
+      <nav 
+        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-dark/95 backdrop-blur-xl shadow-lg border-white/5 py-2' : 'bg-transparent py-4'}`}
+        dir={isEn ? 'ltr' : 'rtl'}
+      >
         <div className="container mx-auto px-6 flex justify-between items-center">
           
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-10">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.id}
-                to={link.path}
-                className={`text-base font-bold transition-colors relative group ${
-                  location.pathname === link.path ? 'text-primary' : 'text-gray-200 hover:text-white'
-                } ${link.isCta ? 'hidden' : ''}`}
-              >
-                {link.label}
-                <span className={`absolute -bottom-2 right-0 h-1 bg-primary transition-all duration-300 rounded-full ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-              </Link>
-            ))}
+          {/* 1. اللوجو - دايماً ترتيبه الأول بصرياً */}
+          <Link 
+            to="/" 
+            className={`flex items-center gap-3 group relative z-50 ${isEn ? 'order-1' : 'order-2'}`}
+          >
+            {/* في الإنجليزي الصورة الأول، في العربي النص الأول */}
+            <img 
+              src={logoImg} 
+              alt="Logo" 
+              className={`h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105 ${isEn ? 'order-1' : 'order-2'}`}
+            />
+            <div className={`flex flex-col ${isEn ? 'items-start order-2' : 'items-end order-1'} leading-none`}>
+              <span className="text-lg lg:text-2xl font-black font-sans tracking-wide text-white group-hover:text-primary transition-colors">
+                OFF FIRE
+              </span>
+              <span className="text-cta text-[10px] lg:text-xs font-bold tracking-[0.2em]">
+                ONLINE
+              </span>
+            </div>
+          </Link>
+
+          {/* 2. المنيو والزراير - ترتيبها التاني بصرياً */}
+          <div className={`hidden lg:flex items-center gap-10 ${isEn ? 'order-2' : 'order-1'}`}>
+            <div className="flex items-center gap-8">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.id}
+                  to={link.path}
+                  className={`text-base font-bold transition-colors relative group ${
+                    location.pathname === link.path ? 'text-primary' : 'text-gray-200 hover:text-white'
+                  } ${link.isCta ? 'hidden' : ''}`}
+                >
+                  {link.label}
+                  <span className={`absolute -bottom-2 ${isEn ? 'left-0' : 'right-0'} h-1 bg-primary transition-all duration-300 rounded-full ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                </Link>
+              ))}
+            </div>
             
-            {/* الأزرار في الديسكتوب - تم تعديل الترتيب هنا */}
             <div className="flex items-center gap-3">
               <Link to="/contact" className="bg-cta hover:bg-cta-hover text-white px-6 py-2.5 rounded-xl font-bold transition-transform hover:scale-105 shadow-lg shadow-cta/20 text-base">
-                اتصل بنا
+                {isEn ? 'Contact Us' : 'اتصل بنا'}
               </Link>
               <Link to="/register-provider" className="px-5 py-2.5 rounded-xl font-bold border border-white/20 text-white hover:border-[#EF4444] hover:bg-[#EF4444]/10 transition-all flex items-center gap-2 text-base">
-                <Briefcase size={18} /> انضم كشريك
+                <Briefcase size={18} /> {isEn ? 'Join as Partner' : 'انضم كشريك'}
               </Link>
             </div>
           </div>
 
-          
-          {/* Mobile Menu Button */}
+          {/* 3. زرار الموبايل */}
           <button 
-            className="lg:hidden text-white p-2 focus:outline-none" 
+            className={`lg:hidden text-white p-2 focus:outline-none ${isEn ? 'order-2' : 'order-1'}`}
             onClick={() => setIsOpen(true)}
-            aria-label="Open Menu"
           >
             <Menu size={32} />
           </button>
 
-          {/* Logo Section */}
-          <Link to="/" className="flex items-center gap-3 group relative z-50">
-            <div className="flex flex-col items-end leading-none">
-              <span className="text-lg lg:text-2xl font-black font-sans tracking-wide group-hover:text-primary transition-colors">
-                OFF FIRE
-              </span>
-              <span className="text-cta text-[10px] lg:text-xs font-bold tracking-[0.2em] group-hover:text-white transition-colors">
-                ONLINE
-              </span>
-            </div>
-
-            <img 
-              src={logoImg} 
-              alt="OFF FIRE Logo" 
-              className="h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105"
-            />
-          </Link>
-
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-[60] bg-dark/95 backdrop-blur-2xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-10'}`}>
+      {/* مِنيو الموبايل المنبثقة */}
+      <div 
+        className={`fixed inset-0 z-[60] bg-dark/95 backdrop-blur-2xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-10'}`}
+        dir={isEn ? 'ltr' : 'rtl'}
+      >
         <div className="container mx-auto px-6 py-5 flex justify-between items-center border-b border-white/10">
-            <button 
-                onClick={() => setIsOpen(false)}
-                className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
-            >
-                <X size={32} />
-            </button>
-            <span className="text-gray-400 text-sm font-bold tracking-widest">القائمة</span>
+            <span className="text-gray-400 text-sm font-bold tracking-widest uppercase">{isEn ? 'Menu' : 'القائمة'}</span>
+            <button onClick={() => setIsOpen(false)} className="text-white p-2"><X size={32} /></button>
         </div>
 
         <div className="flex-1 flex flex-col justify-center px-8 gap-6 overflow-y-auto">
-            {NAV_LINKS.map((link, idx) => (
+            {NAV_LINKS.map((link) => (
             <Link
                 key={link.id}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`text-lg font-bold py-4 border-b border-white/5 flex justify-between items-center group ${
-                    link.isCta ? 'hidden' : ''
-                } ${location.pathname === link.path ? 'text-primary' : 'text-white'}`}
-                style={{ transitionDelay: `${idx * 50}ms` }}
+                className={`text-lg font-bold py-4 border-b border-white/5 flex justify-between items-center ${location.pathname === link.path ? 'text-primary' : 'text-white'} ${link.isCta ? 'hidden' : ''}`}
             >
-                {link.label}
-                <ChevronLeft size={20} className={`transition-transform group-hover:-translate-x-2 ${location.pathname === link.path ? 'text-primary' : 'text-gray-600'}`}/>
+                <span>{link.label}</span>
+                <ChevronLeft size={20} className={isEn ? 'rotate-180' : 'rotate-0'}/>
             </Link>
             ))}
             
-            {/* الأزرار في الموبايل */}
             <div className="mt-8 flex flex-col gap-4">
-                <Link 
-                    to="/contact" 
-                    onClick={() => setIsOpen(false)}
-                    className="block w-full bg-cta text-white text-center py-4 rounded-2xl font-bold text-lg shadow-2xl shadow-cta/20 active:scale-95 transition-transform"
-                >
-                    اتصل بنا الآن
+                <Link to="/contact" onClick={() => setIsOpen(false)} className="block w-full bg-cta text-white text-center py-4 rounded-2xl font-bold text-lg">
+                    {isEn ? 'Contact Us Now' : 'اتصل بنا الآن'}
                 </Link>
-                <Link 
-                    to="/register-provider" 
-                    onClick={() => setIsOpen(false)}
-                    className="flex w-full items-center justify-center gap-2 bg-transparent border-2 border-white/10 text-white text-center py-4 rounded-2xl font-bold text-lg hover:border-[#EF4444] hover:text-[#EF4444] hover:bg-[#EF4444]/5 transition-colors"
-                >
-                    <Briefcase size={20} /> سجل كمزود خدمة
+                <Link to="/register-provider" onClick={() => setIsOpen(false)} className="flex w-full items-center justify-center gap-2 bg-transparent border-2 border-white/10 text-white py-4 rounded-2xl font-bold text-lg">
+                    <Briefcase size={20} /> {isEn ? 'Register as Provider' : 'سجل كمزود خدمة'}
                 </Link>
             </div>
-        </div>
-        <div className="p-8 text-center text-gray-500 text-xs border-t border-white/5">
-            © 2025 OFF FIRE ONLINE
         </div>
       </div>
     </>

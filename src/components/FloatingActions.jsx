@@ -1,18 +1,46 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FloatingActions = () => {
+  const { i18n } = useTranslation();
+  // التأكد من اللغة الحالية
+  const currentLanguage = i18n.language || 'ar';
+
+  // دالة تغيير اللغة وقلب اتجاه الموقع
+  const toggleLanguage = () => {
+    const newLang = currentLanguage === 'ar' ? 'en' : 'ar';
+    localStorage.setItem('appLanguage', newLang); // نحفظ اللغة الجديدة
+    window.location.reload(); // ريفرش سريع عشان الداتا تقرأ صح
+  };
+
   return (
     <>
       <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4 animate-slideUp">
-        {/* واتساب */}
+        
+        {/* 🌐 زرار تغيير اللغة */}
+        <button 
+          onClick={toggleLanguage}
+          className="w-14 h-14 bg-[#1E293B] border border-white/10 rounded-full flex items-center justify-center text-[#EDEDEF] shadow-lg shadow-black/30 hover:scale-110 transition-transform cursor-pointer relative group font-bold text-lg"
+        >
+          {/* النص جوه الدائرة (EN أو AR) */}
+          {currentLanguage === 'ar' ? 'EN' : 'AR'}
+          
+          {/* الـ Tooltip اللي بتظهر لما تقف بالماوس */}
+          <span className="absolute left-16 bg-white text-[#0B1120] px-3 py-1 rounded-md text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+            {currentLanguage === 'ar' ? 'English' : 'عربي'}
+          </span>
+        </button>
+
+        {/* 💬 واتساب */}
         <a 
           href="https://wa.me/966530394904" 
           target="_blank" 
           rel="noreferrer"
           className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-lg shadow-green-500/30 hover:scale-110 transition-transform cursor-pointer relative group"
         >
-          <span className="absolute left-16 bg-white text-dark px-3 py-1 rounded-md text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">تواصل واتساب</span>
+          <span className="absolute left-16 bg-white text-[#0B1120] px-3 py-1 rounded-md text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+            {currentLanguage === 'ar' ? 'تواصل واتساب' : 'WhatsApp Us'}
+          </span>
           
           {/* أيقونة الواتساب الأصلية SVG */}
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">

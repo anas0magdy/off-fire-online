@@ -17,10 +17,6 @@ import ProviderRegistration from './pages/ProviderRegistration'; // تأكد م�
 
 
 function App() {
-  // ⚠️ هام: لازم basename هنا يكون نفس اللي كتبته في vite.config.js
-  // لو اسم الريبو '/off-fire-online/' يبقى هنا '/off-fire-online'
-  // أو سيبها import.meta.env.BASE_URL وهي هتاخد القيمة من ملف vite.config.js أوتوماتيك
-  
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
@@ -29,6 +25,7 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
+            {/* المسارات العربية */}
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
@@ -37,7 +34,17 @@ function App() {
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/register-provider" element={<ProviderRegistration />} />
-            {/* توجيه أي رابط غلط للرئيسية */}
+
+            {/* المسارات الإنجليزية (تحت مسار /en) */}
+            <Route path="/en" element={<HomePage />} />
+            <Route path="/en/about" element={<AboutPage />} />
+            <Route path="/en/services" element={<ServicesPage />} />
+            <Route path="/en/blog" element={<BlogPage />} />
+            <Route path="/en/contact" element={<ContactPage />} />
+            <Route path="/en/terms" element={<TermsPage />} />
+            <Route path="/en/privacy" element={<PrivacyPage />} />
+            <Route path="/en/register-provider" element={<ProviderRegistration />} />
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

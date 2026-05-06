@@ -1,0 +1,533 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "hero": {
+      "slide1": {
+        "title": "Fulfill Civil Defense Requirements — Through Certified Companies, All in One Place",
+        "subtitle": "Compare offers, choose the best fit, and execute — all online and for free.",
+        "cta": "Request a Free Quote"
+      },
+      "slide2": {
+        "title": "Save Time Searching and Get Quotes from Certified Companies",
+        "subtitle": "Compare, choose, and execute — all online and for free.",
+        "cta": "Consult an Expert"
+      }
+    },
+    "painPoints": {
+      "p1": {
+        "title": "Initial Confusion",
+        "desc": "You don't know who the certified companies are, nor where to find the correct Civil Defense requirements."
+      },
+      "p2": {
+        "title": "Time Drain",
+        "desc": "Delays in execution, fear of losing down payments with uncertified companies, and paying twice."
+      },
+      "p3": {
+        "title": "Vague Offers",
+        "desc": "Inconsistent technical specifications make fair comparison between quotes nearly impossible."
+      },
+      "p4": {
+        "title": "Compliance Anxiety",
+        "desc": "Will the plans be accepted by the Salama portal? Will execution follow the SBC, or face rejection during inspection?"
+      }
+    },
+    "features": {
+      "f1": {
+        "title": "Direct Access to Certified Entities",
+        "desc": "Access companies and engineering offices across the Kingdom — with no hidden fees."
+      },
+      "f2": {
+        "title": "Smart & Transparent Comparison",
+        "desc": "Real prices, documented quality, and defined execution timelines."
+      },
+      "f3": {
+        "title": "Smart Analysis Chooses the Best Fit",
+        "desc": "Precise recommendations based on your facility type and budget."
+      },
+      "f4": {
+        "title": "Guaranteed System Compliance",
+        "desc": "Complete guidance fully aligned with the Saudi Building Code (SBC) and Civil Defense requirements."
+      },
+      "f5": {
+        "title": "Direct E-Store",
+        "desc": "For safety and security equipment from reliable suppliers with fast delivery."
+      }
+    },
+    "servicesSummary": {
+      "s1": {
+        "title": "Permits, Certificates & Technical Reports",
+        "desc": "Issuing safety certificates, technical reports, and certified maintenance contracts via Salama and Balady portals."
+      },
+      "s2": {
+        "title": "Firefighting & Early Warning Systems",
+        "desc": "Supply and installation of firefighting and alarm systems through a network of certified contractors to ensure compliance."
+      },
+      "s3": {
+        "title": "Safety & Security Equipment",
+        "desc": "A comprehensive digital marketplace offering fire extinguishers and PPE at competitive prices with direct delivery."
+      },
+      "s4": {
+        "title": "Engineering Consultancy & Services",
+        "desc": "Plan approvals, technical offer evaluations, and risk analysis by elite experts and engineering offices."
+      },
+      "s5": {
+        "title": "Security Surveillance & Access Control",
+        "desc": "Supply and installation of the latest CCTV cameras and smart access systems to meet security licensing requirements."
+      },
+      "s6": {
+        "title": "Custom Engineering Service Request",
+        "desc": "Tailored engineering solutions for major projects, violation rectification, and upgrading legacy systems."
+      }
+    },
+    "targetAudience": {
+      "t1": {
+        "title": "Industrial & Logistics Sector",
+        "desc": "Advanced systems for high-risk management, protecting production lines and assets, and ensuring successful industrial inspections."
+      },
+      "t2": {
+        "title": "Healthcare & Hospitals",
+        "desc": "Implementing advanced fire suppression systems to protect lives and sensitive medical equipment, strictly complying with complex SBC requirements."
+      },
+      "t3": {
+        "title": "Commercial & Administrative Sector",
+        "desc": "Exact compliance with Civil Defense and municipal requirements to facilitate commercial license issuance and renewal."
+      },
+      "t4": {
+        "title": "Real Estate Developers & Contractors",
+        "desc": "Your strategic partner for executing and approving fire alarm and firefighting systems, ensuring timely project handover."
+      }
+    },
+    "whyUs": {
+      "w1": {
+        "title": "Save Your Time",
+        "desc": "Rapidly reach final decisions with minimal effort (from hours to minutes)."
+      },
+      "w2": {
+        "title": "Smart Analysis Saves Weeks",
+        "desc": "Precise technical comparison that ends long searches and protects you from wrong decisions."
+      },
+      "w3": {
+        "title": "Independent Intermediary",
+        "desc": "We select the market's best with absolute neutrality. Your interest is our priority."
+      },
+      "w4": {
+        "title": "Free Consultation — Zero Obligations",
+        "desc": "Comprehensive technical evaluation of your facility for free, giving you peace of mind before any decision."
+      },
+      "w5": {
+        "title": "Instant Support",
+        "desc": "Direct assistance in applying safety standards and ensuring smooth execution."
+      },
+      "w6": {
+        "title": "Updated & Certified Database",
+        "desc": "Immediate access to certified companies and licensed engineering offices — keeping you safe from unqualified vendors."
+      }
+    },
+    "faq": {
+      "q1": {
+        "q": "Are the platform's services free for clients?",
+        "a": "Yes, you can request quotes, compare them, and get our consultations completely for free; our goal is to ensure you reach the best option at the best price."
+      },
+      "q2": {
+        "q": "How does the platform ensure the quality of certified companies?",
+        "a": "No company is listed on OFF FIRE ONLINE without verifying its official records, Civil Defense classification, and reviewing its past projects to ensure professional execution."
+      },
+      "q3": {
+        "q": "Do you cover all regions of the Kingdom?",
+        "a": "Yes, we cover all cities and automatically connect you with the nearest certified providers to your project site, ensuring fast response and reduced service costs."
+      },
+      "q4": {
+        "q": "Does the platform interfere in the financial contracting process?",
+        "a": "Direct contracting takes place between you and the executing company to ensure transparency, while our team remains your technical reference to ensure execution matches agreed specifications."
+      },
+      "q5": {
+        "q": "Can you help me if I have remarks from the Civil Defense?",
+        "a": "Absolutely. Once the remarks are uploaded to the platform, our engineering team analyzes them and nominates specialized companies to solve these specific issues and ensure you pass the next inspection."
+      }
+    },
+    "cta": {
+      "title": "Stop Searching... Start Now.",
+      "text": "OFF FIRE ONLINE empowers you to make fast, clear, and safe decisions — without complexity or cost.",
+      "btn": "Request Free Quotes Now"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Every Service Your Facility Needs — From Engineering Plans to Operation Permits — In One Place.",
+      "subtitle": "Your independent digital platform. We connect you with elite engineering offices and certified safety companies to execute systems and issue licenses according to Civil Defense and SBC requirements — fast, transparently, and with no hidden commissions.",
+      "cta1": "Request Your Service Now",
+      "cta2": "Talk to Our Consultant"
+    },
+    "services": {
+      "s1": {
+        "title": "Permits, Certificates & Technical Reports",
+        "subtitle": "Your Trusted Gateway for All Official Documents",
+        "desc": "We connect you directly with certified entities via 'Salama' and 'Balady' portals.",
+        "role": "We route your requests to the nearest certified companies and offices to ensure fast and highly reliable issuance of your certificates and technical reports.",
+        "subItems": {
+          "item1": { "title": "Safety Certificate (Operation Permit)", "details": "The essential document to operate any commercial activity. Platform Role: We route your request to the nearest company with instant issuance authority." },
+          "item2": { "title": "Technical Report", "details": "An engineering report proving building compliance with the SBC. Platform Role: We send a certified engineering office to inspect the site and issue the report." },
+          "item3": { "title": "Electronic Maintenance Contracts", "details": "Mandatory for all facilities annually to renew licenses. Platform Role: We tender your request among maintenance companies to get you the lowest annual cost." },
+          "item4": { "title": "Electrical Installations Safety Certificate", "details": "Inspecting loads and panels to ensure no electrical hazards. Platform Role: We connect you with specialized electrical engineers." },
+          "item5": { "title": "Installation Completion Certificate", "details": "Required to release electric current and prove execution. Platform Role: Consultant handover to protect you from manipulation." }
+        }
+      },
+      "s2": {
+        "title": "Firefighting & Early Warning Systems",
+        "subtitle": "Supply and Installation",
+        "desc": "Send your request, and we deliver it to a network of certified installation companies based on your project size.",
+        "role": "We help determine the appropriate system for your activity, then fetch competitive technical and financial quotes.",
+        "subItems": {
+          "item1": { "title": "Water-based Firefighting Systems", "details": "Automatic sprinklers, fire hose cabinets, UL/FM fire pumps." },
+          "item2": { "title": "Gas Fire Suppression Systems", "details": "FM200 for server rooms, CO2 systems for kitchens, Aerosol systems." },
+          "item3": { "title": "Automatic Fire Alarm Systems", "details": "Addressable systems for large buildings, and Conventional systems." }
+        }
+      },
+      "s3": {
+        "title": "Safety & Security Equipment",
+        "subtitle": "Comprehensive Digital Marketplace",
+        "desc": "A digital market gathering top suppliers in one place.",
+        "role": "We compare supplier prices to ensure you get authentic products at the best price with direct delivery.",
+        "subItems": {
+          "item1": { "title": "Fire Extinguishers", "details": "Powder, CO2, Foam — all sizes meeting SASO specifications." },
+          "item2": { "title": "Personal Protective Equipment (PPE)", "details": "Helmets, safety shoes, reflective vests." },
+          "item3": { "title": "System Accessories", "details": "Valves, hoses, smoke and heat detectors." },
+          "item4": { "title": "Emergency Panels", "details": "Illuminated exit signs and emergency lighting." }
+        }
+      },
+      "s4": {
+        "title": "Engineering Consultancy & Services",
+        "subtitle": "Experts & Consulting Offices",
+        "desc": "Experts ready to serve you online or on-site.",
+        "role": "Providing neutral technical analyses and engineering reviews to ensure your project meets the highest SBC standards.",
+        "subItems": {
+          "item1": { "title": "Plan Approvals", "details": "Reviewing and approving fire prevention plans by classified engineering offices." },
+          "item2": { "title": "Quote Evaluation (Free)", "details": "Send us quotes you received from anywhere, and our consultants will analyze them technically." },
+          "item3": { "title": "Risk Analysis Studies", "details": "Risk Assessments for factories and major high-risk projects." }
+        }
+      },
+      "s5": {
+        "title": "Security Surveillance & Access Control",
+        "subtitle": "Integrated Protection meeting Requirements",
+        "desc": "Supply and install the latest CCTV cameras and smart access systems to secure your facility.",
+        "role": "We tender your request to certified security tech companies to provide reliable quotes.",
+        "subItems": {
+          "item1": { "title": "CCTV Cameras", "details": "Indoor and outdoor (IP/Analog) cameras meeting security license requirements." },
+          "item2": { "title": "Access Control Systems", "details": "Smart locks, biometrics, and magnetic cards for offices and warehouses." },
+          "item3": { "title": "Intrusion Alarm", "details": "Motion sensors, door sensors, and instant alert systems." },
+          "item4": { "title": "Security Maintenance Contracts", "details": "Periodic maintenance to ensure cameras and recording devices work efficiently." }
+        }
+      },
+      "s6": {
+        "title": "Custom Engineering Service Request",
+        "subtitle": "Solutions Tailored to Your Project",
+        "desc": "Didn't find what you're looking for? Our team is ready to help.",
+        "role": "Our consulting team studies your project details, determines the correct engineering path, and connects you with specialists.",
+        "subItems": {
+          "item1": { "title": "Major & Specialized Projects", "details": "Managing safety requirements for factories, hospitals, and commercial complexes." },
+          "item2": { "title": "Upgrading Legacy Systems", "details": "Evaluating current systems and planning upgrades to match SBC at the lowest cost." },
+          "item3": { "title": "Pre-Lease Consultations", "details": "Inspecting the site before renting to ensure readiness for safety requirements." },
+          "item4": { "title": "Violation Rectification", "details": "Providing engineering solutions to fix previous issues and violations with Civil Defense." }
+        }
+      }
+    },
+    "usp": {
+      "u1": { "title": "Independent Intermediary", "desc": "Our interest lies with the client; we are not biased towards any contractor or supplier." },
+      "u2": { "title": "Certified Companies", "desc": "We deal only with entities classified in 'Salama' and 'Balady' portals." },
+      "u3": { "title": "Technical Analysis", "desc": "We review offers and match them with the Saudi Code before they reach you." },
+      "u4": { "title": "Smart Savings", "desc": "Competition between companies on the platform guarantees you the best price." }
+    },
+    "steps": {
+      "st1": { "title": "Submit Your Request", "desc": "Define your need without technical expertise, and the platform clarifies initial requirements." },
+      "st2": { "title": "Tendering & Filtering", "desc": "Your request is sent to certified companies in your area to provide standardized quotes." },
+      "st3": { "title": "Compare & Choose", "desc": "Receive quotes in a unified format — compare price, rating, and warranties." },
+      "st4": { "title": "Execution & Approval", "desc": "We connect you with the company to sign the contract and begin execution." },
+      "st5": { "title": "Final Certification", "desc": "We follow up with you until you pass the inspection and obtain the license." }
+    },
+    "faq": {
+      "q1": { "q": "Do you install the systems yourselves?", "a": "No. We are an independent engineering brokerage platform — we connect you with the best certified installation companies." },
+      "q2": { "q": "Do you guarantee the acceptance of the safety certificate in Balady?", "a": "Yes, because we deal exclusively with classified companies and engineering offices that have active accounts in the 'Salama' portal." },
+      "q3": { "q": "Are prices on the platform more expensive than the market?", "a": "On the contrary. Competition among companies on the platform drives them to offer competitive prices, and our oversight prevents overpricing." },
+      "q4": { "q": "Who guarantees the quality of the executing company's work?", "a": "We deal only with licensed companies under a transparent rating system. In case of disputes, our consulting team acts as a neutral arbitrator." },
+      "q5": { "q": "Do you cover the issuance of government licenses?", "a": "We do not issue licenses ourselves, but we provide you with certified offices authorized to access official portals and complete procedures on your behalf." }
+    },
+    "cta": {
+      "title": "Don't waste time searching randomly — let the experts compete to serve you.",
+      "text": "Request free quotes now and choose the best fit for your facility with confidence.",
+      "btn1": "Request Free Quotes Now",
+      "btn2": "Talk to Our Consultant"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Your Premier Digital Destination for Securing Your Facility & Civil Defense Approval",
+      "subtitle": "OFF FIRE ONLINE shortens the safety journey for your facility — by filtering the market, technically auditing quotes, and guaranteeing compliance until the license is issued."
+    },
+    "story": "The idea for OFF FIRE ONLINE emerged after we witnessed the real struggles facilities face in their safety journey: exhausting searches, vague quotes, and varying quality. Thus, we decided to build a different solution.",
+    "vision": "To be the premier digital reference in the Kingdom for safety & security solutions, transforming facility protection from a complex burden into a smart, transparent digital experience.",
+    "mission": "Empowering facility owners to make precise safety decisions — by filtering certified companies and technically auditing quotes, ensuring the best value for their investment.",
+    "values": {
+      "v1": { "title": "Absolute Transparency", "desc": "Safety leaves no room for half-measures. We commit to full compliance with the Saudi Building Code (SBC) as the core standard for all quotes." },
+      "v2": { "title": "Complete Independence", "desc": "We work for you. As your independent consultant, our selection of companies is based solely on quality and certification." },
+      "v3": { "title": "Innovation", "desc": "Artificial intelligence to analyze offers." },
+      "v4": { "title": "Speed with Precision", "desc": "Our technology cuts weeks down to days, and our engineering team ensures speed never compromises decision accuracy." }
+    },
+    "process": {
+      "p1": { "title": "Understanding Your Needs", "desc": "Grasping the project scope and requirements." },
+      "p2": { "title": "Gathering Offers", "desc": "Obtaining comprehensive quotes." },
+      "p3": { "title": "Evaluation & Comparison", "desc": "A comparison matrix analyzing performance and cost." },
+      "p4": { "title": "Guidance & Support", "desc": "Helping you choose the best fit." },
+      "p5": { "title": "Follow-up", "desc": "Monitoring execution and technical support." }
+    },
+    "whyUs": {
+      "w1": { "title": "Independent Intermediary", "desc": "We choose the best for you neutrally." },
+      "w2": { "title": "Power of AI", "desc": "Precise evaluation of proposals." },
+      "w3": { "title": "Farewell to Worry", "desc": "We give you confidence in compliance." },
+      "w4": { "title": "Save Time", "desc": "Integrating offers into one platform." },
+      "w5": { "title": "Price Transparency", "desc": "Ensuring no price manipulation." }
+    },
+    "audience": {
+      "a1": { "title": "Commercial Businesses", "desc": "Offices, showrooms, retail stores." },
+      "a2": { "title": "Factories & Warehouses", "desc": "Solutions for risk management." },
+      "a3": { "title": "Education & Tourism", "desc": "Schools, universities, hotels." },
+      "a4": { "title": "Developers & Contractors", "desc": "Real estate projects and engineering offices." }
+    },
+    "cta": {
+      "title": "Get a certified quote in less than 24 hours — with no effort or prior commitment.",
+      "text": "Make your decision with confidence, and start now so our team can connect you with the most suitable company for your facility.",
+      "btn1": "Contact Us Now",
+      "btn2": "Start Your Journey for Free"
+    }
+  },
+  "blog": {
+    "tags": ["#Safety_License", "#Saudi_Building_Code", "#Maintenance_Contracts", "#Civil_Defense_Violations", "#Technical_Report"],
+    "categories": {
+      "all": "All",
+      "guides": "Practical Guides",
+      "permits": "Licenses & Permits",
+      "systems": "Systems & Equipment",
+      "contracts": "Contracts & Costs",
+      "code": "Saudi Building Code"
+    },
+    "posts": {
+      "p1": {
+        "title": "How to Choose the Right Fire Protection Company for Your Project (And Avoid Amateurs)",
+        "readTime": "4 mins",
+        "excerpt": "The safety market is full of companies. How do you distinguish between a certified expert and an amateur? Your guide to avoiding unqualified vendors.",
+        "content": "<h3>1. Verify Official Certification</h3><p>The first and most important step is ensuring the company is certified by the Civil Defense. Do not rely on verbal confirmation; ask to see the certificate and check its expiration date.</p><h3>2. Documented Track Record</h3><p>Ask for a list of similar projects the company has executed. Have they handled projects of the same size and complexity? Contacting previous clients can provide real insights into work quality and commitment.</p><h3>3. Qualified Technical Team</h3><p>Does the company have certified engineers and technicians? Modern systems require high technical expertise for installation and programming. Untrained labor can cause future disasters.</p><h3>4. After-Sales & Maintenance</h3><p>Your relationship with the company doesn't end after installation. Ensure they have a strong maintenance department and rapid emergency response.</p><h3>5. Clear Contract & Pricing</h3><p>The contract must be detailed, covering all items and specifications. Avoid vague contracts that may hide additional costs later.</p>"
+      },
+      "p2": {
+        "title": "How to Read a Quote? (Your Guide to Analyzing Offers & Spotting Hidden Items)",
+        "readTime": "5 mins",
+        "excerpt": "Received an offer for 50k and another for 35k? Is cheaper always better? Learn how to uncover the trick of estimated quantities.",
+        "content": "<h3>Don't Be Fooled by the Final Number</h3><p>Comparing quotes based solely on the final price is the biggest mistake facility owners make. You must analyze the offer item by item.</p><h3>The 'Estimated Quantities' Trick</h3><p>Some companies list fewer quantities than required to appear cheaper, then charge you the difference during execution (Variation Order). Ensure quantities are 'Lump Sum' or based on an approved plan.</p><h3>Material Specifications (Brand List)</h3><p>Ensure the brand and origin of each item are specified. A European fire pump differs in price and quality from a Chinese one.</p><h3>Payment & Warranty Terms</h3><p>The payment schedule must be tied to actual progress. Don't forget warranty terms: Does it cover spare parts? For how long?</p>"
+      },
+      "p3": {
+        "title": "Checklist: Is Your System Compliant with Civil Defense Requirements?",
+        "readTime": "3 mins",
+        "excerpt": "Inspector visiting tomorrow? We've prepared a quick checklist (documents, exits, equipment) so you can verify compliance beforehand.",
+        "content": "<h3>1. Documents & Records</h3><ul><li>Building Permit and Building Completion Certificate.</li><li>Valid, electronically documented maintenance contract.</li><li>Technical report from a certified engineering office (if applicable).</li></ul><h3>2. Firefighting & Alarm Systems</h3><ul><li>Alarm panel is operational with No Faults.</li><li>Fire pumps are in Auto Mode.</li><li>Fire hoses are intact and properly folded.</li><li>Fire extinguishers are in place, pressure gauge in the green zone.</li></ul><h3>3. Emergency Exits</h3><ul><li>Exits are unlocked and clear of obstacles.</li><li>'EXIT' signs are illuminated and working.</li><li>Emergency doors open outwards and have a Panic Bar.</li></ul>"
+      },
+      "p4": {
+        "title": "The Comprehensive Guide to Issuing a 'Civil Defense License' via Salama Portal (2025)",
+        "readTime": "6 mins",
+        "excerpt": "From registration to printing. Learn the difference between instant and non-instant licenses, and how to avoid processing delays.",
+        "content": "<h3>Instant vs. Non-Instant Licenses</h3><p>Instant licenses are issued for low-risk, small-area activities immediately after contracting a safety company. Non-instant licenses require a field visit.</p><h3>Issuance Steps via Salama Portal</h3><ol><li>Log in and select 'Issue New License'.</li><li>Accurately enter facility data and activity type.</li><li>Select a certified safety company to provide the technical report and maintenance contract.</li><li>Pay the required fees.</li><li>The safety company uploads the report and approves it via the system.</li><li>Print the license instantly (if instant) or await the visit.</li></ol><h3>Common Errors Causing Delays</h3><p>Choosing the wrong activity, unpaid previous violations, or expired company CR. Ensure all paperwork is valid before starting.</p>"
+      },
+      "p5": {
+        "title": "The 'Technical Report' in Balady: When Does Civil Defense Request It?",
+        "readTime": "4 mins",
+        "excerpt": "Why is a technical report requested for old buildings or activity changes? Ensure first-time approval via a certified office.",
+        "content": "<h3>What is a Technical Report?</h3><p>An engineering document proving the building is structurally and electrically safe and complies with the Saudi Building Code. Requested by Civil Defense in specific cases.</p><h3>When is it Requested?</h3><ul><li>Renewing a license for an old building without a completion certificate.</li><li>Changing the facility's activity (e.g., from retail to restaurant).</li><li>Structural modifications or building expansions.</li></ul><h3>How to Ensure Approval?</h3><p>It must be prepared by an approved, classified engineering office. It should include plans, photos, and test results proving compliance.</p>"
+      },
+      "p6": {
+        "title": "Electrical Installation Safety Certificate: Invisible Protection",
+        "readTime": "3 mins",
+        "excerpt": "Electrical short circuits are the leading cause of fires. Discover the importance of electrical safety certificates for factories.",
+        "content": "<h3>Why is it Important?</h3><p>Most fires start due to electrical faults (shorts, overloads, poor connections). This certificate ensures your electrical network is safe and compliant.</p><h3>What Does the Engineer Check?</h3><ul><li>Cable and breaker Load Balancing.</li><li>Earthing System integrity.</li><li>Wire insulation and connection quality.</li><li>Testing Earth Leakage Circuit Breakers (ELCB).</li></ul><h3>Who Needs It?</h3><p>Mandatory for factories, warehouses, and high-risk buildings. It is a prerequisite for license renewal and insurance.</p>"
+      },
+      "p7": {
+        "title": "Installation Completion Certificate: Requirements & Releasing Power",
+        "readTime": "5 mins",
+        "excerpt": "For new buildings, the electric company requires this certificate. Learn about the pressure and pump tests required for issuance.",
+        "content": "<h3>What is the Completion Certificate?</h3><p>A declaration by a certified contractor and consultant that all safety systems are successfully installed, tested, and operational. Without it, power won't be released to new buildings.</p><h3>Required Tests for Issuance</h3><ul><li>Hydrostatic Test for pipe networks to ensure no leaks.</li><li>Pump Performance Curve tests at various flows.</li><li>Alarm system testing and its integration with elevators and HVAC.</li></ul><h3>Important Advice</h3><p>Do not postpone these tests to the last minute. Conduct them in phases during execution to avoid breaking walls/ceilings later.</p>"
+      },
+      "p8": {
+        "title": "Electronic Maintenance Contracts: Guide to Avoiding Non-Renewal Fines",
+        "readTime": "4 mins",
+        "excerpt": "Maintenance contracts are now electronic and linked to Salama. How to choose the right contract and ensure emergency response.",
+        "content": "<h3>Digital Transformation of Contracts</h3><p>Paper contracts are no longer sufficient. Contracts must be registered in the 'Salama' portal and linked to your facility's license.</p><h3>What Should the Contract Include?</h3><ul><li>Number of periodic visits (monthly or quarterly).</li><li>Emergency response time (e.g., within 4 hours).</li><li>Provision of authentic spare parts (Are they included?).</li></ul><h3>Avoid Fake Contracts</h3><p>Contracting a company just to 'renew the license' without real maintenance exposes you to severe risks, fines, and license cancellation in case of an incident.</p>"
+      },
+      "p9": {
+        "title": "Water Sprinklers vs. FM200: How to Choose the Right System?",
+        "readTime": "6 mins",
+        "excerpt": "Should I install water sprinklers because they are cheaper? The SBC has the answer. A technical comparison between water and gas.",
+        "content": "<h3>Water Sprinkler System</h3><p><strong>Pros:</strong> Low cost, readily available extinguishing agent, highly effective at controlling fires.</p><p><strong>Cons:</strong> Causes property damage (papers, electronics) upon activation.</p><p><strong>Usage:</strong> Warehouses, offices, malls, garages.</p><h3>Clean Gas System (FM200 / NOVEC)</h3><p><strong>Pros:</strong> Extinguishes fires in seconds, leaves no residue, completely safe for sensitive electronics.</p><p><strong>Cons:</strong> Very high cost, requires an airtight room.</p><p><strong>Usage:</strong> Server rooms (Data Centers), electrical rooms, important archives, museums.</p><h3>Conclusion</h3><p>Don't skimp on protecting a server room with water, and don't waste money installing gas in an open warehouse. Every risk has a tailored system.</p>"
+      },
+      "p10": {
+        "title": "Restaurant Guide: Wet Chemical Fire Suppression Requirements",
+        "readTime": "5 mins",
+        "excerpt": "Civil Defense requires this system to license any restaurant. Learn its mandatory components and the importance of the gas shut-off valve.",
+        "content": "<h3>Why Wet Chemical?</h3><p>Cooking oil fires (Class K) cannot be extinguished with water or dry powder; they may flare up. Wet Chemical reacts with oil to form a soapy foam layer, blocking oxygen and cooling the oil.</p><h3>Mandatory System Components</h3><ul><li>Chemical cylinder (sized according to hood volume).</li><li>Pipe network and nozzles precisely aimed at cooking zones.</li><li>Fusible Links inside the hood that melt at specific temperatures to activate the system.</li><li><strong>Gas Shut-off Valve:</strong> The most crucial part; cuts off gas instantly during a fire to prevent feeding the flames.</li></ul><h3>Maintenance</h3><p>Cooking grease accumulates on detectors and nozzles. Routine cleaning and maintenance are a matter of life and death in restaurants.</p>"
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "intro": "Welcome to Off Fire Online. These Terms and Conditions serve as a legally binding agreement between the Platform (referred to as 'We' or 'Platform') and the User (referred to as 'Client' or 'User'). By using the platform, browsing it, or requesting any of its technical or consulting services, you explicitly acknowledge that you have read, understood, and fully agreed to these terms without restriction or condition.",
+    "sections": {
+      "s1": {
+        "title": "Article (1): Definitions",
+        "items": [
+          "Platform: Off Fire Online digital platform, operating in engineering brokerage and technical consulting for safety and security systems.",
+          "Client (User): Any natural or legal person (facility owner, investor, company) using the platform to request quotes, consultations, or contract for safety system execution.",
+          "Service Provider (Third Party): Companies, consulting engineering offices, and suppliers certified and classified by the General Directorate of Civil Defense and competent government authorities, linked with the client via the platform."
+        ]
+      },
+      "s2": {
+        "title": "Article (2): Nature of Platform's Work",
+        "items": [
+          "Brokerage and Consulting: Off Fire Online acts strictly as a digital broker and independent engineering consultant. Our role is limited to technically linking clients with service providers and filtering quotes to ensure SBC compliance. The platform is not an executing contracting company.",
+          "Independence from Government Entities: The platform is a private technological entity and does not represent the Civil Defense, Ministry of Municipalities, or official portals like 'Salama' or 'Balady'.",
+          "Contractual Relationship Nature: Any final contract for execution, supply, or maintenance is concluded directly between the (Client) and the (Service Provider). The platform is not a party to this contract."
+        ]
+      },
+      "s3": {
+        "title": "Article (3): Limitation of Liability",
+        "intro": "Under no circumstances shall Off Fire Online be legally or financially liable for the following:",
+        "items": [
+          "Any errors, manufacturing defects, or negligence in field execution by the service provider.",
+          "Delays by the service provider in delivering the project or issuing required certificates on time.",
+          "Any material losses, business interruptions, or fines imposed on the client due to government refusal to complete licenses for reasons attributed to the contractor or the facility's condition.",
+          "Advisory information provided by the platform represents engineering recommendations based on the Saudi Code and does not constitute a final guarantee of passing government inspections."
+        ]
+      },
+      "s4": {
+        "title": "Article (4): Disclaimer Regarding Government Licenses",
+        "items": [
+          "The platform disclaims all responsibility if 'Salama' or 'Balady' portals reject license issuance due to the client's administrative or regulatory reasons (e.g., suspended CR, labor violations, unpaid fees).",
+          "The platform is not responsible for the failure or delay in issuing the 'Installation Completion Certificate' if manipulation by the executing contractor is discovered, or if the client alters approved plans without consulting the engineering office."
+        ]
+      },
+      "s5": {
+        "title": "Article (5): Client Obligations",
+        "intro": "The client pledges and commits to the following:",
+        "items": [
+          "Data Accuracy: Providing correct information, areas, and engineering plans matching the actual site. The client bears any additional costs or fines resulting from misleading data.",
+          "Financial Commitment: Paying all financial dues to the service provider according to the contract's payment schedule.",
+          "Site Readiness: Preparing the site for construction works, inspections, or material delivery on scheduled dates.",
+          "Previous Violations: Bearing full responsibility for any prior structural or operational violations hindering license issuance."
+        ]
+      },
+      "s6": {
+        "title": "Article (6): Pricing Mechanism & Technical Analysis",
+        "items": [
+          "Initial quotes are based on data and plans uploaded electronically by the client.",
+          "The service provider and platform reserve the full right to amend the final quote if fundamental discrepancies are discovered during the site inspection visit.",
+          "The 'External Quote Evaluation' service clarifies the technical fairness of the offer based on the SBC, and does not oblige the platform to compensate the client for subsequent market price fluctuations."
+        ]
+      },
+      "s7": {
+        "title": "Article (7): Data Sharing & Technical Privacy",
+        "intro": "By agreeing to these terms, you grant Off Fire Online explicit authorization to:",
+        "items": [
+          "Share engineering plans, site reports, and technical data of your facility with service providers registered in our database.",
+          "This sharing is strictly limited to studying the project and providing accurate quotes, with the platform committing not to use data for external commercial purposes."
+        ]
+      },
+      "s8": {
+        "title": "Article (8): Technical Arbitration & Dispute Management",
+        "items": [
+          "In the event of a purely technical dispute between the client and the service provider regarding installation quality or SBC compliance, Off Fire Online may intervene, upon request, as a neutral technical consultant.",
+          "The platform's opinion in this case is an 'engineering advisory' opinion, not legally binding, and does not waive any party's right to resort to judicial authorities."
+        ]
+      },
+      "s9": {
+        "title": "Article (9): Termination of Service",
+        "intro": "Off Fire Online reserves the absolute right, at its sole discretion, to:",
+        "items": [
+          "Temporarily or permanently suspend any user's account if proven to violate these terms, attempt fraud, or provide misleading data.",
+          "Refuse service to any facility without stating reasons, to protect the platform's integrity."
+        ]
+      },
+      "s10": {
+        "title": "Article (10): Intellectual Property Rights",
+        "intro": "All intellectual property rights related to the platform (logo, visual identity, texts, designs, workflow, articles, and technical filtering algorithms) are the exclusive property of Off Fire Online. Unauthorized copying or reproduction is strictly prohibited and subject to severe legal accountability."
+      },
+      "s11": {
+        "title": "Article (11): Amendment of Terms & Conditions",
+        "intro": "Off Fire Online has the right to amend, add, or delete any clause of these terms at any time without prior notice. Continued use of the platform constitutes final acceptance of the modifications."
+      },
+      "s12": {
+        "title": "Article (12): Governing Law & Jurisdiction",
+        "intro": "These Terms and Conditions are governed by and construed in accordance with the laws of the Kingdom of Saudi Arabia. In case of any legal dispute arising from the use of the platform that cannot be resolved amicably, exclusive spatial jurisdiction lies with the competent courts in Saudi Arabia."
+      }
+    },
+    "cr": "This platform is operated and managed under Commercial Registration No. (4030357735) - Kingdom of Saudi Arabia."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "At Off Fire Online, we fully understand the importance of your technical and personal data privacy. This 'Privacy Policy' explains how we collect, use, protect, and share the information you provide when using our platform.",
+    "sections": {
+      "s1": {
+        "title": "1. Information We Collect",
+        "intro": "When using Off Fire Online, we may ask you to provide necessary information to deliver the service, including:",
+        "items": [
+          "Contact Data: Name, phone number, email, and facility name.",
+          "Technical & Engineering Data: Engineering plans (AutoCAD / PDF), site areas, business activity details, and previous technical reports.",
+          "Browsing Data: IP address, browser type, and pages visited on our platform (for UX improvement purposes)."
+        ]
+      },
+      "s2": {
+        "title": "2. How Do We Use Your Information?",
+        "intro": "We use the collected data strictly for the following purposes:",
+        "items": [
+          "Providing Quotes: Studying plans and understanding your facility's needs to provide accurate quotes.",
+          "Effective Communication: Sending updates, contract renewal alerts, and responding to technical inquiries.",
+          "Service Improvement: Analyzing user behavior to develop platform performance.",
+          "Legal Compliance: Meeting government requirements or responding to legal claims."
+        ]
+      },
+      "s3": {
+        "title": "3. Data Sharing with Third Parties",
+        "intro": "As an engineering brokerage platform, our core operation requires sharing your facility's information. We commit to the following:",
+        "items": [
+          "Technical plans and engineering details are shared ONLY with our certified network of companies and suppliers to study your project.",
+          "We obligate all service providers in our network to maintain confidentiality and not use the information outside the scope of your project.",
+          "We do not sell, rent, or trade your personal data with any external marketing entities."
+        ]
+      },
+      "s4": {
+        "title": "4. Data Protection and Info Security",
+        "intro": "We implement all necessary technical and organizational measures (such as encryption and standard security protocols) to protect your data and engineering plans from unauthorized access, modification, disclosure, or destruction."
+      },
+      "s5": {
+        "title": "5. Use of Cookies",
+        "intro": "Our platform uses cookies to improve your experience, remember your preferences, and present relevant advertising content. You can modify browser settings to reject cookies, though it may affect some platform functionalities."
+      },
+      "s6": {
+        "title": "6. Your Rights as a Client",
+        "intro": "You have the right at any time to:",
+        "items": [
+          "Request access to the personal data we hold about you.",
+          "Request the correction of any inaccurate information.",
+          "Request the deletion of your data or plans from our database (excluding data we are legally required to retain for billing or records)."
+        ]
+      },
+      "s7": {
+        "title": "7. Privacy Policy Amendments",
+        "intro": "We may update the privacy policy occasionally to keep pace with technical or regulatory changes. Any amendments will be published on this page. Your continued use of the platform constitutes agreement to the updated policy."
+      },
+      "s8": {
+        "title": "8. Contact Us",
+        "intro": "If you have any questions about our privacy policy, feel free to speak with our technical support team via the communication channels available on the platform."
+      }
+    }
+  }
+}

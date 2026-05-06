@@ -4,40 +4,33 @@ import { Target, ShieldCheck, Heart, Zap, Users, ArrowLeft, CheckCircle, Briefca
 import Button from '../components/Button';
 import TextWithBrand from '../components/TextWithBrand';
 import { ABOUT_DATA, WHY_US_BG_IMAGE, HSERVICES1 } from '../data/content';
-import { Helmet } from 'react-helmet-async'; // استدعاء المكتبة
+import { Helmet } from 'react-helmet-async';
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
 const AboutPage = () => {
-  return (
-    <div className="animate-fadeIn pt-20 lg:pt-24">
-      
-    <Helmet>
-        {/* العنوان الأساسي للتبويب */}
-        <title>من نحن | {ABOUT_DATA.hero.title}</title>
-        
-        {/* الوصف التعريفي لمحركات البحث SEO */}
-        <meta name="description" content={ABOUT_DATA.hero.subtitle} />
-        
-        {/* الكلمات المفتاحية (Keywords) */}
-        <meta name="keywords" content="من نحن، حماية، أمان، رحلة العميل، رؤية الشركة، خدمات تقنية، شريك الأمان" />
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
 
-        {/* إعدادات وسائل التواصل الاجتماعي (Open Graph / Facebook) */}
-        <meta property="og:title" content={`من نحن - ${ABOUT_DATA.hero.title}`} />
+  return (
+    <div className="animate-fadeIn pt-20 lg:pt-24" dir={isEn ? 'ltr' : 'rtl'}>
+      
+      <Helmet>
+        <title>{t('nav.about')} | {ABOUT_DATA.hero.title}</title>
+        <meta name="description" content={ABOUT_DATA.hero.subtitle} />
+        <meta name="keywords" content="من نحن، حماية، أمان، رحلة العميل، رؤية الشركة، خدمات تقنية، شريك الأمان" />
+        <meta property="og:title" content={`${t('nav.about')} - ${ABOUT_DATA.hero.title}`} />
         <meta property="og:description" content={ABOUT_DATA.hero.subtitle} />
         <meta property="og:image" content={HSERVICES1} />
         <meta property="og:type" content="website" />
-
-        {/* إعدادات تويتر (Twitter Cards) */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`من نحن - ${ABOUT_DATA.hero.title}`} />
+        <meta name="twitter:title" content={`${t('nav.about')} - ${ABOUT_DATA.hero.title}`} />
         <meta name="twitter:description" content={ABOUT_DATA.hero.subtitle} />
         <meta name="twitter:image" content={HSERVICES1} />
-
-        {/* رابط الصفحة الحالي (Canonical Link) */}
         <link rel="canonical" href="https://www.offfireonline.com" />
-    </Helmet>
-      {/* 1. Hero Section */}
+      </Helmet>
+
       <div className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center bg-dark border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0">
             <img 
@@ -50,18 +43,17 @@ const AboutPage = () => {
 
         <div className="text-center container mx-auto px-4 lg:px-6 z-10 relative">
           <span className="text-cta font-bold tracking-[0.2em] mb-3 lg:mb-4 block text-sm lg:text-xl uppercase border-b-2 border-cta inline-block pb-1 lg:pb-2">
-            من نحن
+            {t('nav.about')}
           </span>
           <h1 className="text-2xl md:text-5xl lg:text-6xl font-black text-text-main mb-4 lg:mb-6 leading-tight drop-shadow-2xl max-w-5xl mx-auto">
             {ABOUT_DATA.hero.title}
           </h1>
-          <p className="text-sm lg:text-2xl text-text-sub max-w-4xl mx-auto font-medium leading-relaxed px-2">
+          <p className="text-sm lg:text-2xl text-text-sub max-w-4xl mx-auto font-medium leading-relaxed px-2 text-center">
             <TextWithBrand text={ABOUT_DATA.hero.subtitle} />
           </p>
         </div>
       </div>
 
-      {/* 2. Story Section */}
       <section className="py-12 lg:py-28 bg-darker">
         <div className="container mx-auto px-4 lg:px-6">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
@@ -74,39 +66,43 @@ const AboutPage = () => {
                     />
                 </div>
 
-                <div className="w-full lg:w-1/2">
-                    <h2 className="text-xl lg:text-4xl font-bold text-text-main mb-4 lg:mb-6 flex items-center gap-2 lg:gap-3">
-                        قصتنا: من مشكلة إلى رؤية <span className="w-8 lg:w-12 h-1 bg-cta rounded-full"></span>
+                <div className="w-full lg:w-1/2 text-start">
+                    <h2 className="text-xl lg:text-4xl font-bold text-text-main mb-4 lg:mb-6 flex items-center gap-2 lg:gap-3 text-start">
+                        {isEn ? 'Our Story: From a Problem to a Vision' : 'قصتنا: من مشكلة إلى رؤية'} <span className="w-8 lg:w-12 h-1 bg-cta rounded-full"></span>
                     </h2>
-                    <p className="text-text-sub text-sm lg:text-xl leading-relaxed lg:leading-loose mb-6 lg:mb-10">
+                    <p className="text-text-sub text-sm lg:text-xl leading-relaxed lg:leading-loose mb-6 lg:mb-10 text-start">
                         <TextWithBrand text={ABOUT_DATA.story} />
                     </p>
                     
                     <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4">
-                        <div className="bg-card p-5 lg:p-6 rounded-xl lg:rounded-2xl border-l-4 border-primary shadow-md hover:translate-y-[-5px] transition-transform duration-300">
+                        <div className="bg-card p-5 lg:p-6 rounded-xl lg:rounded-2xl border-s-4 border-primary shadow-md hover:translate-y-[-5px] transition-transform duration-300 text-start flex flex-col items-start">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="bg-primary/10 p-2 rounded-lg text-primary">
                                     <Target size={24} className="lg:w-8 lg:h-8"/>
                                 </div>
-                                <h3 className="font-bold text-white text-lg lg:text-xl">رؤيتنا</h3>
+                                <h3 className="font-bold text-white text-lg lg:text-xl text-start">
+                                  {isEn ? 'Our Vision' : 'رؤيتنا'}
+                                </h3>
                             </div>
                             <div className="w-full h-[1px] bg-white/10 mb-4 relative">
-                                <div className="absolute right-0 top-0 h-full w-1/3 bg-primary rounded-full"></div>
+                                <div className="absolute start-0 top-0 h-full w-1/3 bg-primary rounded-full"></div>
                             </div>
-                            <p className="text-text-sub text-sm lg:text-base leading-relaxed">{ABOUT_DATA.vision}</p>
+                            <p className="text-text-sub text-sm lg:text-base leading-relaxed text-start w-full">{ABOUT_DATA.vision}</p>
                         </div>
                         
-                        <div className="bg-card p-5 lg:p-6 rounded-xl lg:rounded-2xl border-l-4 border-cta shadow-md hover:translate-y-[-5px] transition-transform duration-300">
+                        <div className="bg-card p-5 lg:p-6 rounded-xl lg:rounded-2xl border-s-4 border-cta shadow-md hover:translate-y-[-5px] transition-transform duration-300 text-start flex flex-col items-start">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="bg-cta/10 p-2 rounded-lg text-cta">
                                     <ShieldCheck size={24} className="lg:w-8 lg:h-8"/>
                                 </div>
-                                <h3 className="font-bold text-white text-lg lg:text-xl">رسالتنا</h3>
+                                <h3 className="font-bold text-white text-lg lg:text-xl text-start">
+                                  {isEn ? 'Our Mission' : 'رسالتنا'}
+                                </h3>
                             </div>
                             <div className="w-full h-[1px] bg-white/10 mb-4 relative">
-                                <div className="absolute right-0 top-0 h-full w-1/3 bg-cta rounded-full"></div>
+                                <div className="absolute start-0 top-0 h-full w-1/3 bg-cta rounded-full"></div>
                             </div>
-                            <p className="text-text-sub text-sm lg:text-base leading-relaxed">{ABOUT_DATA.mission}</p>
+                            <p className="text-text-sub text-sm lg:text-base leading-relaxed text-start w-full">{ABOUT_DATA.mission}</p>
                         </div>
                     </div>
                 </div>
@@ -114,43 +110,44 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* --- NEW SECTION: Partner/Provider Banner --- */}
       <section className="bg-gradient-to-r from-primary/10 via-[#0B1120] to-cta/10 border-y border-white/10 py-10 lg:py-14 relative z-20">
         <div className="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-5 text-center md:text-right">
+          <div className="flex flex-col md:flex-row items-center gap-5 text-center md:text-start w-full">
             <div className="w-16 h-16 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(239,68,68,0.2)]">
                <Briefcase className="text-[#EF4444] w-8 h-8" />
             </div>
-            <div>
-              <h3 className="text-white font-bold text-2xl lg:text-3xl mb-2">هل تشاركنا نفس الرؤية؟</h3>
-              <p className="text-slate-300 text-sm lg:text-lg max-w-2xl leading-relaxed">
-                نبحث دائماً عن مكاتب استشارية، شركات مقاولات، وموردين يشاركونا التزامنا بالجودة. انضم لأكبر شبكة معتمدة في المملكة وضاعف أعمالك.
+            <div className="text-start">
+              <h3 className="text-white font-bold text-2xl lg:text-3xl mb-2 text-start">
+                {isEn ? 'Share Our Vision?' : 'هل تشاركنا نفس الرؤية؟'}
+              </h3>
+              <p className="text-slate-300 text-sm lg:text-lg max-w-2xl leading-relaxed text-start">
+                {isEn ? 'We are always looking for consulting offices, contracting companies, and suppliers who share our commitment to quality. Join the largest certified network in the Kingdom and multiply your business.' : 'نبحث دائماً عن مكاتب استشارية، شركات مقاولات، وموردين يشاركونا التزامنا بالجودة. انضم لأكبر شبكة معتمدة في المملكة وضاعف أعمالك.'}
               </p>
             </div>
           </div>
           <Link to="/register-provider" className="w-full md:w-auto shrink-0">
             <button className="w-full md:w-auto bg-white hover:bg-slate-200 text-[#0B1120] font-bold px-10 py-4 rounded-xl transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)] text-lg">
-              انضم كشريك نجاح
+              {isEn ? 'Join as a Success Partner' : 'انضم كشريك نجاح'}
             </button>
           </Link>
         </div>
       </section>
-      {/* --- END NEW SECTION --- */}
 
-      {/* 3. Values Section */}
       <section className="py-12 lg:py-28 bg-dark relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-6 relative z-10">
-            <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-8 lg:mb-16">قيمنا الراسخة</h2>
+            <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-8 lg:mb-16">
+              {isEn ? 'Our Core Values' : 'قيمنا الراسخة'}
+            </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
                 {ABOUT_DATA.values.map((val, i) => {
                     const Icon = val.icon;
                     return (
-                        <div key={i} className="bg-card p-4 lg:p-8 rounded-2xl lg:rounded-3xl border border-white/5 hover:border-primary/50 transition-all text-center">
-                            <div className="w-10 h-10 lg:w-14 lg:h-14 mx-auto bg-dark rounded-full flex items-center justify-center mb-3 lg:mb-6 text-primary shadow-lg">
+                        <div key={i} className="bg-card p-4 lg:p-8 rounded-2xl lg:rounded-3xl border border-white/5 hover:border-primary/50 transition-all text-start flex flex-col items-start">
+                            <div className="w-10 h-10 lg:w-14 lg:h-14 bg-dark rounded-full flex items-center justify-center mb-3 lg:mb-6 text-primary shadow-lg">
                                 <Icon size={20} className="lg:w-7 lg:h-7"/>
                             </div>
-                            <h3 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-3">{val.title}</h3>
-                            <p className="text-text-sub text-[10px] lg:text-sm leading-tight">{val.desc}</p>
+                            <h3 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-3 text-start w-full">{val.title}</h3>
+                            <p className="text-text-sub text-[10px] lg:text-sm leading-tight text-start w-full">{val.desc}</p>
                         </div>
                     );
                 })}
@@ -158,74 +155,79 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 4. How We Work */}
       <section className="py-12 lg:py-28 bg-darker">
         <div className="container mx-auto px-4 lg:px-6">
             <div className="text-center mb-8 lg:mb-16">
-                <span className="text-cta font-bold tracking-widest text-xs lg:text-sm uppercase">رحلة العميل</span>
-                <h2 className="text-xl lg:text-4xl font-bold text-text-main mt-2">كيف ندير رحلة الأمان بالنيابة عنك؟</h2>
+                <span className="text-cta font-bold tracking-widest text-xs lg:text-sm uppercase">
+                  {isEn ? 'Customer Journey' : 'رحلة العميل'}
+                </span>
+                <h2 className="text-xl lg:text-4xl font-bold text-text-main mt-2">
+                  {isEn ? 'How do we manage the safety journey on your behalf?' : 'كيف ندير رحلة الأمان بالنيابة عنك؟'}
+                </h2>
             </div>
 
             <div className="lg:hidden flex overflow-x-auto gap-4 pb-6 snap-x snap-mandatory no-scrollbar">
                 {ABOUT_DATA.process.map((step, i) => (
-                    <div key={i} className="min-w-[85vw] bg-card p-6 rounded-2xl border border-white/5 snap-center relative shadow-lg">
-                        <div className="absolute top-4 left-4 text-6xl font-black text-white/5 pointer-events-none">{i + 1}</div>
+                    <div key={i} className="min-w-[85vw] bg-card p-6 rounded-2xl border border-white/5 snap-center relative shadow-lg text-start flex flex-col items-start">
+                        <div className="absolute top-4 end-4 text-6xl font-black text-white/5 pointer-events-none">{i + 1}</div>
                         <div className="w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center font-bold text-lg mb-4">
                             {i + 1}
                         </div>
-                        <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-                        <p className="text-text-sub text-sm leading-relaxed">{step.desc}</p>
+                        <h3 className="text-lg font-bold text-white mb-2 text-start w-full">{step.title}</h3>
+                        <p className="text-text-sub text-sm leading-relaxed text-start w-full">{step.desc}</p>
                     </div>
                 ))}
             </div>
             
             <div className="hidden lg:block relative max-w-4xl mx-auto">
-                <div className="absolute top-0 bottom-0 right-1/2 w-1 bg-white/10 -mr-0.5 rounded-full"></div>
-                {ABOUT_DATA.process.map((step, i) => (
-                    <div key={i} className={`flex gap-8 mb-12 relative ${i % 2 === 0 ? 'flex-row-reverse' : ''}`}>
-                        <div className="absolute right-1/2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg border-4 border-dark z-10 -mr-5 shadow-lg shadow-primary/30">
-                            {i + 1}
-                        </div>
-                        <div className="w-1/2"></div>
-                        <div className="w-1/2 px-8">
-                            <div className={`bg-card p-6 rounded-2xl border border-white/5 hover:border-primary transition-colors relative group ${i % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
-                                <p className="text-text-sub text-sm leading-relaxed">{step.desc}</p>
+                <div className="absolute top-0 bottom-0 end-1/2 w-1 bg-white/10 -me-0.5 rounded-full"></div>
+                {ABOUT_DATA.process.map((step, i) => {
+                    const isEven = i % 2 === 0;
+                    return (
+                        <div key={i} className={`flex gap-8 mb-12 relative ${isEven ? 'flex-row-reverse' : ''}`}>
+                            <div className="absolute end-1/2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg border-4 border-dark z-10 -me-5 shadow-lg shadow-primary/30">
+                                {i + 1}
+                            </div>
+                            <div className="w-1/2"></div>
+                            <div className="w-1/2 px-8">
+                                <div className={`bg-card p-6 rounded-2xl border border-white/5 hover:border-primary transition-colors relative group flex flex-col ${isEven ? 'items-end text-end' : 'items-start text-start'}`}>
+                                    <h3 className={`text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors w-full ${isEven ? 'text-end' : 'text-start'}`}>{step.title}</h3>
+                                    <p className={`text-text-sub text-sm leading-relaxed w-full ${isEven ? 'text-end' : 'text-start'}`}>{step.desc}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
       </section>
 
-      {/* 5. Why Us & Audience (Updated Background) */}
       <section className="py-16 lg:py-28 relative bg-dark">
-        {/* الخلفية الجديدة */}
         <div className="absolute inset-0 z-0">
             <img 
                 src={WHY_US_BG_IMAGE} 
                 alt="Why Us Background" 
                 className="w-full h-full object-cover"
             />
-            {/* طبقة تعتيم 90% */}
             <div className="absolute inset-0 bg-dark/80"></div>
         </div>
 
         <div className="container mx-auto px-4 lg:px-6 relative z-10">
             <div className="mb-12 lg:mb-20">
-                <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-6 lg:mb-12">لماذا نحن خيارك الذكي؟</h2>
+                <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-6 lg:mb-12">
+                  {isEn ? 'Why Are We Your Smart Choice?' : 'لماذا نحن خيارك الذكي؟'}
+                </h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6">
                     {ABOUT_DATA.whyUs.map((item, i) => {
                         const Icon = item.icon;
                         return (
-                            <div key={i} className="flex flex-col lg:flex-row gap-3 lg:gap-4 bg-card/50 backdrop-blur-sm p-4 lg:p-6 rounded-xl lg:rounded-2xl border border-white/5 text-center lg:text-right hover:border-white/20 transition-colors">
-                                <div className="mx-auto lg:mx-0 flex-shrink-0 text-cta bg-dark p-2 rounded-full w-fit">
+                            <div key={i} className="flex flex-col lg:flex-row gap-3 lg:gap-4 bg-card/50 backdrop-blur-sm p-4 lg:p-6 rounded-xl lg:rounded-2xl border border-white/5 text-start hover:border-white/20 transition-colors items-center lg:items-start text-center lg:text-start">
+                                <div className="flex-shrink-0 text-cta bg-dark p-2 rounded-full w-fit">
                                     <Icon size={20} className="lg:w-6 lg:h-6" />
                                 </div>
-                                <div>
-                                    <h4 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-2">{item.title}</h4>
-                                    <p className="text-text-sub text-[10px] lg:text-sm leading-tight">{item.desc}</p>
+                                <div className="w-full text-start">
+                                    <h4 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-2 text-start">{item.title}</h4>
+                                    <p className="text-text-sub text-[10px] lg:text-sm leading-tight text-start">{item.desc}</p>
                                 </div>
                             </div>
                         );
@@ -234,15 +236,17 @@ const AboutPage = () => {
             </div>
 
             <div>
-                <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-6 lg:mb-12">شريك الأمان الأول لكافة القطاعات</h2>
+                <h2 className="text-xl lg:text-4xl font-bold text-center text-text-main mb-6 lg:mb-12">
+                  {isEn ? 'The Premier Safety Partner for All Sectors' : 'شريك الأمان الأول لكافة القطاعات'}
+                </h2>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
                     {ABOUT_DATA.audience.map((item, i) => (
-                        <div key={i} className="group relative rounded-xl lg:rounded-2xl overflow-hidden h-40 lg:h-64 border border-white/10 shadow-lg">
+                        <div key={i} className="group relative rounded-xl lg:rounded-2xl overflow-hidden h-40 lg:h-64 border border-white/10 shadow-lg text-start flex flex-col items-start">
                             <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/60 to-transparent z-10"></div>
                             <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                            <div className="absolute bottom-0 left-0 w-full p-3 lg:p-6 z-20">
-                                <h4 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-2 drop-shadow-md">{item.title}</h4>
-                                <p className="text-gray-200 text-xs lg:text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all lg:translate-y-2 lg:group-hover:translate-y-0 leading-snug font-medium">
+                            <div className="absolute bottom-0 start-0 w-full p-3 lg:p-6 z-20 text-start">
+                                <h4 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-2 drop-shadow-md text-start w-full">{item.title}</h4>
+                                <p className="text-gray-200 text-xs lg:text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all lg:translate-y-2 lg:group-hover:translate-y-0 leading-snug font-medium text-start w-full">
                                     {item.desc}
                                 </p>
                             </div>
@@ -253,26 +257,23 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 6. Final CTA */}
       <section className="py-12 lg:py-20 bg-gradient-to-r from-primary/10 to-cta/10 border-t border-white/10">
         <div className="container mx-auto px-4 lg:px-6 text-center">
             <h2 className="text-2xl md:text-4xl font-black text-text-main mb-4 lg:mb-6">{ABOUT_DATA.cta.title}</h2>
-            <p className="text-sm lg:text-xl text-text-sub mb-6 lg:mb-10 max-w-3xl mx-auto">
+            <p className="text-sm lg:text-xl text-text-sub mb-6 lg:mb-10 max-w-3xl mx-auto text-center">
                 {ABOUT_DATA.cta.text}
             </p>
         <div className="flex flex-col sm:flex-row gap-3 lg:gap-6 justify-center">
 
-            {/* زرار الأساسي */}
             <Link to="/contact">
                 <Button 
                 primary 
                 className="w-full sm:w-auto text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-3 shadow-lg shadow-cta/20"
                 >
-                ابدأ رحلة الاعتماد الآن
+                {isEn ? 'Start Your Certification Journey Now' : 'ابدأ رحلة الاعتماد الآن'}
                 </Button>
             </Link>
 
-            {/* زرار واتساب */}
             <a 
                 href="https://wa.me/966530394904"
                 target="_blank" 
@@ -283,7 +284,7 @@ const AboutPage = () => {
                 className="w-full sm:w-auto text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-3 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white"
                 >
                 <MessageCircle size={20} />
-                تواصل عبر واتساب
+                {isEn ? 'Contact via WhatsApp' : 'تواصل عبر واتساب'}
                 </Button>
             </a>
 

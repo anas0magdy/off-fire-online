@@ -1,46 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   
+   <!-- 1. الصفحة الرئيسية - Home Page -->
    <url>
-      <loc>https://offfireonline.com/</loc>
-      <lastmod>2026-04-27</lastmod>
+      <loc>https://www.offfireonline.com/</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.offfireonline.com/"/>
+      <lastmod>2026-05-06</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
-   
    <url>
-      <loc>https://offfireonline.com/services</loc>
-      <lastmod>2026-04-27</lastmod>
+      <loc>https://www.offfireonline.com/en</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>1.0</priority>
+   </url>
+
+   <!-- 2. الخدمات - Services -->
+   <url>
+      <loc>https://www.offfireonline.com/services</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/services"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/services"/>
+      <lastmod>2026-05-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.offfireonline.com/en/services</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/services"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/services"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- 3. من نحن - About -->
+   <url>
+      <loc>https://www.offfireonline.com/about</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/about"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/about"/>
+      <lastmod>2026-05-06</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://offfireonline.com/about</loc>
-      <lastmod>2026-04-27</lastmod>
-      <changefreq>monthly</changefreq>
+      <loc>https://www.offfireonline.com/en/about</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/about"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/about"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- 4. المدونة - Blog -->
+   <url>
+      <loc>https://www.offfireonline.com/blog</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/blog"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/blog"/>
+      <lastmod>2026-05-06</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://offfireonline.com/blog</loc>
-      <lastmod>2026-04-27</lastmod>
-      <changefreq>monthly</changefreq>
+      <loc>https://www.offfireonline.com/en/blog</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/blog"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/blog"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- 5. اتصل بنا - Contact -->
+   <url>
+      <loc>https://www.offfireonline.com/contact</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/contact"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/contact"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.offfireonline.com/en/contact</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/contact"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/contact"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- 6. تسجيل مزود خدمة - Provider Registration -->
+   <url>
+      <loc>https://www.offfireonline.com/register-provider</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/register-provider"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/register-provider"/>
+      <lastmod>2026-05-06</lastmod>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://offfireonline.com/contact</loc>
-      <lastmod>2026-04-27</lastmod>
-      <changefreq>monthly</changefreq>
+      <loc>https://www.offfireonline.com/en/register-provider</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/register-provider"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/register-provider"/>
+      <lastmod>2026-05-06</lastmod>
       <priority>0.8</priority>
+   </url>
+
+   <!-- 7. الشروط والأحكام - Terms -->
+   <url>
+      <loc>https://www.offfireonline.com/terms</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/terms"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/terms"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.5</priority>
    </url>
    <url>
-      <loc>https://offfireonline.com/terms</loc>
-      <lastmod>2026-04-27</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <loc>https://www.offfireonline.com/en/terms</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/terms"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/terms"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.5</priority>
+   </url>
+
+   <!-- 8. سياسة الخصوصية - Privacy -->
+   <url>
+      <loc>https://www.offfireonline.com/privacy</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/privacy"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/privacy"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.5</priority>
    </url>
    <url>
-      <loc>https://offfireonline.com/privacy</loc>
-      <lastmod>2026-04-27</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <loc>https://www.offfireonline.com/en/privacy</loc>
+      <xhtml:link rel="alternate" hreflang="ar" href="https://www.offfireonline.com/privacy"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.offfireonline.com/en/privacy"/>
+      <lastmod>2026-05-06</lastmod>
+      <priority>0.5</priority>
    </url>
+
 </urlset>

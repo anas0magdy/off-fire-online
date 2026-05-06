@@ -3,8 +3,9 @@ import {
   HelpCircle, TrendingUp, Award, Zap, BookOpen, Landmark, Coins, Wrench,
   Lightbulb, Anchor, Filter, MessageCircle, Target, Heart
 } from 'lucide-react';
+import i18n from '../i18n'; // استدعاء الترجمة المباشر
 
-// === استيراد الصور (تأكد من وجودها في assets) ===
+// === استيراد الصور ===
 import hero1 from '../assets/hero-1.webp';
 import hero2 from '../assets/hero-2.jpg';
 import serviceFire from '../assets/service-fire.webp';
@@ -26,11 +27,11 @@ import serviceCctv from '../assets/serviceCctv.webp';
 // =========================================================
 
 export const NAV_LINKS = [
-  { id: 'home', label: 'الرئيسية', path: '/' },
-  { id: 'about', label: 'من نحن', path: '/about' },
-  { id: 'services', label: 'خدماتنا', path: '/services' },
-  { id: 'blog', label: 'المدونة', path: '/blog' },
-  { id: 'contact', label: 'اتصل بنا', path: '/contact', isCta: true },
+  { id: 'home', label: i18n.t('nav.home'), path: '/' },
+  { id: 'about', label: i18n.t('nav.about'), path: '/about' },
+  { id: 'services', label: i18n.t('nav.services'), path: '/services' },
+  { id: 'blog', label: i18n.t('nav.blog'), path: '/blog' },
+  { id: 'contact', label: i18n.t('nav.contact'), path: '/contact', isCta: true },
 ];
 
 export const SECTORS_BG_IMAGE = sectorsBg;
@@ -39,398 +40,171 @@ export const SOLUTION_IMAGE = appHand;
 export const HSERVICES1 = hservice1;
 
 // =========================================================
-//  HOME PAGE DATA (تم التحديث بناءً على LANDING PAGE FINAL2)
+//  HOME PAGE DATA
 // =========================================================
 
 export const HERO_SLIDES = [
   {
     id: 1,
     image: hero1,
-    title: "أنجز متطلبات الدفاع المدني — عبر شركات معتمدة، في مكان واحد",
-    subtitle: "قارن العروض، اختر الأنسب، ونفّذ — كل ذلك أونلاين ومجاناً.",
-    cta: "اطلب عرض سعر مجاني"
+    title: i18n.t('home.hero.slide1.title'),
+    subtitle: i18n.t('home.hero.slide1.subtitle'),
+    cta: i18n.t('home.hero.slide1.cta')
   },
   {
     id: 2,
     image: hero2,
-    title: "وفّر عناء البحث واحصل على عروض أسعار من شركات معتمدة",
-    subtitle: "قارن، اختر، ونفّذ — كل ذلك أونلاين ومجاناً.",
-    cta: "تواصل مع خبير"
+    title: i18n.t('home.hero.slide2.title'),
+    subtitle: i18n.t('home.hero.slide2.subtitle'),
+    cta: i18n.t('home.hero.slide2.cta')
   }
 ];
 
 export const PAIN_POINTS = [
-  { 
-    icon: Search, 
-    title: "تخبط البدايات", 
-    desc: "لا تعرف من هي الشركات المعتمدة، ولا أين تجد اشتراطات الدفاع المدني الصحيحة." 
-  },
-  { 
-    icon: Clock, 
-    title: "استنزاف الوقت", 
-    desc: "مماطلة في التنفيذ، والخوف من خسارة دفعاتك المقدمة مع شركات غير معتمدة، ودفع التكلفة مرتين." 
-  },
-  { 
-    icon: FileText, 
-    title: "عروض مبهمة", 
-    desc: "مواصفات فنية غير موحدة، تجعل المقارنة العادلة بين عروض الأسعار شبه مستحيلة." 
-  },
-  { 
-    icon: ShieldCheck, 
-    title: "هاجس المطابقة", 
-    desc: "هل سيتم قبول المخططات في بوابة سلامة؟ وهل سيتم التنفيذ وفق الكود السعودي.. أم ستواجه رفضاً عند التفتيش؟" 
-  },
+  { icon: Search, title: i18n.t('home.painPoints.p1.title'), desc: i18n.t('home.painPoints.p1.desc') },
+  { icon: Clock, title: i18n.t('home.painPoints.p2.title'), desc: i18n.t('home.painPoints.p2.desc') },
+  { icon: FileText, title: i18n.t('home.painPoints.p3.title'), desc: i18n.t('home.painPoints.p3.desc') },
+  { icon: ShieldCheck, title: i18n.t('home.painPoints.p4.title'), desc: i18n.t('home.painPoints.p4.desc') }
 ];
 
 export const FEATURES = [
-  { 
-    title: "وصول مباشر للجهات المعتمدة", 
-    desc: "من الشركات والمكاتب الهندسية في جميع مناطق المملكة — بدون أي عمولات خفية." 
-  },
-  { 
-    title: "مقارنة ذكية وشفافة", 
-    desc: "أسعار حقيقية، جودة موثّقة، ومدة تنفيذ محددة." 
-  },
-  { 
-    title: "تحليل ذكي يختار الأنسب", 
-    desc: "توصية دقيقة بناءً على نوع منشأتك وميزانيتك." 
-  },
-  { 
-    title: "ضمان المطابقة للأنظمة", 
-    desc: "إرشاد كامل يطابق كود البناء السعودي ومتطلبات الدفاع المدني." 
-  },
-  { 
-    title: "متجر إلكتروني مباشر", 
-    desc: "لمعدات الأمن والسلامة من موردين موثوقين بتوصيل سريع." 
-  }
+  { title: i18n.t('home.features.f1.title'), desc: i18n.t('home.features.f1.desc') },
+  { title: i18n.t('home.features.f2.title'), desc: i18n.t('home.features.f2.desc') },
+  { title: i18n.t('home.features.f3.title'), desc: i18n.t('home.features.f3.desc') },
+  { title: i18n.t('home.features.f4.title'), desc: i18n.t('home.features.f4.desc') },
+  { title: i18n.t('home.features.f5.title'), desc: i18n.t('home.features.f5.desc') }
 ];
 
-// ملخص الخدمات للصفحة الرئيسية (تم التحديث)
 export const SERVICES_SUMMARY = [
-  { 
-    id: 1, 
-    title: "التصاريح والشهادات والتقارير الفنية", 
-    desc: "إصدار شهادات السلامة، التقارير الفنية، وعقود الصيانة المعتمدة عبر بوابتي سلامة وبلدي.", 
-    icon: FileText, 
-    image: serviceConsult 
-  },
-  { 
-    id: 2, 
-    title: "أنظمة مكافحة الحريق والإنذار المبكر", 
-    desc: "توريد وتركيب أنظمة الإطفاء والإنذار عبر شبكة من المقاولين المعتمدين لضمان المطابقة.", 
-    icon: ShieldCheck, 
-    image: serviceFire 
-  },
-  { 
-    id: 3, 
-    title: "معدات ومستلزمات الأمن والسلامة", 
-    desc: "سوق رقمي شامل يوفر طفايات الحريق ومعدات الوقاية بأسعار تنافسية وتوصيل مباشر.", 
-    icon: Target, 
-    image: serviceEquip 
-  },
-  { 
-    id: 4, 
-    title: "الاستشارات والخدمات الهندسية", 
-    desc: "اعتماد المخططات، تقييم العروض الفنية، وتحليل المخاطر عبر نخبة من الخبراء والمكاتب.", 
-    icon: Users, 
-    image: serviceAlarm 
-  },
-  { 
-    id: 5, 
-    title: "أنظمة المراقبة والتحكم الأمني", 
-    desc: "توريد وتركيب أحدث كاميرات CCTV وأنظمة الدخول الذكية لتلبية التراخيص الأمنية.", 
-    icon: Cpu, 
-    image: serviceCctv 
-  },
-  { 
-    id: 6, 
-    title: "طلب خدمة هندسية مخصصة", 
-    desc: "حلول هندسية مصممة خصيصاً للمشاريع الكبرى، معالجة المخالفات، وتحديث الأنظمة القديمة.", 
-    icon: Lightbulb, 
-    image: serviceCustom 
-  }
+  { id: 1, icon: FileText, image: serviceConsult, title: i18n.t('home.servicesSummary.s1.title'), desc: i18n.t('home.servicesSummary.s1.desc') },
+  { id: 2, icon: ShieldCheck, image: serviceFire, title: i18n.t('home.servicesSummary.s2.title'), desc: i18n.t('home.servicesSummary.s2.desc') },
+  { id: 3, icon: Target, image: serviceEquip, title: i18n.t('home.servicesSummary.s3.title'), desc: i18n.t('home.servicesSummary.s3.desc') },
+  { id: 4, icon: Users, image: serviceAlarm, title: i18n.t('home.servicesSummary.s4.title'), desc: i18n.t('home.servicesSummary.s4.desc') },
+  { id: 5, icon: Cpu, image: serviceCctv, title: i18n.t('home.servicesSummary.s5.title'), desc: i18n.t('home.servicesSummary.s5.desc') },
+  { id: 6, icon: Lightbulb, image: serviceCustom, title: i18n.t('home.servicesSummary.s6.title'), desc: i18n.t('home.servicesSummary.s6.desc') }
 ];
 
 export const TARGET_AUDIENCE = [
-  { 
-    title: "القطاع الصناعي واللوجستي", 
-    desc: "أنظمة متطورة لإدارة المخاطر العالية وحماية خطوط الإنتاج والأصول؛ وضمان اجتياز التفتيش الصناعي.",
-    image: serviceEquip 
-  },
-  { 
-    title: "الرعاية الصحية والمستشفيات", 
-    desc: "تنفيذ أنظمة إطفاء متقدمة لحماية الأرواح والأجهزة الطبية الحساسة، بامتثال تام لأعقد اشتراطات الكود السعودي (SBC).",
-    image: serviceFire 
-  },
-  { 
-    title: "القطاع التجاري والإداري", 
-    desc: "مطابقة دقيقة لاشتراطات الدفاع المدني والبلدية؛ لتسهيل استخراج وتجديد رخصتك التجارية.",
-    image: serviceAlarm 
-  },
-  { 
-    title: "المطورون العقاريون والمقاولون", 
-    desc: "شريكك الاستراتيجي لتنفيذ واعتماد بند (الإنذار والإطفاء) بالكامل، لضمان تسليم مشاريعك للجهات المالكة في وقتها.",
-    image: serviceConsult 
-  }
+  { image: serviceEquip, title: i18n.t('home.targetAudience.t1.title'), desc: i18n.t('home.targetAudience.t1.desc') },
+  { image: serviceFire, title: i18n.t('home.targetAudience.t2.title'), desc: i18n.t('home.targetAudience.t2.desc') },
+  { image: serviceAlarm, title: i18n.t('home.targetAudience.t3.title'), desc: i18n.t('home.targetAudience.t3.desc') },
+  { image: serviceConsult, title: i18n.t('home.targetAudience.t4.title'), desc: i18n.t('home.targetAudience.t4.desc') }
 ];
 
 export const WHY_US = [
-  { 
-    title: "وفر وقتك", 
-    desc: "وصول سريع للقرار النهائي بأقل مجهود (من ساعات إلى دقائق).", 
-    icon: Clock 
-  },
-  { 
-    title: "تحليل ذكي يختصر اسابيع في دقائق", 
-    desc: " مقارنة فنية دقيقة تُنهي رحلة البحث الطويلة وتحميك من القرارات الخاطئة.", 
-    icon: Cpu 
-  },
-  { 
-    title: "وسيط مستقل ومحايد", 
-    desc: "نختار لك الأفضل في السوق بحيادية تامة. مصلحتك هي الأولوية.", 
-    icon: Anchor 
-  },
-  { 
-    title: "استشارة مجانية — بدون التزامات", 
-    desc: "تقييم فني كامل لمنشأتك دون رسوم، حتى تطمئن قبل أي قرار.", 
-    icon: Coins 
-  },
-  { 
-    title: "دعم فوري", 
-    desc: "مساعدة مباشرة في تطبيق معايير السلامة وسهولة التنفيذ.", 
-    icon: ShieldCheck 
-  },
-  { 
-    title: "قاعدة بيانات مُحدّثة ومعتمدة", 
-    desc: "وصول فوري للشركات المعتمدة ومكاتب هندسية مرخصة — بعيداً عن فخ غير المؤهلين.", 
-    icon: Filter 
-  }
+  { icon: Clock, title: i18n.t('home.whyUs.w1.title'), desc: i18n.t('home.whyUs.w1.desc') },
+  { icon: Cpu, title: i18n.t('home.whyUs.w2.title'), desc: i18n.t('home.whyUs.w2.desc') },
+  { icon: Anchor, title: i18n.t('home.whyUs.w3.title'), desc: i18n.t('home.whyUs.w3.desc') },
+  { icon: Coins, title: i18n.t('home.whyUs.w4.title'), desc: i18n.t('home.whyUs.w4.desc') },
+  { icon: ShieldCheck, title: i18n.t('home.whyUs.w5.title'), desc: i18n.t('home.whyUs.w5.desc') },
+  { icon: Filter, title: i18n.t('home.whyUs.w6.title'), desc: i18n.t('home.whyUs.w6.desc') }
 ];
 
 export const FAQ = [
-  { q: "هل خدمات المنصة مجانية للعملاء؟", a: "نعم، يمكنك طلب العروض ومقارنتها والحصول على استشاراتنا مجاناً بالكامل؛ هدفنا هو ضمان وصولك للخيار الأنسب بأفضل سعر." },
-  { q: "كيف تضمن المنصة جودة الشركات المعتمدة؟", a: "لا يتم إدراج أي شركة في أوف فاير أونلاين إلا بعد التحقق من سجلاتها الرسمية، وتصنيفها لدى الدفاع المدني، ومراجعة سابقة أعمالها لضمان تنفيذ مشروعك باحترافية." },
-  { q: "هل تغطون جميع مناطق المملكة؟", a: "نعم، نغطي كافة المدن ونربطك تلقائياً بأقرب المزودين المعتمدين لموقع مشروعك، مما يضمن لك سرعة الاستجابة وتقليل تكاليف النقل والخدمات." },
-  { q: "هل المنصة تتدخل في عملية التعاقد المالي؟", a: "يتم التعاقد المباشر بينك وبين الشركة المنفذة لضمان الشفافية، مع بقاء فريقنا كمرجع فني لك لضمان مطابقة التنفيذ للمواصفات المتفق عليها." },
-  { q: "هل يمكنكم مساعدتي إذا كان لدي ملاحظات من الدفاع المدني؟", a: "بكل تأكيد. بمجرد رفع الملاحظات على المنصة، يقوم فريقنا الهندسي بتحليلها وترشيح الشركات المتخصصة في حل هذه المشكلات تحديداً لضمان اجتياز التفتيش القادم." }
+  { q: i18n.t('home.faq.q1.q'), a: i18n.t('home.faq.q1.a') },
+  { q: i18n.t('home.faq.q2.q'), a: i18n.t('home.faq.q2.a') },
+  { q: i18n.t('home.faq.q3.q'), a: i18n.t('home.faq.q3.a') },
+  { q: i18n.t('home.faq.q4.q'), a: i18n.t('home.faq.q4.a') },
+  { q: i18n.t('home.faq.q5.q'), a: i18n.t('home.faq.q5.a') }
 ];
 
 export const HOME_CTA = {
-  title: "توقف عن البحث… وابدأ الآن.",
-  text: "تمنحك Off Fire Online القدرة على اتخاذ قرار سريع، واضح، وآمن — بدون أي تعقيد أو تكلفة.",
-  btn: "اطلب عروض أسعار مجانية الآن"
+  title: i18n.t('home.cta.title'),
+  text: i18n.t('home.cta.text'),
+  btn: i18n.t('home.cta.btn')
 };
 
 // =========================================================
-//  SERVICES PAGE CONTENT (البيانات الكاملة)
+//  SERVICES PAGE CONTENT
 // =========================================================
-
-// تأكد من وجود استدعاءات الصور والأيقونات في أعلى الملف لديك كما هي:
-// import { Anchor, Filter, Cpu, Users } from 'lucide-react';
-// import serviceConsult from '../assets/services/consult.jpg'; (أو مسار صورك)
-// ...
 
 export const SERVICES_PAGE_CONTENT = {
   hero: {
-    title: "كل خدمة تحتاجها منشأتك — من المخطط الهندسي لرخصة التشغيل — في مكان واحد.",
-    subtitle: "منصتك الرقمية المستقلة. نربطك بنخبة من المكاتب الهندسية وشركات السلامة المعتمدة لتنفيذ الأنظمة وإصدار التراخيص وفق اشتراطات الدفاع المدني والكود السعودي (SBC) — بسرعة، شفافية، وبدون عمولات خفية.",
-    cta1: "اطلب خدمتك الآن",
-    cta2: "تحدث مع مستشارنا"
+    title: i18n.t('servicesPage.hero.title'),
+    subtitle: i18n.t('servicesPage.hero.subtitle'),
+    cta1: i18n.t('servicesPage.hero.cta1'),
+    cta2: i18n.t('servicesPage.hero.cta2')
   },
   services: [
     {
-      id: 1,
-      title: "التصاريح والشهادات والتقارير الفنية",
-      subtitle: "بوابتك الموثوقة لكل الوثائق الرسمية",
-      desc: "نوصلك مباشرة بالجهات المعتمدة عبر بوابتي 'سلامة' و'بلدي'.",
-      image: serviceConsult,
-      role: "نوجه طلباتك لأقرب الشركات والمكاتب المعتمدة لضمان استخراج شهاداتك وتقاريرك الفنية بسرعة وموثوقية عالية.",
+      id: 1, image: serviceConsult, title: i18n.t('servicesPage.services.s1.title'), subtitle: i18n.t('servicesPage.services.s1.subtitle'), desc: i18n.t('servicesPage.services.s1.desc'), role: i18n.t('servicesPage.services.s1.role'),
       subItems: [
-        { 
-          title: "شهادة سلامة (تصريح تشغيل)", 
-          details: "الوثيقة الأساسية لتشغيل أي نشاط تجاري وشرط رخصة البلدية. دور المنصة: نوجه طلبك لأقرب شركة تملك صلاحية الإصدار الفوري لرفع الشهادة في نفس اليوم." 
-        },
-        { 
-          title: "التقرير الفني", 
-          details: "تقرير هندسي يثبت مطابقة المبنى للكود السعودي (SBC). دور المنصة: نرسل لك مكتباً هندسياً معتمداً لفحص الموقع ورفع التقرير بدون رفض." 
-        },
-        { 
-          title: "عقود الصيانة الإلكترونية", 
-          details: "إلزامي لجميع المنشآت سنوياً لتجديد الترخيص. دور المنصة: نطرح منافسة بين شركات الصيانة لتحصل على أقل تكلفة سنوية." 
-        },
-        { 
-          title: "شهادة سلامة التمديدات الكهربائية", 
-          details: "فحص الأحمال واللوحات لضمان عدم وجود خطر التماس. دور المنصة: نربطك بمهندسين كهربائيين متخصصين لإجراء الفحص وإصدار الشهادة." 
-        },
-        { 
-          title: "شهادة إنهاء التركيبات", 
-          details: "مطلوبة لإطلاق التيار الكهربائي وإثبات التنفيذ. دور المنصة: استلام استشاري يحميك من التلاعب قبل إصدار الشهادة." 
-        }
+        { title: i18n.t('servicesPage.services.s1.subItems.item1.title'), details: i18n.t('servicesPage.services.s1.subItems.item1.details') },
+        { title: i18n.t('servicesPage.services.s1.subItems.item2.title'), details: i18n.t('servicesPage.services.s1.subItems.item2.details') },
+        { title: i18n.t('servicesPage.services.s1.subItems.item3.title'), details: i18n.t('servicesPage.services.s1.subItems.item3.details') },
+        { title: i18n.t('servicesPage.services.s1.subItems.item4.title'), details: i18n.t('servicesPage.services.s1.subItems.item4.details') },
+        { title: i18n.t('servicesPage.services.s1.subItems.item5.title'), details: i18n.t('servicesPage.services.s1.subItems.item5.details') }
       ]
     },
     {
-      id: 2,
-      title: "أنظمة مكافحة الحريق والإنذار المبكر",
-      subtitle: "توريد وتركيب",
-      desc: "أرسل طلبك، ونوصله لشبكة من شركات التركيب المعتمدة (فئة أ، ب، ج) حسب حجم مشروعك.",
-      image: serviceFire,
-      role: "نساعدك في تحديد النظام المناسب لنشاطك، ثم نجلب عروض أسعار فنية ومالية تنافسية من شركات معتمدة لتختار الأفضل بينها.",
+      id: 2, image: serviceFire, title: i18n.t('servicesPage.services.s2.title'), subtitle: i18n.t('servicesPage.services.s2.subtitle'), desc: i18n.t('servicesPage.services.s2.desc'), role: i18n.t('servicesPage.services.s2.role'),
       subItems: [
-        { 
-          title: "أنظمة الإطفاء المائية", 
-          details: "شبكات الرش الآلي (Sprinklers)، صناديق الحريق، مضخات الحريق UL/FM." 
-        },
-        { 
-          title: "أنظمة الإطفاء بالغاز", 
-          details: "FM200 لغرف السيرفرات، أنظمة CO2 للمطابخ، أنظمة الأيروسول." 
-        },
-        { 
-          title: "أنظمة الإنذار الآلي", 
-          details: "الأنظمة المعنونة (Addressable) للمباني الكبيرة، والتقليدية (Conventional)." 
-        }
+        { title: i18n.t('servicesPage.services.s2.subItems.item1.title'), details: i18n.t('servicesPage.services.s2.subItems.item1.details') },
+        { title: i18n.t('servicesPage.services.s2.subItems.item2.title'), details: i18n.t('servicesPage.services.s2.subItems.item2.details') },
+        { title: i18n.t('servicesPage.services.s2.subItems.item3.title'), details: i18n.t('servicesPage.services.s2.subItems.item3.details') }
       ]
     },
     {
-      id: 3,
-      title: "معدات ومستلزمات الأمن والسلامة",
-      subtitle: "سوق رقمي شامل",
-      desc: "سوق رقمي يجمع لك كبار الموردين في مكان واحد.",
-      image: serviceEquip,
-      role: "نقارن أسعار الموردين لضمان حصولك على منتجات أصلية بأفضل سعر — جملة وقطاعي — مع التوصيل لموقعك.",
+      id: 3, image: serviceEquip, title: i18n.t('servicesPage.services.s3.title'), subtitle: i18n.t('servicesPage.services.s3.subtitle'), desc: i18n.t('servicesPage.services.s3.desc'), role: i18n.t('servicesPage.services.s3.role'),
       subItems: [
-        { 
-          title: "طفايات الحريق", 
-          details: "بودرة، CO2، رغوة — بجميع الأحجام والمواصفات السعودية SASO." 
-        },
-        { 
-          title: "مستلزمات الوقاية الشخصية (PPE)", 
-          details: "خوذات، أحذية سلامة، سترات عاكسة." 
-        },
-        { 
-          title: "إكسسوارات الأنظمة", 
-          details: "محابس، خراطيم، كاشفات دخان وحرارة." 
-        },
-        { 
-          title: "لوحات الطوارئ", 
-          details: "مخارج الهروب المضيئة (Exit Signs) وإنارة الطوارئ." 
-        }
+        { title: i18n.t('servicesPage.services.s3.subItems.item1.title'), details: i18n.t('servicesPage.services.s3.subItems.item1.details') },
+        { title: i18n.t('servicesPage.services.s3.subItems.item2.title'), details: i18n.t('servicesPage.services.s3.subItems.item2.details') },
+        { title: i18n.t('servicesPage.services.s3.subItems.item3.title'), details: i18n.t('servicesPage.services.s3.subItems.item3.details') },
+        { title: i18n.t('servicesPage.services.s3.subItems.item4.title'), details: i18n.t('servicesPage.services.s3.subItems.item4.details') }
       ]
     },
     {
-      id: 4,
-      title: "الاستشارات والخدمات الهندسية",
-      subtitle: "خبراء ومكاتب استشارية",
-      desc: "خبراء ومكاتب استشارية جاهزون لخدمتك أونلاين أو ميدانياً.",
-      image: serviceAlarm,
-      role: "تقديم تحليلات فنية محايدة ومراجعات هندسية لضمان مطابقة مشروعك للكود بأعلى المعايير، وحمايتك من التلاعب.",
+      id: 4, image: serviceAlarm, title: i18n.t('servicesPage.services.s4.title'), subtitle: i18n.t('servicesPage.services.s4.subtitle'), desc: i18n.t('servicesPage.services.s4.desc'), role: i18n.t('servicesPage.services.s4.role'),
       subItems: [
-        { 
-          title: "اعتماد المخططات", 
-          details: "مراجعة واعتماد مخططات الوقاية من الحريق ومطابقتها للكود السعودي من مكاتب هندسية مصنفة." 
-        },
-        { 
-          title: "تقييم عروض الأسعار (مجاناً)", 
-          details: "أرسل لنا العروض التي حصلت عليها من أي مكان، ومستشارونا يحللونها فنياً ويخبرونك بمدى عدالتها." 
-        },
-        { 
-          title: "دراسات تحليل المخاطر", 
-          details: "دراسات (Risk Assessment) للمصانع والمشاريع الكبرى عالية الخطورة." 
-        }
+        { title: i18n.t('servicesPage.services.s4.subItems.item1.title'), details: i18n.t('servicesPage.services.s4.subItems.item1.details') },
+        { title: i18n.t('servicesPage.services.s4.subItems.item2.title'), details: i18n.t('servicesPage.services.s4.subItems.item2.details') },
+        { title: i18n.t('servicesPage.services.s4.subItems.item3.title'), details: i18n.t('servicesPage.services.s4.subItems.item3.details') }
       ]
     },
     {
-      id: 5,
-      title: "أنظمة المراقبة والتحكم الأمني",
-      subtitle: "حماية متكاملة ومطابقة للاشتراطات",
-      desc: "توريد وتركيب أحدث كاميرات المراقبة وأنظمة الدخول الذكية لتأمين منشأتك وتلبية متطلبات الجهات الأمنية.",
-      image: serviceCctv, // ستحتاج لإضافة صورة متغيرة باسم serviceCctv
-      role: "نطرح طلبك على شركات التقنية الأمنية المعتمدة لتقديم عروض أسعار موثوقة للأنظمة التي تتوافق مع التراخيص.",
+      id: 5, image: serviceCctv, title: i18n.t('servicesPage.services.s5.title'), subtitle: i18n.t('servicesPage.services.s5.subtitle'), desc: i18n.t('servicesPage.services.s5.desc'), role: i18n.t('servicesPage.services.s5.role'),
       subItems: [
-        { 
-          title: "كاميرات المراقبة (CCTV)", 
-          details: "كاميرات داخلية وخارجية (IP/Analog) تلبي متطلبات التراخيص الأمنية." 
-        },
-        { 
-          title: "أنظمة التحكم في الدخول", 
-          details: "أقفال ذكية، بصمة، وبطاقات ممغنطة للمكاتب والمستودعات." 
-        },
-        { 
-          title: "الإنذار ضد الاقتحام", 
-          details: "حساسات حركة، حساسات أبواب، وأنظمة تنبيه فورية." 
-        },
-        { 
-          title: "عقود الصيانة الأمنية", 
-          details: "صيانة دورية لضمان عمل الكاميرات وأجهزة التسجيل بكفاءة." 
-        }
+        { title: i18n.t('servicesPage.services.s5.subItems.item1.title'), details: i18n.t('servicesPage.services.s5.subItems.item1.details') },
+        { title: i18n.t('servicesPage.services.s5.subItems.item2.title'), details: i18n.t('servicesPage.services.s5.subItems.item2.details') },
+        { title: i18n.t('servicesPage.services.s5.subItems.item3.title'), details: i18n.t('servicesPage.services.s5.subItems.item3.details') },
+        { title: i18n.t('servicesPage.services.s5.subItems.item4.title'), details: i18n.t('servicesPage.services.s5.subItems.item4.details') }
       ]
     },
     {
-      id: 6,
-      title: "طلب خدمة هندسية مخصصة",
-      subtitle: "حلول مصممة خصيصاً لمشروعك",
-      desc: "لم تجد ما تبحث عنه؟ أو لديك مشروع معقد يحتاج إلى تدقيق هندسي خاص؟ فريقنا جاهز لمساعدتك.",
-      image: serviceCustom, // ستحتاج لإضافة صورة متغيرة باسم serviceCustom
-      role: "يدرس فريقنا الاستشاري تفاصيل مشروعك، يحدد المسار الهندسي الصحيح، ثم يربطك بالجهات المتخصصة لتنفيذه.",
+      id: 6, image: serviceCustom, title: i18n.t('servicesPage.services.s6.title'), subtitle: i18n.t('servicesPage.services.s6.subtitle'), desc: i18n.t('servicesPage.services.s6.desc'), role: i18n.t('servicesPage.services.s6.role'),
       subItems: [
-        { 
-          title: "المشاريع النوعية والكبرى", 
-          details: "إدارة متطلبات السلامة للمصانع، المستشفيات، والمجمعات التجارية." 
-        },
-        { 
-          title: "تحديث الأنظمة القديمة", 
-          details: "تقييم الأنظمة الحالية ووضع خطة لتطويرها لتطابق الكود السعودي (SBC) بأقل تكلفة." 
-        },
-        { 
-          title: "استشارات ما قبل التأجير", 
-          details: "فحص الموقع قبل الإيجار للتأكد من جاهزيته لاشتراطات السلامة لتجنب التكاليف المفاجئة." 
-        },
-        { 
-          title: "معالجة المخالفات", 
-          details: "تقديم حلول هندسية لمعالجة المشكلات والمخالفات السابقة مع الدفاع المدني." 
-        }
+        { title: i18n.t('servicesPage.services.s6.subItems.item1.title'), details: i18n.t('servicesPage.services.s6.subItems.item1.details') },
+        { title: i18n.t('servicesPage.services.s6.subItems.item2.title'), details: i18n.t('servicesPage.services.s6.subItems.item2.details') },
+        { title: i18n.t('servicesPage.services.s6.subItems.item3.title'), details: i18n.t('servicesPage.services.s6.subItems.item3.details') },
+        { title: i18n.t('servicesPage.services.s6.subItems.item4.title'), details: i18n.t('servicesPage.services.s6.subItems.item4.details') }
       ]
     }
   ],
   usp: [
-    { title: "وسيط مستقل", desc: "مصلحتنا مع العميل، لا ننحاز لمقاول أو مورد.", icon: Anchor },
-    { title: "شركات معتمدة", desc: "نتعامل فقط مع الجهات المصنفة في بوابات 'سلامة' و'بلدي'.", icon: Filter },
-    { title: "تحليل فني", desc: "نراجع العروض ونطابقها بالكود السعودي قبل أن تصل إليك.", icon: Cpu },
-    { title: "توفير ذكي", desc: "المنافسة بين الشركات داخل المنصة تضمن لك أفضل سعر.", icon: Users }
+    { icon: Anchor, title: i18n.t('servicesPage.usp.u1.title'), desc: i18n.t('servicesPage.usp.u1.desc') },
+    { icon: Filter, title: i18n.t('servicesPage.usp.u2.title'), desc: i18n.t('servicesPage.usp.u2.desc') },
+    { icon: Cpu, title: i18n.t('servicesPage.usp.u3.title'), desc: i18n.t('servicesPage.usp.u3.desc') },
+    { icon: Users, title: i18n.t('servicesPage.usp.u4.title'), desc: i18n.t('servicesPage.usp.u4.desc') }
   ],
   steps: [
-    { title: "ارفع طلبك", desc: "حدد احتياجك بدون خبرة فنية، والمنصة توضح لك المتطلبات المبدئية وفق الكود." },
-    { title: "طرح المناقصة والفلترة", desc: "يُرسل طلبك لشركات معتمدة في منطقتك لتقديم عروض موحدة المواصفات." },
-    { title: "المقارنة والاختيار", desc: "تصلك العروض بتنسيق موحد — قارن السعر، التقييم، والضمانات، واختر الأنسب." },
-    { title: "التنفيذ والتعميد", desc: "نوصلك بالشركة لتوقيع العقد، والبدء في أعمال التنفيذ." },
-    { title: "الاعتماد النهائي", desc: "نتابع معك حتى اجتياز التفتيش واستخراج الرخصة." }
+    { title: i18n.t('servicesPage.steps.st1.title'), desc: i18n.t('servicesPage.steps.st1.desc') },
+    { title: i18n.t('servicesPage.steps.st2.title'), desc: i18n.t('servicesPage.steps.st2.desc') },
+    { title: i18n.t('servicesPage.steps.st3.title'), desc: i18n.t('servicesPage.steps.st3.desc') },
+    { title: i18n.t('servicesPage.steps.st4.title'), desc: i18n.t('servicesPage.steps.st4.desc') },
+    { title: i18n.t('servicesPage.steps.st5.title'), desc: i18n.t('servicesPage.steps.st5.desc') }
   ],
   faq: [
-    { 
-      q: "هل تقومون بتركيب الأنظمة بأنفسكم؟", 
-      a: "لا. نحن منصة وساطة هندسية مستقلة — نوصلك بأفضل شركات التركيب المعتمدة ونشرف على عملية الاختيار لضمان حقك." 
-    },
-    { 
-      q: "هل تضمنون قبول شهادة السلامة في منصة بلدي؟", 
-      a: "نعم، لأننا نتعامل حصراً مع شركات ومكاتب هندسية مصنفة ولديها حسابات فعالة في بوابة 'سلامة'، مما يضمن ربط الشهادة برخصتك فوراً." 
-    },
-    { 
-      q: "هل الأسعار في المنصة أغلى من السوق؟", 
-      a: "بالعكس. المنافسة بين الشركات داخل المنصة تدفعهم لتقديم أسعار تنافسية لكسب العميل — ورقابتنا تمنع المبالغة في التسعير." 
-    },
-    { 
-      q: "من يضمن جودة عمل الشركة المنفذة؟", 
-      a: "نتعامل فقط مع شركات مرخصة بنظام تقييم شفاف. في حال وجود خلاف، يتدخل فريقنا الاستشاري كطرف محايد للتحكيم الفني." 
-    },
-    { 
-      q: "هل تغطون استخراج الرخص الحكومية؟", 
-      a: "نحن لا نصدر الرخص بأنفسنا، لكننا نوفر لك المكاتب المعتمدة التي تملك صلاحية الدخول للبوابات الرسمية وإنهاء الإجراءات نيابةً عنك." 
-    }
+    { q: i18n.t('servicesPage.faq.q1.q'), a: i18n.t('servicesPage.faq.q1.a') },
+    { q: i18n.t('servicesPage.faq.q2.q'), a: i18n.t('servicesPage.faq.q2.a') },
+    { q: i18n.t('servicesPage.faq.q3.q'), a: i18n.t('servicesPage.faq.q3.a') },
+    { q: i18n.t('servicesPage.faq.q4.q'), a: i18n.t('servicesPage.faq.q4.a') },
+    { q: i18n.t('servicesPage.faq.q5.q'), a: i18n.t('servicesPage.faq.q5.a') }
   ],
   cta: {
-    title: "لا تضيع وقتك في البحث العشوائي — دع الخبراء يتنافسون لخدمتك.",
-    text: "اطلب عروض أسعار مجانية الآن واختر الأنسب لمنشأتك بكل ثقة.",
-    btn1: "اطلب عروض أسعار مجانية الآن",
-    btn2: "تحدث مع مستشارنا"
+    title: i18n.t('servicesPage.cta.title'),
+    text: i18n.t('servicesPage.cta.text'),
+    btn1: i18n.t('servicesPage.cta.btn1'),
+    btn2: i18n.t('servicesPage.cta.btn2')
   }
 };
 
@@ -440,461 +214,107 @@ export const SERVICES_PAGE_CONTENT = {
 
 export const ABOUT_DATA = {
   hero: {
-    title: "وجهتك الرقمية الأولى لتأمين منشأتك واعتماد الدفاع المدني",
-    subtitle: "OFF FIRE ONLINE نختصر رحلة الأمن والسلامة لمنشأتك — بفلترة للسوق، وتدقيق فني للعروض، وضمان المطابقة حتى استخراج الرخصة"
+    title: i18n.t('about.hero.title'),
+    subtitle: i18n.t('about.hero.subtitle')
   },
-  story: "جاءت فكرة OFF FIRE ONLINE بعدما لمسنا معاناة المنشآت الحقيقية في رحلة الأمن والسلامة: بحث مرهق، عروض أسعار غامضة، وتفاوت في الجودة. من هنا قررنا بناء حل مختلف.",
-  vision: "أن نكون المرجعية الرقمية الأولى في المملكة لحلول الأمن والسلامة، ونحول تأمين المنشآت من عبء معقد إلى تجربة رقمية  ذكية وشفافة.",
-  mission: "تمكين أصحاب المنشآت من اتخاذ قرارات سلامة دقيقة — عبر فلترة الشركات المعتمدة وتدقيق العروض فنياً ومالياً، لضمان أفضل قيمة للاستثمار.",
+  story: i18n.t('about.story'),
+  vision: i18n.t('about.vision'),
+  mission: i18n.t('about.mission'),
   values: [
-    { title: "الشفافية المطلقة", desc: "السلامة لا تحتمل أنصاف الحلول. نلتزم بالمطابقة الكلية للكود السعودي (SBC) كمعيار أساسي لكل عروضنا.", icon: Search },
-    { title: "الإستقلالية التامة", desc: "نعمل لصالحك أنت. بصفتنا مستشارك المستقل، اختيارنا للشركات يعتمد على الجودة والاعتماد فقط.", icon: ShieldCheck },
-    { title: "الابتكار", desc: "ذكاء اصطناعي لتحليل العروض.", icon: Cpu },
-    { title: "السرعة مع الدقة", desc: "تقنيتنا تختصر الأسابيع إلى أيام، وفريقنا الهندسي يضمن أن السرعة لا تأتي على حساب دقة القرار.", icon: Clock }
+    { icon: Search, title: i18n.t('about.values.v1.title'), desc: i18n.t('about.values.v1.desc') },
+    { icon: ShieldCheck, title: i18n.t('about.values.v2.title'), desc: i18n.t('about.values.v2.desc') },
+    { icon: Cpu, title: i18n.t('about.values.v3.title'), desc: i18n.t('about.values.v3.desc') },
+    { icon: Clock, title: i18n.t('about.values.v4.title'), desc: i18n.t('about.values.v4.desc') }
   ],
   process: [
-    { title: "معرفة احتياجاتك", desc: "فهم نطاق المشروع والمتطلبات." },
-    { title: "جمع العروض", desc: "الحصول على عروض شاملة." },
-    { title: "التقييم والمقارنة", desc: "جدول مقارنة يحلل الأداء والتكلفة." },
-    { title: "التوجيه والدعم", desc: "مساعدتك في اختيار الأنسب." },
-    { title: "المتابعة", desc: "متابعة التنفيذ والدعم الفني." }
+    { title: i18n.t('about.process.p1.title'), desc: i18n.t('about.process.p1.desc') },
+    { title: i18n.t('about.process.p2.title'), desc: i18n.t('about.process.p2.desc') },
+    { title: i18n.t('about.process.p3.title'), desc: i18n.t('about.process.p3.desc') },
+    { title: i18n.t('about.process.p4.title'), desc: i18n.t('about.process.p4.desc') },
+    { title: i18n.t('about.process.p5.title'), desc: i18n.t('about.process.p5.desc') }
   ],
   whyUs: [
-    { title: "وسيط مستقل", desc: "نختار لك الأفضل بحيادية.", icon: Anchor },
-    { title: "قوة الذكاء الاصطناعي", desc: "تقييم دقيق للمقترحات.", icon: Cpu },
-    { title: "وداعاً للقلق", desc: "نمنحك الثقة في الامتثال.", icon: ShieldCheck },
-    { title: "وفر وقتك", desc: "دمج العروض في منصة واحدة.", icon: Clock },
-    { title: "شفافية الأسعار", desc: "ضمان عدم التلاعب بالأسعار.", icon: Coins }
+    { icon: Anchor, title: i18n.t('about.whyUs.w1.title'), desc: i18n.t('about.whyUs.w1.desc') },
+    { icon: Cpu, title: i18n.t('about.whyUs.w2.title'), desc: i18n.t('about.whyUs.w2.desc') },
+    { icon: ShieldCheck, title: i18n.t('about.whyUs.w3.title'), desc: i18n.t('about.whyUs.w3.desc') },
+    { icon: Clock, title: i18n.t('about.whyUs.w4.title'), desc: i18n.t('about.whyUs.w4.desc') },
+    { icon: Coins, title: i18n.t('about.whyUs.w5.title'), desc: i18n.t('about.whyUs.w5.desc') }
   ],
   audience: [
-    { title: "الشركات التجارية", desc: "مكاتب، معارض، محلات تجزئة.", image: serviceEquip },
-    { title: "المصانع والمستودعات", desc: "حلول لإدارة المخاطر.", image: serviceFire },
-    { title: "التعليم والسياحة", desc: "مدارس، جامعات، فنادق.", image: serviceAlarm },
-    { title: "المطورون والمقاولون", desc: "مشاريع عقارية ومكاتب هندسية.", image: serviceConsult }
+    { image: serviceEquip, title: i18n.t('about.audience.a1.title'), desc: i18n.t('about.audience.a1.desc') },
+    { image: serviceFire, title: i18n.t('about.audience.a2.title'), desc: i18n.t('about.audience.a2.desc') },
+    { image: serviceAlarm, title: i18n.t('about.audience.a3.title'), desc: i18n.t('about.audience.a3.desc') },
+    { image: serviceConsult, title: i18n.t('about.audience.a4.title'), desc: i18n.t('about.audience.a4.desc') }
   ],
   cta: {
-    title: "احصل على عرض سعر معتمد في أقل من 24 ساعة — بدون مجهود أو أي إلتزام مسبق.",
-    text: "اتخذ قرارك بثقة، وابدأ الآن ليقوم فريقنا بتوصيلك بالشركة الأنسب لمنشأتك.",
-    btn1: "تواصل معنا الآن",
-    btn2: "ابدأ رحلتك مجاناً"
+    title: i18n.t('about.cta.title'),
+    text: i18n.t('about.cta.text'),
+    btn1: i18n.t('about.cta.btn1'),
+    btn2: i18n.t('about.cta.btn2')
   }
 };
 
 // =========================================================
-//  BLOG DATA (بيانات المدونة)
+//  BLOG DATA
 // =========================================================
 
-export const BLOG_TAGS = ['#رخصة_سلامة', '#الكود_السعودي', '#عقود_الصيانة', '#مخالفات_الدفاع_المدني', '#التقرير_الفني'];
+export const BLOG_TAGS = i18n.t('blog.tags', { returnObjects: true });
 
 export const BLOG_CATEGORIES = [
-  { id: 'all', title: 'الكل', icon: BookOpen },
-  { id: 'guides', title: 'أدلة عملية', icon: HelpCircle },
-  { id: 'permits', title: 'التراخيص والتصاريح', icon: FileText },
-  { id: 'systems', title: 'الأنظمة والمعدات', icon: Zap },
-  { id: 'contracts', title: 'العقود والتكاليف', icon: Coins },
-  { id: 'code', title: 'الكود السعودي', icon: Landmark },
+  { id: 'all', icon: BookOpen, title: i18n.t('blog.categories.all') },
+  { id: 'guides', icon: HelpCircle, title: i18n.t('blog.categories.guides') },
+  { id: 'permits', icon: FileText, title: i18n.t('blog.categories.permits') },
+  { id: 'systems', icon: Zap, title: i18n.t('blog.categories.systems') },
+  { id: 'contracts', icon: Coins, title: i18n.t('blog.categories.contracts') },
+  { id: 'code', icon: Landmark, title: i18n.t('blog.categories.code') }
 ];
 
 export const BLOG_POSTS = [
-  {
-    id: 1,
-    title: "كيفية اختيار شركة مكافحة حريق مناسبة لمشروعك (ولا تقع ضحية للهواة)",
-    category: "أدلة عملية",
-    categoryId: "guides",
-    readTime: "4 دقائق",
-    excerpt: "سوق الأمن والسلامة مليء بالشركات. كيف تميز بين الخبير المعتمد والهاوي؟ دليلك لتجنب الشركات غير المؤهلة وخسائر الرفض.",
-    image: blogLicense,
-    content: `
-      <h3>1. التأكد من الاعتماد الرسمي</h3>
-      <p>أول وأهم خطوة هي التأكد من أن الشركة معتمدة لدى الدفاع المدني. لا تكتفِ بالكلام الشفهي، اطلب رؤية شهادة الاعتماد وتأكد من تاريخ انتهائها.</p>
-      
-      <h3>2. سابقة الأعمال الموثقة</h3>
-      <p>اطلب قائمة بمشاريع مشابهة لمشروعك قامت الشركة بتنفيذها. هل نفذوا مشاريع بنفس الحجم والتعقيد؟ الاتصال بعملاء سابقين يمكن أن يوفر لك رؤية حقيقية عن جودة العمل والالتزام بالمواعيد.</p>
-      
-      <h3>3. الفريق الفني المؤهل</h3>
-      <p>هل تمتلك الشركة مهندسين وفنيين معتمدين؟ الأنظمة الحديثة تتطلب خبرة فنية عالية للتركيب والبرمجة. العمالة غير المدربة قد تتسبب في كوارث مستقبلية.</p>
-      
-      <h3>4. خدمات ما بعد البيع والصيانة</h3>
-      <p>علاقتك بالشركة لا تنتهي عند التركيب. تأكد من وجود قسم صيانة قوي وسرعة استجابة للطوارئ. نظام الإطفاء يحتاج لصيانة دورية لضمان عمله عند الحاجة.</p>
-      
-      <h3>5. وضوح العقد والتسعير</h3>
-      <p>العقد يجب أن يكون مفصلاً وشاملاً لكل البنود والمواصفات. تجنب العقود الغامضة التي قد تخفي تكاليف إضافية لاحقاً.</p>
-    `
-  },
-  {
-    id: 2,
-    title: "كيف تقرأ عرض السعر؟ (دليلك لتحليل العروض وكشف البنود المخفية)",
-    category: "العقود والتكاليف",
-    categoryId: "contracts",
-    readTime: "5 دقائق",
-    excerpt: "وصلك عرض بـ 50 ألف وآخر بـ 35 ألف؟ هل الأرخص هو الأفضل؟ تعلم كيف تكشف خدعة الكميات التقديرية والمواصفات.",
-    image: blogMaint,
-    content: `
-      <h3>لا تنخدع بالرقم النهائي</h3>
-      <p>مقارنة العروض بناءً على السعر النهائي فقط هو أكبر خطأ يقع فيه أصحاب المنشآت. يجب تحليل العرض بنداً بنداً.</p>
-      
-      <h3>خدعة "الكميات التقديرية"</h3>
-      <p>بعض الشركات تضع كميات أقل من الواقع لتبدو أرخص، ثم تطالبك بفرق السعر عند التنفيذ (Variation Order). تأكد أن الكميات "مقطوعة" (Lump Sum) أو بناءً على مخطط معتمد.</p>
-      
-      <h3>مواصفات المواد (Brand List)</h3>
-      <p>تأكد من تحديد ماركة ومنشأ كل قطعة. مضخة حريق "أوروبية" تختلف سعراً وجودة عن "صينية". العقد يجب أن يحدد الماركة بوضوح (مثلاً: مضخة ماركة X موديل Y).</p>
-      
-      <h3>شروط الدفع والضمان</h3>
-      <p>جدول الدفعات يجب أن يكون مرتبطاً بالإنجاز على أرض الواقع. ولا تنسَ شروط الضمان: هل يشمل قطع الغيار؟ وما هي مدته؟</p>
-    `
-  },
-  {
-    id: 3,
-    title: "قائمة التحقق (Checklist): هل نظامك مطابق لاشتراطات الدفاع المدني؟",
-    category: "أدلة عملية",
-    categoryId: "guides",
-    readTime: "3 دقائق",
-    excerpt: "موعد زيارة المفتش غداً؟ قمنا بتجهيز قائمة تحقق سريعة (الوثائق، المخارج، المعدات) لتتأكد بنفسك قبل الزيارة.",
-    image: blogAI,
-    content: `
-      <h3>1. الوثائق والمستندات</h3>
-      <ul>
-        <li>رخصة البناء وشهادة إتمام البناء.</li>
-        <li>عقد الصيانة ساري المفعول وموثق إلكترونياً.</li>
-        <li>تقرير فني من مكتب هندسي معتمد (إن وجد).</li>
-      </ul>
-      
-      <h3>2. أنظمة الإطفاء والإنذار</h3>
-      <ul>
-        <li>لوحة الإنذار تعمل ولا توجد بها أخطاء (No Faults).</li>
-        <li>مضخات الحريق في وضع التشغيل التلقائي (Auto Mode).</li>
-        <li>خراطيم الحريق سليمة ومطوية بشكل صحيح.</li>
-        <li>طفايات الحريق في أماكنها ومؤشر الضغط في المنطقة الخضراء.</li>
-      </ul>
-      
-      <h3>3. مخارج الطوارئ</h3>
-      <ul>
-        <li>المخارج غير مقفلة وخالية من أي عوائق.</li>
-        <li>لوحات "مخرج" مضيئة وتعمل (حتى عند قطع الكهرباء).</li>
-        <li>أبواب الطوارئ تفتح للخارج ومزودة بـ Panic Bar.</li>
-      </ul>
-    `
-  },
-  {
-    id: 4,
-    title: "الدليل الشامل لإصدار 'رخصة الدفاع المدني' عبر بوابة سلامة (2025)",
-    category: "التراخيص والتصاريح",
-    categoryId: "permits",
-    readTime: "6 دقائق",
-    excerpt: "من التسجيل حتى الطباعة. تعرف على الفرق بين الرخص الفورية وغير الفورية، وكيف تتجنب تعطيل معاملتك.",
-    image: blogLicense,
-    content: `
-      <h3>الفرق بين الرخص الفورية وغير الفورية</h3>
-      <p>الرخص الفورية تصدر للأنشطة منخفضة الخطورة والمساحات الصغيرة مباشرة بعد التعاقد مع شركة سلامة. الرخص غير الفورية تتطلب زيارة ميدانية من الدفاع المدني.</p>
-      
-      <h3>خطوات الإصدار عبر بوابة سلامة</h3>
-      <ol>
-        <li>تسجيل الدخول واختيار "إصدار ترخيص جديد".</li>
-        <li>إدخال بيانات المنشأة ونوع النشاط بدقة.</li>
-        <li>اختيار شركة السلامة المعتمدة لعمل التقرير الفني وعقد الصيانة.</li>
-        <li>دفع الرسوم المقررة.</li>
-        <li>تقوم شركة السلامة برفع التقرير والموافقة عبر النظام.</li>
-        <li>طباعة الرخصة فوراً (للفوري) أو انتظار الزيارة (لغير الفوري).</li>
-      </ol>
-      
-      <h3>أخطاء شائعة تعطل الترخيص</h3>
-      <p>اختيار نشاط خاطئ، عدم سداد المخالفات السابقة، أو انتهاء سجل الشركة التجاري. تأكد من سلامة كل أوراقك قبل البدء.</p>
-    `
-  },
-  {
-    id: 5,
-    title: "'التقرير الفني' في منصة بلدي: متى يطلبه الدفاع المدني؟",
-    category: "التراخيص والتصاريح",
-    categoryId: "permits",
-    readTime: "4 دقائق",
-    excerpt: "لماذا يُطلب التقرير الفني للمباني القديمة أو تغيير النشاط؟ وكيف تضمن قبوله من المرة الأولى عبر مكتب هندسي معتمد؟",
-    image: serviceConsult,
-    content: `
-      <h3>ما هو التقرير الفني؟</h3>
-      <p>هو وثيقة هندسية تثبت سلامة المبنى إنشائياً وكهربائياً ومطابقته لكود البناء السعودي. يطلبه الدفاع المدني في حالات معينة للتأكد من أمان المنشأة.</p>
-      
-      <h3>متى يُطلب؟</h3>
-      <ul>
-        <li>عند تجديد رخصة لمبنى قديم لا يملك شهادة إتمام بناء.</li>
-        <li>عند تغيير نشاط المنشأة (مثلاً من محل تجاري إلى مطعم).</li>
-        <li>عند وجود تعديلات إنشائية أو توسعة في المبنى.</li>
-      </ul>
-      
-      <h3>كيف تضمن قبوله؟</h3>
-      <p>يجب إعداد التقرير من قبل مكتب هندسي معتمد ومصنف. التقرير يجب أن يشمل مخططات، صور، ونتائج اختبارات (مثل اختبارات التربة أو الأحمال الكهربائية) تثبت الامتثال.</p>
-    `
-  },
-  {
-    id: 6,
-    title: "شهادة سلامة التمديدات الكهربائية: الحماية الخفية",
-    category: "الأنظمة والمعدات",
-    categoryId: "systems",
-    readTime: "3 دقائق",
-    excerpt: "الماس الكهربائي هو المسبب الأول للحرائق. تعرف على أهمية شهادة سلامة التمديدات للمصانع والمستودعات.",
-    image: serviceAlarm,
-    content: `
-      <h3>لماذا هي مهمة؟</h3>
-      <p>معظم الحرائق تبدأ بسبب خلل كهربائي (ماس، أحمال زائدة، وصلات رديئة). شهادة سلامة التمديدات تضمن أن الشبكة الكهربائية في منشأتك آمنة ومطابقة للمواصفات.</p>
-      
-      <h3>ماذا يفحص المهندس؟</h3>
-      <ul>
-        <li>قياس أحمال الكابلات والقواطع (Load Balancing).</li>
-        <li>فحص التأريض (Earthing System).</li>
-        <li>التأكد من عزل الأسلاك وجودة التوصيلات.</li>
-        <li>اختبار قواطع التسريب الأرضي (ELCB).</li>
-      </ul>
-      
-      <h3>لمن هي إلزامية؟</h3>
-      <p>بشكل خاص للمصانع، المستودعات، والمباني عالية الخطورة، وتعتبر شرطاً أساسياً لتجديد الترخيص والتأمين.</p>
-    `
-  },
-  {
-    id: 7,
-    title: "شهادة إنجاز تركيبات: متطلباتها ودورها في إطلاق التيار",
-    category: "الكود السعودي",
-    categoryId: "code",
-    readTime: "5 دقائق",
-    excerpt: "للمباني الجديدة، شركة الكهرباء تطلب هذه الشهادة. تعرف على اختبارات الضغط والمضخات المطلوبة لإصدارها.",
-    image: hero2,
-    content: `
-      <h3>ما هي شهادة إنجاز التركيبات؟</h3>
-      <p>هي إقرار من مقاول معتمد ومكتب استشاري بأن جميع أنظمة السلامة تم تركيبها واختبارها بنجاح وجاهزة للعمل. بدونها، لن يتم إطلاق التيار الكهربائي للمبنى الجديد.</p>
-      
-      <h3>الاختبارات المطلوبة للإصدار</h3>
-      <ul>
-        <li>اختبار ضغط شبكة المواسير (Hydrostatic Test) للتأكد من عدم وجود تسريب.</li>
-        <li>اختبار أداء المضخات (Performance Curve) عند تدفقات مختلفة.</li>
-        <li>اختبار نظام الإنذار وربطه بالمصاعد وأنظمة التكييف.</li>
-      </ul>
-      
-      <h3>نصيحة هامة</h3>
-      <p>لا تؤجل هذه الاختبارات للحظة الأخيرة. قم بإجرائها مرحلياً أثناء التنفيذ لتجنب تكسير الجدران أو الأسقف لاحقاً لإصلاح العيوب.</p>
-    `
-  },
-  {
-    id: 8,
-    title: "عقود الصيانة الإلكترونية: دليلك لتجنب غرامات عدم التجديد",
-    category: "العقود والتكاليف",
-    categoryId: "contracts",
-    readTime: "4 دقائق",
-    excerpt: "عقد الصيانة أصبح إلكترونياً ومربوطاً بسلامة. كيف تختار العقد الأنسب وتضمن استجابة الشركة للطوارئ؟",
-    image: serviceEquip,
-    content: `
-      <h3>التحول الرقمي للعقود</h3>
-      <p>لم يعد العقد الورقي كافياً. يجب أن يكون العقد مسجلاً في بوابة "سلامة" ومربوطاً برخصة منشأتك. هذا يضمن مراقبة الدفاع المدني لالتزام شركة الصيانة.</p>
-      
-      <h3>ماذا يجب أن يشمل العقد؟</h3>
-      <ul>
-        <li>عدد الزيارات الدورية (شهرياً أو ربع سنوي حسب الخطورة).</li>
-        <li>زمن الاستجابة للطوارئ (مثلاً خلال 4 ساعات).</li>
-        <li>توفير قطع الغيار الأصلية (هل هي مشمولة أم لا؟).</li>
-      </ul>
-      
-      <h3>تجنب العقود الصورية</h3>
-      <p>التعاقد مع شركة لمجرد "تجديد الرخصة" دون صيانة حقيقية يعرضك لمخاطر جسيمة وغرامات، وقد يؤدي لإلغاء ترخيصك في حال وقوع حادث لا قدر الله.</p>
-    `
-  },
-  {
-    id: 9,
-    title: "رش آلي أم غاز FM200؟ كيف تختار النظام المناسب؟",
-    category: "الأنظمة والمعدات",
-    categoryId: "systems",
-    readTime: "6 دقائق",
-    excerpt: "هل أركب رشاشات مياه لأنها أرخص؟ الإجابة في الكود السعودي. مقارنة فنية بين الماء والغاز وأماكن استخدامهم.",
-    image: serviceFire,
-    content: `
-      <h3>نظام الرش المائي (Sprinklers)</h3>
-      <p><strong>المميزات:</strong> تكلفة منخفضة، وسيط إطفاء متوفر (الماء)، فعالية عالية في السيطرة على الحرائق.</p>
-      <p><strong>العيوب:</strong> يسبب تلفيات للممتلكات (أوراق، إلكترونيات) عند عمله.</p>
-      <p><strong>الاستخدام:</strong> المستودعات، المكاتب، الأسواق، الجراجات.</p>
-      
-      <h3>نظام الغاز النظيف (FM200 / NOVEC)</h3>
-      <p><strong>المميزات:</strong> يطفي الحريق في ثوانٍ، لا يترك أي أثر، آمن تماماً على الأجهزة الإلكترونية الحساسة.</p>
-      <p><strong>العيوب:</strong> تكلفة عالية جداً، يتطلب غرفة محكمة الغلق.</p>
-      <p><strong>الاستخدام:</strong> غرف السيرفرات (Data Centers)، غرف الكهرباء، الأرشيف الهام، المتاحف.</p>
-      
-      <h3>الخلاصة</h3>
-      <p>لا توفر في حماية غرفة السيرفرات بتركيب مياه، ولا تهدر مالك بتركيب غاز في مستودع مفتوح. لكل مقام مقال، ولكل خطر نظام.</p>
-    `
-  },
-  {
-    id: 10,
-    title: "دليل المطاعم: اشتراطات نظام الإطفاء الذاتي (Wet Chemical)",
-    category: "الكود السعودي",
-    categoryId: "code",
-    readTime: "5 دقائق",
-    excerpt: "الدفاع المدني يشترط هذا النظام لترخيص أي مطعم. تعرف على مكوناته الإلزامية وأهمية صمام قطع الغاز.",
-    image: serviceFire,
-    content: `
-      <h3>لماذا نظام Wet Chemical؟</h3>
-      <p>حرائق زيوت الطبخ (Class K) لا يمكن إطفاؤها بالماء أو البودرة العادية، بل قد تزيد اشتعالاً. نظام Wet Chemical يتفاعل مع الزيت ليشكل طبقة رغوية (تصبن) تمنع الأكسجين وتبرد الزيت.</p>
-      
-      <h3>المكونات الإلزامية للنظام</h3>
-      <ul>
-        <li>أسطوانة المادة الكيميائية (سعة تتناسب مع حجم "الهود").</li>
-        <li>شبكة مواسير وفوهات (Nozzles) موجهة بدقة على مناطق الطبخ (قلايات، شوايات).</li>
-        <li>كاشفات حرارية (Fusible Links) داخل الهود تذوب عند حرارة معينة لتفعيل النظام.</li>
-        <li><strong>صمام قطع الغاز (Gas Shut-off Valve):</strong> أهم قطعة، يقطع الغاز فوراً عند اندلاع الحريق لمنع تغذية النار.</li>
-      </ul>
-      
-      <h3>الصيانة</h3>
-      <p>دهون الطبخ تتراكم على الكاشفات والفوهات وقد تسدها. التنظيف والصيانة الدورية لهذا النظام مسألة حياة أو موت في المطاعم.</p>
-    `
-  }
+  { id: 1, categoryId: "guides", image: blogLicense, title: i18n.t('blog.posts.p1.title'), category: i18n.t('blog.categories.guides'), readTime: i18n.t('blog.posts.p1.readTime'), excerpt: i18n.t('blog.posts.p1.excerpt'), content: i18n.t('blog.posts.p1.content') },
+  { id: 2, categoryId: "contracts", image: blogMaint, title: i18n.t('blog.posts.p2.title'), category: i18n.t('blog.categories.contracts'), readTime: i18n.t('blog.posts.p2.readTime'), excerpt: i18n.t('blog.posts.p2.excerpt'), content: i18n.t('blog.posts.p2.content') },
+  { id: 3, categoryId: "guides", image: blogAI, title: i18n.t('blog.posts.p3.title'), category: i18n.t('blog.categories.guides'), readTime: i18n.t('blog.posts.p3.readTime'), excerpt: i18n.t('blog.posts.p3.excerpt'), content: i18n.t('blog.posts.p3.content') },
+  { id: 4, categoryId: "permits", image: blogLicense, title: i18n.t('blog.posts.p4.title'), category: i18n.t('blog.categories.permits'), readTime: i18n.t('blog.posts.p4.readTime'), excerpt: i18n.t('blog.posts.p4.excerpt'), content: i18n.t('blog.posts.p4.content') },
+  { id: 5, categoryId: "permits", image: serviceConsult, title: i18n.t('blog.posts.p5.title'), category: i18n.t('blog.categories.permits'), readTime: i18n.t('blog.posts.p5.readTime'), excerpt: i18n.t('blog.posts.p5.excerpt'), content: i18n.t('blog.posts.p5.content') },
+  { id: 6, categoryId: "systems", image: serviceAlarm, title: i18n.t('blog.posts.p6.title'), category: i18n.t('blog.categories.systems'), readTime: i18n.t('blog.posts.p6.readTime'), excerpt: i18n.t('blog.posts.p6.excerpt'), content: i18n.t('blog.posts.p6.content') },
+  { id: 7, categoryId: "code", image: hero2, title: i18n.t('blog.posts.p7.title'), category: i18n.t('blog.categories.code'), readTime: i18n.t('blog.posts.p7.readTime'), excerpt: i18n.t('blog.posts.p7.excerpt'), content: i18n.t('blog.posts.p7.content') },
+  { id: 8, categoryId: "contracts", image: serviceEquip, title: i18n.t('blog.posts.p8.title'), category: i18n.t('blog.categories.contracts'), readTime: i18n.t('blog.posts.p8.readTime'), excerpt: i18n.t('blog.posts.p8.excerpt'), content: i18n.t('blog.posts.p8.content') },
+  { id: 9, categoryId: "systems", image: serviceFire, title: i18n.t('blog.posts.p9.title'), category: i18n.t('blog.categories.systems'), readTime: i18n.t('blog.posts.p9.readTime'), excerpt: i18n.t('blog.posts.p9.excerpt'), content: i18n.t('blog.posts.p9.content') },
+  { id: 10, categoryId: "code", image: serviceFire, title: i18n.t('blog.posts.p10.title'), category: i18n.t('blog.categories.code'), readTime: i18n.t('blog.posts.p10.readTime'), excerpt: i18n.t('blog.posts.p10.excerpt'), content: i18n.t('blog.posts.p10.content') }
 ];
 
-// ====== الشروط والأحكام ======
+// ====== TERMS AND CONDITIONS ======
 export const TERMS_CONTENT = {
-  title: "الشروط والأحكام (Terms and Conditions)",
-  intro: "مرحباً بكم في منصة Off Fire Online. تُعد هذه الشروط والأحكام بمثابة اتفاقية قانونية ملزمة بين المنصة (يُشار إليها بـ 'نحن' أو 'المنصة') وبين المستخدم (يُشار إليه بـ 'العميل' أو 'المستخدم'). باستخدامك للمنصة، أو تصفحها، أو طلب أي من خدماتها الفنية أو الاستشارية، فإنك تقر صراحة بقراءة هذه الشروط وفهمها والموافقة التامة عليها دون قيد أو شرط.",
+  title: i18n.t('terms.title'),
+  intro: i18n.t('terms.intro'),
   sections: [
-    {
-      title: "المادة (1): التعريفات",
-      items: [
-        "المنصة: منصة Off Fire Online الرقمية، وهي منصة تعمل في مجال الوساطة الهندسية والاستشارات التقنية لأنظمة الأمن والسلامة.",
-        "العميل (المستخدم): أي شخص طبيعي أو اعتباري (صاحب منشأة، مستثمر، شركة، مؤسسة) يستخدم المنصة لطلب عروض أسعار، أو استشارات، أو التعاقد لتنفيذ أنظمة سلامة وتراخيص.",
-        "مقدم الخدمة (الطرف الثالث): الشركات، المكاتب الهندسية الاستشارية، والموردون المعتمدون والمصنفون لدى المديرية العامة للدفاع المدني والجهات الحكومية المختصة، والذين يتم الربط بينهم وبين العميل عبر المنصة."
-      ]
-    },
-    {
-      title: "المادة (2): طبيعة عمل المنصة (نطاق المسؤولية الأساسي)",
-      items: [
-        "الوساطة والاستشارة: تعمل منصة Off Fire Online كـ وسيط رقمي واستشاري هندسي مستقل فقط. دورنا ينحصر في الربط التقني بين العميل ومقدمي الخدمات، وفلترة عروض الأسعار فنياً لضمان مطابقتها للكود السعودي (SBC). المنصة ليست شركة مقاولات تنفيذية، ولا تقوم بأعمال التركيب الميداني.",
-        "الاستقلالية عن الجهات الحكومية: المنصة جهة تكنولوجية خاصة ومستقلة، ولا تمثل بأي شكل من الأشكال المديرية العامة للدفاع المدني، أو وزارة الشؤون البلدية والقروية، أو بوابات التراخيص الرسمية مثل 'سلامة' أو 'بلدي'.",
-        "طبيعة العلاقة التعاقدية: أي تعاقد نهائي بغرض التنفيذ، التوريد، أو الصيانة ينعقد مباشرة بين (العميل) و(مقدم الخدمة). المنصة ليست طرفاً في هذا العقد، ولا تتحمل أي مسؤولية تضامنية أو تبعية عن أي التزامات تنشأ عنه."
-      ]
-    },
-    {
-      title: "المادة (3): حدود وإخلاء المسؤولية",
-      intro: "لا تتحمل منصة Off Fire Online، بأي حال من الأحوال، المسؤولية القانونية أو المالية عن الآتي:",
-      items: [
-        "أي أخطاء، عيوب مصنعية، أو تقصير في التنفيذ الميداني من قِبل مقدم الخدمة (الطرف الثالث).",
-        "تأخر مقدم الخدمة في تسليم المشروع أو استخراج الشهادات المطلوبة في الوقت المتفق عليه مع العميل.",
-        "أي خسائر مادية، توقف للنشاط التجاري، أو غرامات تُفرض على العميل نتيجة رفض الجهات الحكومية إتمام التراخيص لأسباب تعود للمقاول أو لحالة المنشأة.",
-        "المعلومات الاستشارية التي تقدمها المنصة هي توصيات هندسية مبنية على الكود السعودي وتُقدم بحسن نية، ولا تُعد تفويضاً أو ضماناً نهائياً باجتياز التفتيش الحكومي."
-      ]
-    },
-    {
-      title: "المادة (4): إخلاء المسؤولية بخصوص التراخيص الحكومية",
-      items: [
-        "تخلي المنصة مسؤوليتها تماماً عن رفض بوابات 'سلامة' أو 'بلدي' لإصدار الرخص للعميل إذا كان الرفض ناتجاً عن أسباب إدارية أو تنظيمية خاصة بالعميل (مثل: إيقاف السجل التجاري، وجود مخالفات عمالية، عدم سداد الرسوم البلدية، أو وجود مخالفات بناء سابقة).",
-        "المنصة غير مسؤولة عن فشل أو تأخر إصدار 'شهادة إنهاء التركيبات' (شهادة إطلاق التيار) في حال تبين وجود تلاعب من المقاول المنفذ، أو قيام العميل بتغيير المخططات المعتمدة دون الرجوع للمكتب الاستشاري."
-      ]
-    },
-    {
-      title: "المادة (5): التزامات العميل",
-      intro: "يلتزم العميل إقراراً وتعهداً بما يلي:",
-      items: [
-        "دقة البيانات: تقديم معلومات، مساحات، ومخططات هندسية صحيحة ومطابقة تماماً للواقع الميداني. يتحمل العميل أي تكاليف إضافية أو غرامات تنتج عن تقديم بيانات مضللة أو غير دقيقة.",
-        "الالترام المالي: سداد كافة المستحقات المالية لمقدم الخدمة وفقاً لجدول الدفعات المنصوص عليه في العقد المبرم بينهما.",
-        "جاهزية الموقع: تجهيز الموقع للأعمال الإنشائية، الفحوصات، أو استلام المواد وفقاً للمواعيد المحددة.",
-        "المخالفات السابقة: تحمل المسؤولية الكاملة عن أي مخالفات إنشائية أو تشغيلية سابقة في المنشأة تعيق إصدار التراخيص."
-      ]
-    },
-    {
-      title: "المادة (6): آلية التسعير والتحليل الفني",
-      items: [
-        "تُبنى عروض الأسعار الأولية على البيانات والمخططات المرفوعة من قِبل العميل إلكترونياً.",
-        "يحتفظ مقدم الخدمة والمنصة بالحق الكامل في تعديل عرض السعر النهائي في حال اكتشاف اختلافات جوهرية بين المخططات المرفوعة والواقع الميداني أثناء زيارة معاينة الموقع.",
-        "خدمة 'تقييم عروض الأسعار الخارجية' المُقدمة من المنصة تهدف لتوضيح مدى عدالة العرض فنياً بناءً على الكود السعودي (SBC)، ولا تُلزم المنصة بتعويض العميل عن أي تقلبات لاحقة في أسعار السوق أو المواد."
-      ]
-    },
-    {
-      title: "المادة (7): مشاركة البيانات والخصوصية الفنية",
-      intro: "بموافقتك على هذه الشروط، فإنك تمنح منصة Off Fire Online تفويضاً صريحاً ومطلقاً للقيام بـ:",
-      items: [
-        "مشاركة المخططات الهندسية، تقارير الموقع، والبيانات الفنية الخاصة بمنشأتك مع مقدمي الخدمات (الشركات والمكاتب الهندسية) المسجلين في قاعدة بياناتنا.",
-        "الغرض من هذه المشاركة يقتصر حصراً على دراسة المشروع وتقديم عروض أسعار دقيقة ومطابقة للمواصفات، مع التزام المنصة بعدم استخدامها لأغراض تجارية خارجية."
-      ]
-    },
-    {
-      title: "المادة (8): التحكيم الفني وإدارة النزاعات",
-      items: [
-        "في حال نشوب خلاف فني بحت بين (العميل) و(مقدم الخدمة) حول جودة التركيب، أو نوعية الخامات، أو المطابقة للكود السعودي، يمكن لمنصة Off Fire Online التدخل، بناءً على طلب الأطراف، كـ (مستشار فني محايد) لتقييم الأعمال وتقديم تقرير يهدف للصلح.",
-        "رأي المنصة في هذه الحالة هو رأي 'هندسي استشاري' غير ملزم قانوناً، ولا يُسقط حق أي طرف في اللجوء للجهات القضائية لفض النزاع."
-      ]
-    },
-    {
-      title: "المادة (9): إيقاف وتعليق الخدمة (Termination of Service)",
-      intro: "تحتفظ منصة Off Fire Online بالحق المطلق، وبإرادتها المنفردة، في:",
-      items: [
-        "تعليق أو إيقاف حساب أي مستخدم بشكل مؤقت أو نهائي إذا ثبت انتهاكه لهذه الشروط، أو محاولته الاحتيال، أو تقديم بيانات مضللة.",
-        "رفض تقديم الخدمة لأي منشأة، أو الامتناع عن توفير عروض أسعار دون الحاجة لإبداء الأسباب، وذلك لحماية نزاهة المنصة ومقدمي الخدمات."
-      ]
-    },
-    {
-      title: "المادة (10): حقوق الملكية الفكرية",
-      intro: "جميع حقوق الملكية الفكرية المتعلقة بالمنصة، والتي تشمل على سبيل المثال لا الحصر (الشعار، الهوية البصرية، النصوص، التصاميم، هيكلية العمل، المقالات، وآلية التحليل والفلترة التقنية) هي ملكية حصرية لمنصة Off Fire Online. يُحظر تماماً نسخ، نقل، أو إعادة إنتاج أي جزء منها لأي غرض، ويُعرض المخالف للمساءلة القانونية المشددة."
-    },
-    {
-      title: "المادة (11): تعديل الشروط والأحكام",
-      intro: "يُحق لمنصة Off Fire Online تعديل، إضافة، أو حذف أي بند من هذه الشروط والأحكام في أي وقت ودون الحاجة لإرسال إشعار مسبق. يُعتبر استمرارك في استخدام المنصة بعد نشر التعديلات موافقة ضمنية ونهائية عليها."
-    },
-    {
-      title: "المادة (12): القانون المطبق والاختصاص القضائي",
-      intro: "تخضع هذه الشروط والأحكام وتُفسر بالكامل وفقاً للأنظمة والقوانين المعمول بها في المملكة العربية السعودية. في حال وجود أي نزاع قانوني ينشأ عن استخدام المنصة ولا يمكن حله ودياً، ينعقد الاختصاص المكاني والحصري للمحاكم المختصة في المملكة العربية السعودية."
-    }
+    { title: i18n.t('terms.sections.s1.title'), items: i18n.t('terms.sections.s1.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s2.title'), items: i18n.t('terms.sections.s2.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s3.title'), intro: i18n.t('terms.sections.s3.intro'), items: i18n.t('terms.sections.s3.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s4.title'), items: i18n.t('terms.sections.s4.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s5.title'), intro: i18n.t('terms.sections.s5.intro'), items: i18n.t('terms.sections.s5.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s6.title'), items: i18n.t('terms.sections.s6.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s7.title'), intro: i18n.t('terms.sections.s7.intro'), items: i18n.t('terms.sections.s7.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s8.title'), items: i18n.t('terms.sections.s8.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s9.title'), intro: i18n.t('terms.sections.s9.intro'), items: i18n.t('terms.sections.s9.items', { returnObjects: true }) },
+    { title: i18n.t('terms.sections.s10.title'), intro: i18n.t('terms.sections.s10.intro') },
+    { title: i18n.t('terms.sections.s11.title'), intro: i18n.t('terms.sections.s11.intro') },
+    { title: i18n.t('terms.sections.s12.title'), intro: i18n.t('terms.sections.s12.intro') }
   ],
-  cr: "يتم تشغيل هذه المنصة وإدارتها تحت السجل التجاري رقم (4030357735) - المملكة العربية السعودية."
+  cr: i18n.t('terms.cr')
 };
 
-// ====== سياسة الخصوصية ======
+// ====== PRIVACY POLICY ======
 export const PRIVACY_CONTENT = {
-  title: "سياسة الخصوصية (Privacy Policy)",
-  intro: "نحن في منصة Off Fire Online ندرك تماماً أهمية خصوصية بياناتك الفنية والشخصية. توضح 'سياسة الخصوصية' هذه كيفية قيامنا بجمع، استخدام، حماية، ومشاركة المعلومات التي تقدمها لنا عند استخدامك لمنصتنا.",
+  title: i18n.t('privacy.title'),
+  intro: i18n.t('privacy.intro'),
   sections: [
-    {
-      title: "1. المعلومات التي نقوم بجمعها",
-      intro: "عند استخدامك لمنصة Off Fire Online، قد نطلب منك تزويدنا ببعض المعلومات الضرورية لتقديم الخدمة، وتشمل:",
-      items: [
-        "بيانات التواصل: الاسم، رقم الهاتف، البريد الإلكتروني، واسم المنشأة.",
-        "البيانات الفنية والهندسية: المخططات الهندسية (AutoCAD / PDF)، مساحات الموقع، تفاصيل النشاط التجاري، وأي تقارير فنية سابقة.",
-        "بيانات تصفح الموقع: عنوان بروتوكول الإنترنت (IP)، نوع المتصفح، والصفحات التي قمت بزيارتها على منصتنا (لأغراض تحسين تجربة المستخدم)."
-      ]
-    },
-    {
-      title: "2. كيف نستخدم معلوماتك؟",
-      intro: "نستخدم البيانات التي نجمعها للأغراض التالية فقط:",
-      items: [
-        "تقديم عروض الأسعار: دراسة المخططات وفهم احتياجات منشأتك لتوفير عروض أسعار دقيقة.",
-        "التواصل الفعال: إرسال التحديثات، تنبيهات تجديد العقود، والرد على استفساراتك الفنية.",
-        "تحسين الخدمة: تحليل سلوك المستخدمين لتطوير أداء المنصة وتسهيل تجربة الاستخدام.",
-        "الامتثال القانوني: تلبية متطلبات الجهات الحكومية أو الرد على أي مطالبات قانونية."
-      ]
-    },
-    {
-      title: "3. مشاركة البيانات مع أطراف ثالثة",
-      intro: "بصفتنا منصة وساطة هندسية، فإن جوهر عملنا يتطلب مشاركة معلومات منشأتك. نلتزم بالآتي:",
-      items: [
-        "تتم مشاركة (المخططات الفنية والتفاصيل الهندسية) فقط مع شبكتنا المعتمدة من الشركات، المكاتب الهندسية، والموردين بغرض دراسة مشروعك وتقديم أسعار تنافسية.",
-        "نُلزم جميع مقدمي الخدمات في شبكتنا بالاحتفاظ بسرية هذه المعلومات وعدم استخدامها لأي أغراض تجارية خارج نطاق مشروعك.",
-        "لا نقوم ببيع، تأجير، أو تداول بياناتك الشخصية مع أي جهات تسويقية خارجية بأي شكل من الأشكال."
-      ]
-    },
-    {
-      title: "4. حماية البيانات وأمن المعلومات",
-      intro: "نحن نتخذ كافة التدابير التقنية والتنظيمية اللازمة (مثل التشفير وبروتوكولات الأمان القياسية) لحماية بياناتك ومخططاتك الهندسية من الوصول غير المصرح به، التعديل، الإفصاح، أو الإتلاف."
-    },
-    {
-      title: "5. استخدام ملفات تعريف الارتباط (Cookies)",
-      intro: "تستخدم منصتنا ملفات تعريف الارتباط لتحسين تجربتك، تذكر تفضيلاتك، وتقديم محتوى إعلاني ملائم لك عبر منصات البحث والتواصل الاجتماعي. يمكنك تعديل إعدادات المتصفح لرفض ملفات تعريف الارتباط، ولكن قد يؤثر ذلك على بعض وظائف المنصة."
-    },
-    {
-      title: "6. حقوقك كعميل",
-      intro: "يحق لك في أي وقت:",
-      items: [
-        "طلب الوصول إلى البيانات الشخصية التي نحتفظ بها عنك.",
-        "طلب تصحيح أي معلومات غير دقيقة.",
-        "طلب حذف بياناتك أو مخططاتك من قاعدة بياناتنا (باستثناء البيانات التي يُلزمنا القانون بالاحتفاظ بها لغرض الفواتير أو السجلات)."
-      ]
-    },
-    {
-      title: "7. التعديلات على سياسة الخصوصية",
-      intro: "قد نقوم بتحديث سياسة الخصوصية من وقت لآخر لمواكبة التغيرات التقنية أو التنظيمية. سيتم نشر أي تعديلات على هذه الصفحة، وننصح بمراجعتها بشكل دوري. استمرارك في استخدام المنصة يعد موافقة على سياسة الخصوصية المُحدثة."
-    },
-    {
-      title: "8. التواصل معنا",
-      intro: "إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية، لا تتردد في التحدث مع فريق الدعم الفني عبر وسائل التواصل المتاحة في المنصة."
-    }
+    { title: i18n.t('privacy.sections.s1.title'), intro: i18n.t('privacy.sections.s1.intro'), items: i18n.t('privacy.sections.s1.items', { returnObjects: true }) },
+    { title: i18n.t('privacy.sections.s2.title'), intro: i18n.t('privacy.sections.s2.intro'), items: i18n.t('privacy.sections.s2.items', { returnObjects: true }) },
+    { title: i18n.t('privacy.sections.s3.title'), intro: i18n.t('privacy.sections.s3.intro'), items: i18n.t('privacy.sections.s3.items', { returnObjects: true }) },
+    { title: i18n.t('privacy.sections.s4.title'), intro: i18n.t('privacy.sections.s4.intro') },
+    { title: i18n.t('privacy.sections.s5.title'), intro: i18n.t('privacy.sections.s5.intro') },
+    { title: i18n.t('privacy.sections.s6.title'), intro: i18n.t('privacy.sections.s6.intro'), items: i18n.t('privacy.sections.s6.items', { returnObjects: true }) },
+    { title: i18n.t('privacy.sections.s7.title'), intro: i18n.t('privacy.sections.s7.intro') },
+    { title: i18n.t('privacy.sections.s8.title'), intro: i18n.t('privacy.sections.s8.intro') }
   ]
 };
