@@ -10,6 +10,11 @@ const BlogPage = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
 
+  const getLocalizedPath = (path) => {
+    if (!isEn) return path;
+    return path === '/' ? '/en' : `/en${path}`;
+  };
+
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPost, setSelectedPost] = useState(null);
@@ -173,12 +178,12 @@ const BlogPage = () => {
                 {isEn ? 'Now that you know what your facility needs, let us help you execute it with the best quality and price.' : 'بعد أن عرفت ما تحتاجه منشأتك، دعنا نساعدك في تنفيذه بأفضل جودة وسعر.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to="/contact">
+                <Link to={getLocalizedPath('/contact')}>
                     <Button primary className="text-lg px-10 py-3 shadow-lg shadow-cta/20">
                         {isEn ? 'Request Quotes' : 'اطلب عروض أسعار'}
                     </Button>
                 </Link>
-                <Link to="/contact">
+                <Link to={getLocalizedPath('/contact')}>
                     <Button className="text-lg px-10 py-3">
                         {isEn ? 'Talk to a Consultant for Free' : 'تحدث مع مستشار مجاناً'}
                     </Button>
@@ -235,7 +240,7 @@ const BlogPage = () => {
                         <h3 className="text-xl font-bold text-white mb-4 text-center">
                             {isEn ? 'Need help applying this in your facility?' : 'هل تحتاج مساعدة في تطبيق هذا في منشأتك؟'}
                         </h3>
-                        <Link to="/contact" onClick={() => setSelectedPost(null)}>
+                        <Link to={getLocalizedPath('/contact')} onClick={() => setSelectedPost(null)}>
                             <Button primary>
                                 {isEn ? 'Contact Us for a Free Consultation' : 'تواصل معنا لاستشارة مجانية'}
                             </Button>

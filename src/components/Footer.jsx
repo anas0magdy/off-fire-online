@@ -12,6 +12,12 @@ const Footer = () => {
   const { i18n } = useTranslation();
   const isEn = i18n.language === 'en';
 
+  // الدالة اللي بتحافظ على مسار اللغة الإنجليزية
+  const getLocalizedPath = (path) => {
+    if (!isEn) return path;
+    return path === '/' ? '/en' : `/en${path}`;
+  };
+
   return (
     <footer className="bg-darker border-t border-white/5 pt-20 pb-10 mt-auto" dir={isEn ? 'ltr' : 'rtl'}>
       <div className="container mx-auto px-6">
@@ -43,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {NAV_LINKS.filter(l => !l.isCta).map(link => (
                 <li key={link.id}>
-                  <Link to={link.path} className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 text-start">
+                  <Link to={getLocalizedPath(link.path)} className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 text-start">
                     <ChevronLeft size={16} className={`text-primary transition-transform ${isEn ? 'rotate-180' : 'rotate-0'}`}/> 
                     {link.label}
                   </Link>
@@ -75,19 +81,20 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* التعديل هنا: ضفنا md:px-24 lg:px-32 عشان نضم العناصر لجوه في الديسكتوب بعيد عن الأطراف */}
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 md:px-24 lg:px-32">
           <div className="flex flex-col items-center md:items-start gap-2">
             <p className="text-gray-500 text-sm">
               {isEn ? 'All Rights Reserved © 2026 OFF FIRE ONLINE' : 'جميع الحقوق محفوظة © 2026 OFF FIRE ONLINE'}
             </p>
             <div className="flex gap-4 text-xs md:text-sm text-gray-500">
-              <Link to="/terms" className="hover:text-primary transition-colors">{isEn ? 'Terms & Conditions' : 'الشروط والأحكام'}</Link>
+              <Link to={getLocalizedPath('/terms')} className="hover:text-primary transition-colors">{isEn ? 'Terms & Conditions' : 'الشروط والأحكام'}</Link>
               <span className="text-gray-600">|</span>
-              <Link to="/privacy" className="hover:text-primary transition-colors">{isEn ? 'Privacy Policy' : 'سياسة الخصوصية'}</Link>
+              <Link to={getLocalizedPath('/privacy')} className="hover:text-primary transition-colors">{isEn ? 'Privacy Policy' : 'سياسة الخصوصية'}</Link>
             </div>
           </div>
           
-          <div className={`flex gap-4 ${isEn ? 'md:translate-x-0' : 'md:translate-x-0'}`}>
+          <div className="flex gap-4 relative z-10">
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#1DA1F2] hover:text-white transition-all"><Twitter size={18} /></a>
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all"><Linkedin size={18} /></a>
             <a href="#" className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-gray-400 hover:bg-[#E1306C] hover:text-white transition-all"><Instagram size={18} /></a>

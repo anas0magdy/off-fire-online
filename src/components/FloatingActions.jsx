@@ -10,7 +10,20 @@ const FloatingActions = () => {
   const toggleLanguage = () => {
     const newLang = currentLanguage === 'ar' ? 'en' : 'ar';
     localStorage.setItem('appLanguage', newLang); // نحفظ اللغة الجديدة
-    window.location.reload(); // ريفرش سريع عشان الداتا تقرأ صح
+
+    // نجيب المسار الحالي
+    const currentPath = window.location.pathname;
+    let newPath = currentPath;
+
+    // نظبط اللينك الجديد بناءً على اللغة
+    if (newLang === 'en') {
+      newPath = currentPath === '/' ? '/en' : `/en${currentPath}`;
+    } else {
+      newPath = currentPath.replace(/^\/en/, '') || '/';
+    }
+
+    // السطر ده هيغير الـ URL في المتصفح وهيعمل "ريفرش" كامل للصفحة في نفس اللحظة
+    window.location.href = newPath;
   };
 
   return (
