@@ -8,6 +8,11 @@ import { Helmet } from 'react-helmet-async';
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
+import journey from '../assets/customer-journey.webp'; 
+import img1 from '../assets/sectors-1.webp'; 
+import img2 from '../assets/sectors-2.webp'; 
+import img3 from '../assets/sectors-3.webp'; 
+import img4 from '../assets/sectors-4.webp'; 
 
 // --- إعدادات الأنيميشن (Animation Variants) ---
 const fadeInUp = {
@@ -42,6 +47,14 @@ const AboutPage = () => {
     return path === '/' ? '/en' : `/en${path}`;
   };
   
+  // قائمة الصور اللوكال للكروت بالترتيب
+  const customAudienceImages = [
+    img1, // صورة الكارت الأول
+    img2, // صورة الكارت التاني
+    img3, // صورة الكارت التالت
+    img4  // صورة الكارت الرابع
+  ];
+
   return (
     <div className="animate-fadeIn pt-20 lg:pt-24" dir={isEn ? 'ltr' : 'rtl'}>
       
@@ -69,9 +82,9 @@ const AboutPage = () => {
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 src={HSERVICES1}
                 alt="Team Meeting" 
-                className="w-full h-full object-cover opacity-20 animate-pulse-slow" 
+                className="w-full h-full object-cover opacity-80 animate-pulse-slow" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/90 to-primary-dark/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/50 via-dark/50 to-primary-dark/30"></div>
         </div>
 
         <motion.div 
@@ -83,7 +96,7 @@ const AboutPage = () => {
           <motion.span variants={fadeInUp} className="text-cta font-bold tracking-[0.2em] mb-3 lg:mb-4 block text-sm lg:text-xl uppercase border-b-2 border-cta inline-block pb-1 lg:pb-2">
             {t('nav.about')}
           </motion.span>
-          <motion.h1 variants={fadeInUp} className="text-2xl md:text-5xl lg:text-6xl font-black text-text-main mb-4 lg:mb-6 leading-tight drop-shadow-2xl max-w-5xl mx-auto">
+          <motion.h1 variants={fadeInUp} className="text-2xl md:text-4xl lg:text-4xl font-black text-text-main mb-4 lg:mb-6 leading-tight drop-shadow-2xl max-w-5xl mx-auto">
             {ABOUT_DATA.hero.title}
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-sm lg:text-2xl text-text-sub max-w-4xl mx-auto font-medium leading-relaxed px-2 text-center">
@@ -203,8 +216,20 @@ const AboutPage = () => {
       </section>
 
       {/* 5. Customer Journey */}
-      <section className="py-12 lg:py-28 bg-darker">
-        <div className="container mx-auto px-4 lg:px-6">
+      <section className="py-12 lg:py-28 relative overflow-hidden bg-darker">
+        
+        {/* الصورة الخلفية والطبقة المعتمة الاحترافية */}
+        <div className="absolute inset-0 z-0">
+            <img 
+                src={journey} 
+                alt="Customer Journey Background" 
+                className="w-full h-full object-cover grayscale opacity-70"
+            />
+            {/* تدرج لوني يدمج الصورة مع خلفية الموقع ويبرز الكروت */}
+            <div className="absolute inset-0 bg-gradient-to-b from-darker via-darker/80 to-darker"></div>
+        </div>
+
+        <div className="container mx-auto px-4 lg:px-6 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-8 lg:mb-16">
                 <span className="text-cta font-bold tracking-widest text-xs lg:text-sm uppercase">
                   {isEn ? 'Customer Journey' : 'رحلة العميل'}
@@ -217,7 +242,7 @@ const AboutPage = () => {
             {/* Mobile View */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="lg:hidden flex overflow-x-auto gap-4 pb-6 snap-x snap-mandatory no-scrollbar">
                 {ABOUT_DATA.process.map((step, i) => (
-                    <motion.div variants={fadeInUp} key={i} className="min-w-[85vw] bg-card p-6 rounded-2xl border border-white/5 snap-center relative shadow-lg text-start flex flex-col items-start">
+                    <motion.div variants={fadeInUp} key={i} className="min-w-[85vw] bg-card/80 backdrop-blur-sm p-6 rounded-2xl border border-white/10 snap-center relative shadow-xl text-start flex flex-col items-start">
                         <div className="absolute top-4 end-4 text-6xl font-black text-white/5 pointer-events-none">{i + 1}</div>
                         <div className="w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center font-bold text-lg mb-4">
                             {i + 1}
@@ -230,17 +255,17 @@ const AboutPage = () => {
             
             {/* Desktop Timeline */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="hidden lg:block relative max-w-4xl mx-auto">
-                <div className="absolute top-0 bottom-0 end-1/2 w-1 bg-white/10 -me-0.5 rounded-full"></div>
+                <div className="absolute top-0 bottom-0 end-1/2 w-1 bg-white/10 -me-0.5 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)]"></div>
                 {ABOUT_DATA.process.map((step, i) => {
                     const isEven = i % 2 === 0;
                     return (
                         <motion.div variants={fadeInUp} key={i} className={`flex gap-8 mb-12 relative ${isEven ? 'flex-row-reverse' : ''}`}>
-                            <div className="absolute end-1/2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg border-4 border-dark z-10 -me-5 shadow-lg shadow-primary/30">
+                            <div className="absolute end-1/2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg border-4 border-dark z-10 -me-5 shadow-[0_0_15px_rgba(0,200,255,0.4)]">
                                 {i + 1}
                             </div>
                             <div className="w-1/2"></div>
                             <div className="w-1/2 px-8">
-                                <div className={`bg-card p-6 rounded-2xl border border-white/5 hover:border-primary transition-colors relative group flex flex-col ${isEven ? 'items-end text-end' : 'items-start text-start'}`}>
+                                <div className={`bg-card/80 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-primary transition-colors relative group flex flex-col shadow-xl ${isEven ? 'items-end text-end' : 'items-start text-start'}`}>
                                     <h3 className={`text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors w-full ${isEven ? 'text-end' : 'text-start'}`}>{step.title}</h3>
                                     <p className={`text-text-sub text-sm leading-relaxed w-full ${isEven ? 'text-end' : 'text-start'}`}>{step.desc}</p>
                                 </div>
@@ -294,7 +319,7 @@ const AboutPage = () => {
                     {ABOUT_DATA.audience.map((item, i) => (
                         <motion.div variants={fadeInUp} key={i} className="group relative rounded-xl lg:rounded-2xl overflow-hidden h-40 lg:h-64 border border-white/10 shadow-lg text-start flex flex-col items-start">
                             <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/60 to-transparent z-10"></div>
-                            <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src={customAudienceImages[i]} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute bottom-0 start-0 w-full p-3 lg:p-6 z-20 text-start">
                                 <h4 className="font-bold text-white text-sm lg:text-lg mb-1 lg:mb-2 drop-shadow-md text-start w-full">{item.title}</h4>
                                 <p className="text-gray-200 text-xs lg:text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all lg:translate-y-2 lg:group-hover:translate-y-0 leading-snug font-medium text-start w-full">
@@ -314,7 +339,7 @@ const AboutPage = () => {
            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}
            className="container mx-auto px-4 lg:px-6 text-center"
         >
-            <h2 className="text-2xl md:text-4xl font-black text-text-main mb-4 lg:mb-6">{ABOUT_DATA.cta.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-text-main mb-4 lg:mb-6">{ABOUT_DATA.cta.title}</h2>
             <p className="text-sm lg:text-xl text-text-sub mb-6 lg:mb-10 max-w-3xl mx-auto text-center">
                 {ABOUT_DATA.cta.text}
             </p>

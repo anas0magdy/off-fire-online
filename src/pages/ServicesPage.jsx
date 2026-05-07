@@ -90,7 +90,7 @@ const ServicesPage = () => {
           animate="visible"
           className="relative z-10 container mx-auto"
         >
-            <motion.h1 variants={fadeInUp} className="text-2xl md:text-5xl font-black text-text-main mb-4 lg:mb-6 leading-tight max-w-4xl mx-auto text-center">
+            <motion.h1 variants={fadeInUp} className="text-2xl md:text-4xl font-black text-text-main mb-4 lg:mb-6 leading-tight max-w-4xl mx-auto text-center">
               {SERVICES_PAGE_CONTENT.hero.title}
             </motion.h1>
             <motion.div variants={fadeInUp} className="text-text-sub max-w-3xl mx-auto text-base md:text-xl leading-relaxed mb-8 lg:mb-10 text-center">
@@ -317,7 +317,7 @@ const ServicesPage = () => {
            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}
            className="container mx-auto px-4 lg:px-6 text-center relative z-10"
         >
-            <h2 className="text-xl lg:text-4xl font-black text-text-main mb-4 lg:mb-6 text-center">{SERVICES_PAGE_CONTENT.cta.title}</h2>
+            <h2 className="text-xl lg:text-3xl font-black text-text-main mb-4 lg:mb-6 text-center">{SERVICES_PAGE_CONTENT.cta.title}</h2>
             <p className="text-sm lg:text-xl text-text-sub mb-6 lg:mb-10 max-w-3xl mx-auto px-2 text-center">
                 {SERVICES_PAGE_CONTENT.cta.text}
             </p>
