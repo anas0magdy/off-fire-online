@@ -286,13 +286,7 @@ const HomePage = () => {
             ))}
           </motion.div>
           
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-8 lg:mb-20 mt-10">
-              <p className="text-text-sub text-lg lg:text-xl max-w-3xl mx-auto text-center font-medium" dir="auto">
-                {isEn 
-                  ? '"Take the shortcut.. OFF FIRE ONLINE is your digital platform; from quote request to approval."' 
-                  : '"اختصر الطريق.. OFF FIRE ONLINE هي منصتك الرقمية؛ من طلب عرض السعر حتى الاعتماد."'}
-              </p>
-          </motion.div>
+          
         </div>
       </section>
 
