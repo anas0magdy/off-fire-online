@@ -99,3 +99,15 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff5757 !important;
+  width: 22px !important;
+  border-radius: 999px !important;
+  transition: all 0.3s ease !important;
+}

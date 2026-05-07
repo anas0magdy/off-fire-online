@@ -75,7 +75,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-4 text-gray-400 text-start ltr:flex-row rtl:flex-row">
                 <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-primary shrink-0"><MapPin size={18} /></div> 
-                <span className="text-sm md:text-base">{isEn ? 'Riyadh, Saudi Arabia' : 'الرياض، المملكة العربية السعودية'}</span>
+                <span className="text-sm md:text-base">{isEn ? 'Kingdom of Saudi Arabia' : 'المملكة العربية السعودية'}</span>
               </li>
             </ul>
           </div>

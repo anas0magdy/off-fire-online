@@ -11,6 +11,10 @@ import { Helmet } from 'react-helmet-async';
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 // --- إعدادات الأنيميشن (Animation Variants) ---
 const fadeInUp = {
@@ -99,6 +103,25 @@ const HomePage = () => {
       setActiveServiceIndex(index);
   };
 
+  const PainCard = ({ item }) => {
+  const Icon = item.icon;
+  return (
+    <div className="bg-card p-5 lg:p-10 rounded-xl lg:rounded-2xl border border-white/5 hover:border-cta transition-all duration-300 group flex flex-col items-start text-start hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,80,80,0.12)] h-full cursor-pointer">
+      <div className="text-cta mb-4 lg:mb-8 bg-dark w-12 h-12 lg:w-20 lg:h-20 rounded-lg lg:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg ltr:mx-0 rtl:mx-0">
+        <Icon size={24} className="lg:w-10 lg:h-10" />
+      </div>
+
+      <h3 className="text-lg lg:text-2xl font-bold text-text-main mb-2 lg:mb-4">
+        {item.title}
+      </h3>
+
+      <p className="text-text-sub leading-snug text-sm lg:text-lg opacity-80">
+        {item.desc}
+      </p>
+    </div>
+  );
+};
+
   return (
     <div className="animate-fadeIn" dir={isEn ? 'ltr' : 'rtl'}>
       <Helmet>
@@ -167,16 +190,16 @@ const HomePage = () => {
               >
                 
                 <motion.div variants={fadeInUp} className="mb-6 lg:mb-10 scale-90 md:scale-100">
-                  <h2 className="text-5xl lg:text-6xl font-black tracking-tight drop-shadow-2xl" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                  <h2 className="text-4xl lg:text-6xl font-black tracking-tight drop-shadow-2xl" style={{ fontFamily: "'Oswald', sans-serif" }}>
                     <span className="text-white text-shadow-lg">OFF FIRE</span> <span className="text-cta text-shadow-lg">ONLINE</span>
                   </h2>
                 </motion.div>
 
-                <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-text-main mb-6 lg:mb-8 leading-tight max-w-5xl drop-shadow-lg">
+                <motion.h1 variants={fadeInUp} className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-text-main mb-6 lg:mb-8 leading-tight max-w-5xl drop-shadow-lg">
                   {slide.title}
                 </motion.h1>
 
-                <motion.p variants={fadeInUp} className="text-lg md:text-xl lg:text-2xl text-text-sub mb-8 lg:mb-12 max-w-3xl font-medium leading-relaxed px-4" dir="auto">
+                <motion.p variants={fadeInUp} className="text-base md:text-xl lg:text-2xl text-text-sub mb-8 lg:mb-12 max-w-3xl font-medium leading-relaxed px-4" dir="auto">
                   {slide.subtitle}
                 </motion.p>
 
@@ -210,37 +233,60 @@ const HomePage = () => {
         <div className="container mx-auto px-4 lg:px-6">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-            className="text-center mb-8 lg:mb-20"
+            className="text-center mb-8 lg:mb-16"
           >
-            <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-3 lg:mb-6 relative inline-block text-center">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-text-main mb-3 lg:mb-6 relative inline-block text-center">
               {isEn 
                 ? 'The #1 platform in KSA connecting you directly with certified Civil Defense companies — zero commissions' 
                 : 'المنصة الأولى في المملكة التي توصلك بشركات الدفاع المدني المعتمدة مباشرة — بدون عمولات'}
               <span className="absolute -bottom-1 lg:-bottom-2 left-0 w-full h-0.5 lg:h-1 bg-gradient-to-r from-transparent via-cta to-transparent opacity-80"></span>
             </h2>
-            <p className="text-text-sub text-lg lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto text-center">
+            <p className="text-text-sub text-base lg:text-xl mt-3 lg:mt-6 max-w-3xl mx-auto text-center">
               {isEn ? 'You think it is just a quote, but the reality is more complex than you imagine.' : 'تظن أن الأمر مجرد عرض سعر، لكن الواقع أصعب مما تتخيل.'}
             </p>
           </motion.div>
           
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8"
+          {/* Mobile Slider */}
+          <div className="block lg:hidden">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={16}
+              slidesPerView={1.15}
+              centeredSlides={true}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              className="pb-16"
+            >
+              {PAIN_POINTS.map((item, idx) => (
+                <SwiperSlide key={idx} className="h-auto">
+                  <PainCard item={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Desktop Grid - الأنيميشن بيتم تطبيقها هنا من بره الكارت */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="hidden lg:grid grid-cols-4 gap-8"
           >
-            {PAIN_POINTS.map((item, idx) => {
-              const Icon = item.icon; 
-              return (
-                <motion.div key={idx} variants={fadeInUp} className="bg-card p-4 lg:p-10 rounded-xl lg:rounded-2xl border border-white/5 hover:border-cta transition-all group flex flex-col items-start text-start">
-                  <div className="text-cta mb-3 lg:mb-8 bg-dark w-12 h-12 lg:w-20 lg:h-20 rounded-lg lg:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg ltr:mx-0 rtl:mx-0">
-                    <Icon size={24} className="lg:w-10 lg:h-10" />
-                  </div>
-                  <h3 className="text-lg lg:text-2xl font-bold text-text-main mb-2 lg:mb-4 text-start">{item.title}</h3>
-                  <p className="text-text-sub leading-snug text-sm lg:text-lg text-start opacity-80">{item.desc}</p>
-                </motion.div>
-              );
-            })}
+            {PAIN_POINTS.map((item, idx) => (
+              <motion.div key={idx} variants={fadeInUp}>
+                <PainCard item={item} />
+              </motion.div>
+            ))}
           </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-8 lg:mb-20 mt-10">
+          
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-8 lg:mb-20 mt-10">
               <p className="text-text-sub text-lg lg:text-xl max-w-3xl mx-auto text-center font-medium" dir="auto">
                 {isEn 
                   ? '"Take the shortcut.. OFF FIRE ONLINE is your digital platform; from quote request to approval."' 
@@ -259,20 +305,18 @@ const HomePage = () => {
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
               className="order-2 md:order-1 ltr:text-left rtl:text-right"
             >
-              <span className={`text-primary font-bold mb-2 lg:mb-4 block uppercase tracking-wider text-base lg:text-lg ${isEn ? 'border-l-4 pl-3' : 'border-r-4 pr-3'} border-primary`}>
-                {isEn ? 'Smart Solution' : 'الحل الذكي'}
-              </span>
-              <h2 className="text-3xl md:text-6xl font-extrabold text-text-main mb-6 lg:mb-10 leading-tight">
-                {isEn ? 'Shortcut your way with ' : 'اختصر طريقك مع '}
+              
+              <h2 className="text-2xl md:text-4xl font-extrabold text-text-main mb-6 lg:mb-10 leading-tight">
+                {isEn ? 'Shortcut your way with ' : 'اختصر الطريق مع  '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-l from-primary to-white">OFF FIRE ONLINE</span>
                 <br/>
-                {isEn ? 'in less than 3 minutes' : 'في أقل من 3 دقائق'}
+                {isEn ? 'Your digital platform — from RFQ submission to final approval.' : 'منصتك الرقمية؛ من طلب عرض السعر حتى الاعتماد.'}
               </h2>
               <div className="text-start mb-8 lg:mb-12">
-                <p className="text-text-sub text-lg lg:text-xl leading-relaxed">
+                <p className="text-text-sub text-base lg:text-xl leading-relaxed">
                   {isEn 
-                    ? 'A unified platform that allows you to complete all safety requirements in one place: certified companies, specifications, prices, technical analysis, and direct purchase… at the click of a button.' 
-                    : 'منصة موحدة تتيح لك إنجاز كل متطلبات الأمن والسلامة في مكان واحد: الشركات المعتمدة، المواصفات، الأسعار، التحليل الفني، والشراء المباشر… بضغطة زر.'}
+                    ? 'A unified platform that allows you to complete all safety requirements in one place:' 
+                    : 'منصة موحدة تتيح لك إنجاز كل متطلبات الأمن والسلامة في مكان واحد:'}
                 </p>
               </div>
               <motion.ul variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-5 lg:space-y-8 mb-8 lg:mb-12">
@@ -282,7 +326,7 @@ const HomePage = () => {
                         <CheckCircle className="text-green-500 flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6" />
                     </div>
                     <div className="text-start">
-                      <h4 className="font-bold text-text-main text-lg lg:text-xl mb-0.5 lg:mb-2 group-hover:text-primary transition-colors">{feat.title}</h4>
+                      <h4 className="font-bold text-text-main text-base lg:text-xl mb-0.5 lg:mb-2 group-hover:text-primary transition-colors">{feat.title}</h4>
                       <p className="text-text-sub text-sm lg:text-lg">{feat.desc}</p>
                     </div>
                   </motion.li>
@@ -324,7 +368,7 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="text-center mb-12 lg:mb-20"
           >
-            <h2 className="text-2xl md:text-5xl font-extrabold text-text-main mb-4 leading-snug">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-text-main mb-4 leading-snug">
               {isEn ? 'From Request to License..' : 'من الطلب إلى الرخصة..'}
               <span className="block text-transparent bg-clip-text bg-gradient-to-l from-primary to-cta">
                 {isEn ? '3 Clear Steps that Shorten the Road' : '3 خطوات واضحة تختصر الطريق'}
@@ -372,10 +416,10 @@ const HomePage = () => {
                   </div>
 
                   <div className="bg-card p-5 lg:p-8 rounded-xl lg:rounded-2xl border border-white/5 hover:border-primary transition-all duration-300 w-full group-hover:shadow-xl group-hover:shadow-primary/10 text-start md:text-center mt-4">
-                    <h3 className="text-lg lg:text-2xl font-bold text-text-main mb-2 text-start md:text-center">
+                    <h3 className="text-base lg:text-1xl font-bold text-text-main mb-2 text-start md:text-center">
                       {step.title}
                     </h3>
-                    <p className="text-text-sub text-sm lg:text-lg leading-relaxed text-start md:text-center">
+                    <p className="text-text-sub text-sm lg:text-base leading-relaxed text-start md:text-center">
                       {step.desc}
                     </p>
                   </div>
@@ -442,9 +486,9 @@ const HomePage = () => {
                             {isEn ? 'Swipe for more' : 'اسحب للمزيد'} <ArrowLeft size={12} className="ltr:rotate-180" />
                         </div>
                     </div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-text-main mb-2 lg:mb-3 text-start">{service.title}</h3>
-                    <p className="text-text-sub text-base lg:text-lg mb-4 leading-relaxed line-clamp-2 lg:line-clamp-none text-start">{service.desc}</p>
-                    <Link to={getLocalizedPath('/services')} className="text-primary text-lg lg:text-lg font-bold flex items-center gap-2 mt-auto group-hover:gap-3 transition-all">
+                    <h3 className="text-lg lg:text-1xl font-bold text-text-main mb-2 lg:mb-3 text-start">{service.title}</h3>
+                    <p className="text-text-sub text-sm lg:text-base mb-4 leading-relaxed line-clamp-2 lg:line-clamp-none text-start">{service.desc}</p>
+                    <Link to={getLocalizedPath('/services')} className="text-primary text-sm lg:text-sm font-bold flex items-center gap-2 mt-auto group-hover:gap-3 transition-all">
                         {isEn ? 'More Details' : 'تفاصيل أكثر'} <ArrowLeft size={18} className="ltr:rotate-180" />
                     </Link>
                 </div>
@@ -490,7 +534,6 @@ const HomePage = () => {
                   {isEn ? 'Who We Serve?' : 'من نخدم؟'}
                 </motion.h3>
                 <motion.p variants={fadeInUp} className="text-text-sub text-lg lg:text-xl mb-6 lg:mb-10 text-start">
-                  {isEn ? 'Whatever your activity, we provide certified engineering solutions, and act as your personal assistant for execution and inspection.' : 'مهما كان نشاطك نوفر لك حلولاً هندسية معتمدة، ونكون مساعدك الشخصي لتنفيذ الأعمال واجتياز التفتيش دون عوائق.'}
                 </motion.p>
 
                 <div className="grid grid-cols-2 gap-3 lg:gap-6">
