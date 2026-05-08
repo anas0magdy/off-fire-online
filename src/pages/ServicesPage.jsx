@@ -45,7 +45,7 @@ const ServicesPage = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
-    <div className="animate-fadeIn pt-20 lg:pt-24" dir={isEn ? 'ltr' : 'rtl'}>
+    <div className="animate-fadeIn pt-20 lg:pt-24 overflow-x-clip" dir={isEn ? 'ltr' : 'rtl'}>
       <Helmet>
         <title>
           {isEn 
