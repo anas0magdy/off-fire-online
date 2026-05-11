@@ -58,19 +58,30 @@ const AboutPage = () => {
   return (
     <div className="animate-fadeIn pt-20 lg:pt-24" dir={isEn ? 'ltr' : 'rtl'}>
       
-      <Helmet>
+<Helmet>
         <title>{t('nav.about')} | {ABOUT_DATA.hero.title}</title>
         <meta name="description" content={ABOUT_DATA.hero.subtitle} />
         <meta name="keywords" content="من نحن، حماية، أمان، رحلة العميل، رؤية الشركة، خدمات تقنية، شريك الأمان" />
+        
         <meta property="og:title" content={`${t('nav.about')} - ${ABOUT_DATA.hero.title}`} />
         <meta property="og:description" content={ABOUT_DATA.hero.subtitle} />
         <meta property="og:image" content={HSERVICES1} />
         <meta property="og:type" content="website" />
+        {/* سحب الرابط الفعلي لصفحة من نحن */}
+        <meta property="og:url" content={`https://www.offfireonline.com${window.location.pathname}`} />
+        
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${t('nav.about')} - ${ABOUT_DATA.hero.title}`} />
         <meta name="twitter:description" content={ABOUT_DATA.hero.subtitle} />
         <meta name="twitter:image" content={HSERVICES1} />
-        <link rel="canonical" href="https://www.offfireonline.com" />
+        
+        {/* التعديل الأهم: الـ Canonical الديناميك */}
+        <link rel="canonical" href={`https://www.offfireonline.com${window.location.pathname}`} />
+        
+        {/* تعريف اللغات عشان جوجل يأرشف العربي والإنجليزي لصفحة من نحن */}
+        <link rel="alternate" hrefLang="ar" href="https://www.offfireonline.com/about" />
+        <link rel="alternate" hrefLang="en" href="https://www.offfireonline.com/en/about" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.offfireonline.com/about" />
       </Helmet>
 
       {/* 1. Hero Section */}

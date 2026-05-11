@@ -72,10 +72,15 @@ const ServicesPage = () => {
         <meta property="og:description" content={isEn ? 'From design to approval.. we provide everything your facility needs.' : 'من التصميم والتركيب إلى الصيانة والاعتماد.. نوفر لك كل ما تحتاجه منشأتك لاجتياز اشتراطات السلامة.'} />
         <meta property="og:image" content={SERVICES_PAGE_CONTENT.services[0]?.image} /> 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={isEn ? "https://www.offfireonline.com/en/services" : "https://www.offfireonline.com/services"} />
+        
+        {/* التعديل: قراءة المسار الفعلي */}
+        <meta property="og:url" content={`https://www.offfireonline.com${window.location.pathname}`} />
 
         {/* Multilingual SEO */}
-        <link rel="canonical" href={isEn ? "https://www.offfireonline.com/en/services" : "https://www.offfireonline.com/services"} />
+        
+        {/* التعديل الأهم: Canonical بيقرا من المتصفح مباشرة */}
+        <link rel="canonical" href={`https://www.offfireonline.com${window.location.pathname}`} />
+        
         <link rel="alternate" hrefLang="ar" href="https://www.offfireonline.com/services" />
         <link rel="alternate" hrefLang="en" href="https://www.offfireonline.com/en/services" />
         <link rel="alternate" hrefLang="x-default" href="https://www.offfireonline.com/services" />

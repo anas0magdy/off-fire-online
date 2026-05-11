@@ -46,17 +46,21 @@ const BlogPage = () => {
 
   <meta property="og:title" content={selectedPost ? selectedPost.title : (isEn ? "Digital Security & Safety Blog" : "مدونة الأمن والسلامة الرقمية")} />
   <meta property="og:description" content={selectedPost ? selectedPost.excerpt : (isEn ? "Simplified explanation of all safety requirements in Saudi Arabia" : "شرح مبسط لكافة اشتراطات السلامة في السعودية")} />
-  <meta property="og:image" content={selectedPost ? selectedPost.image : "/default-blog-share.jpg"} />
+  <meta property="og:image" content={selectedPost ? selectedPost.image : "https://www.offfireonline.com/default-blog-share.jpg"} />
   <meta property="og:type" content={selectedPost ? "article" : "website"} />
   <meta property="og:site_name" content={isEn ? "Off Fire Online" : "أوف فاير أونلاين"} />
-  <meta property="og:url" content={selectedPost ? `https://www.offfireonline.com${isEn ? '/en' : ''}/blog?id=${selectedPost.id}` : `https://www.offfireonline.com${isEn ? '/en' : ''}/blog`} />
+  
+  {/* استخدام الرابط الفعلي مع الـ Search Query (مثل ?id=1) لضمان الدقة */}
+  <meta property="og:url" content={`https://www.offfireonline.com${window.location.pathname}${window.location.search}`} />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={selectedPost ? selectedPost.title : (isEn ? "Digital Reference for Security & Safety" : "المرجع الرقمي للأمن والسلامة")} />
-  <meta name="twitter:image" content={selectedPost ? selectedPost.image : "/default-blog-share.jpg"} />
+  <meta name="twitter:image" content={selectedPost ? selectedPost.image : "https://www.offfireonline.com/default-blog-share.jpg"} />
 
-  {/* الروابط الأساسية وربط اللغات - SEO Multilingual */}
-  <link rel="canonical" href={selectedPost ? `https://www.offfireonline.com${isEn ? '/en' : ''}/blog?id=${selectedPost.id}` : `https://www.offfireonline.com${isEn ? '/en' : ''}/blog`} />
+  {/* الـ Canonical الديناميكي الذي يقرأ المسار الحالي فوراً */}
+  <link rel="canonical" href={`https://www.offfireonline.com${window.location.pathname}${window.location.search}`} />
+  
+  {/* روابط اللغات التبادلية - تظل تعتمد على وجود مقال من عدمه */}
   <link rel="alternate" hreflang="ar" href={selectedPost ? `https://www.offfireonline.com/blog?id=${selectedPost.id}` : `https://www.offfireonline.com/blog`} />
   <link rel="alternate" hreflang="en" href={selectedPost ? `https://www.offfireonline.com/en/blog?id=${selectedPost.id}` : `https://www.offfireonline.com/en/blog`} />
   <link rel="alternate" hreflang="x-default" href={selectedPost ? `https://www.offfireonline.com/blog?id=${selectedPost.id}` : `https://www.offfireonline.com/blog`} />
