@@ -149,14 +149,14 @@ const HomePage = () => {
           <meta property="og:description" content={isEn ? 'From quote request to approval.. complete your facility safety requirements in less than 3 minutes.' : 'من طلب عرض السعر حتى الاعتماد.. أنجز متطلبات الأمن والسلامة لمنشأتك في أقل من 3 دقائق.'} />
           <meta property="og:image" content={SOLUTION_IMAGE} />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content={isEn ? "https://www.offfireonline.com/en" : "https://www.offfireonline.com/"} />
+          <meta property="og:url" content={`https://www.offfireonline.com${window.location.pathname}`} />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={isEn ? 'OFF FIRE ONLINE | The Smart Safety Solution' : 'OFF FIRE ONLINE | الحل الذكي للأمن والسلامة'} />
           <meta name="twitter:description" content={isEn ? 'A unified platform for certified safety companies, specifications, and prices.' : 'منصة موحدة لشركات السلامة المعتمدة، المواصفات، والأسعار في مكان واحد.'} />
           <meta name="twitter:image" content={SOLUTION_IMAGE} />
 
-          <link rel="canonical" href={isEn ? "https://www.offfireonline.com/en" : "https://www.offfireonline.com/"} />
+          <link rel="canonical" href={`https://www.offfireonline.com${window.location.pathname}`} />
           <link rel="alternate" hrefLang="ar" href="https://www.offfireonline.com/" />
           <link rel="alternate" hrefLang="en" href="https://www.offfireonline.com/en" />
           <link rel="alternate" hrefLang="x-default" href="https://www.offfireonline.com/" />
