@@ -1,5 +1,4 @@
 {
-  "homepage": "https://anas0magdy.github.io/off-fire-online/",
   "name": "off-fire-online",
   "private": true,
   "version": "0.0.0",
@@ -7,10 +6,35 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "include": [
+      "/",
+      "/en",
+      "/about",
+      "/en/about",
+      "/services",
+      "/en/services",
+      "/blog",
+      "/en/blog",
+      "/contact",
+      "/en/contact",
+      "/terms",
+      "/en/terms",
+      "/privacy",
+      "/en/privacy"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "waitFor": 1000
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.103.3",
@@ -41,6 +65,7 @@
     "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
+    "react-snap": "^1.23.0",
     "supabase": "^2.98.2",
     "tailwindcss": "^4.1.18",
     "vite": "^7.2.4"

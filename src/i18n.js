@@ -9,14 +9,15 @@ const resources = {
   en: { translation: translationEN }
 };
 
-// بنسأل المتصفح: هل في لغة محفوظة؟ لو مفيش، افتح عربي
-const savedLang = localStorage.getItem('appLanguage') || 'ar';
+// التعديل الأهم: قراءة اللغة من الرابط مباشرة لضمان نجاح react-snap
+const isEnglishUrl = typeof window !== 'undefined' && window.location.pathname.startsWith('/en');
+const initialLang = isEnglishUrl ? 'en' : 'ar';
 
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: savedLang, // نستخدم اللغة المحفوظة أو العربي
+    lng: initialLang, // استخدام اللغة بناءً على الرابط
     fallbackLng: 'ar',
     debug: false,
     interpolation: {
@@ -25,7 +26,7 @@ i18n
   });
 
 // ضبط اتجاه الصفحة (RTL/LTR) فوراً مع التحميل
-document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
-document.documentElement.setAttribute('lang', savedLang);
+document.documentElement.setAttribute('dir', initialLang === 'ar' ? 'rtl' : 'ltr');
+document.documentElement.setAttribute('lang', initialLang);
 
 export default i18n;

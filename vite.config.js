@@ -11,4 +11,8 @@ export default defineConfig({
   // ⚠️ هام جداً: استبدل 'YOUR_REPO_NAME' باسم المستودع بتاعك بالظبط على جيت هب
   // لو اسم المستودع off-fire-online يبقى تكتب: '/off-fire-online/'
   base: '/', 
+
+  build: {
+    target: 'es2015'
+  }
 })
